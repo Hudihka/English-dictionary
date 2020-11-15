@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		528272512561275E00A63410 /* EnumStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272482561275E00A63410 /* EnumStoryboard.swift */; };
+		528272522561275E00A63410 /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272492561275E00A63410 /* Vibro.swift */; };
+		528272532561275E00A63410 /* DefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724A2561275E00A63410 /* DefaultUtils.swift */; };
+		528272542561275E00A63410 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724C2561275E00A63410 /* BaseViewController.swift */; };
+		528272552561275E00A63410 /* CustomBBItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724D2561275E00A63410 /* CustomBBItem.swift */; };
+		528272562561275E00A63410 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724E2561275E00A63410 /* NavigationController.swift */; };
+		528272672561277600A63410 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272582561277600A63410 /* Date.swift */; };
+		528272682561277600A63410 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272592561277600A63410 /* UIView.swift */; };
+		528272692561277600A63410 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725A2561277600A63410 /* Array.swift */; };
+		5282726A2561277600A63410 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725B2561277600A63410 /* UIColor.swift */; };
+		5282726B2561277600A63410 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725C2561277600A63410 /* NSObject.swift */; };
+		5282726C2561277600A63410 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725D2561277600A63410 /* UITableView.swift */; };
+		5282726D2561277600A63410 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725E2561277600A63410 /* UITextField.swift */; };
+		5282726E2561277600A63410 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282725F2561277600A63410 /* UITableViewCell.swift */; };
+		5282726F2561277600A63410 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272602561277600A63410 /* String.swift */; };
+		528272702561277600A63410 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272612561277600A63410 /* UIButton.swift */; };
+		528272712561277600A63410 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272622561277600A63410 /* UIViewController.swift */; };
+		528272722561277600A63410 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272632561277600A63410 /* UIWindow.swift */; };
+		528272742561277600A63410 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272652561277600A63410 /* UIApplication.swift */; };
+		528272752561277600A63410 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272662561277600A63410 /* UITextView.swift */; };
 		52B909B12561238400FC2908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B02561238400FC2908 /* AppDelegate.swift */; };
 		52B909B52561238400FC2908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B42561238400FC2908 /* ViewController.swift */; };
 		52B909B82561238400FC2908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B62561238400FC2908 /* Main.storyboard */; };
@@ -15,6 +35,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		528272482561275E00A63410 /* EnumStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumStoryboard.swift; sourceTree = "<group>"; };
+		528272492561275E00A63410 /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
+		5282724A2561275E00A63410 /* DefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUtils.swift; sourceTree = "<group>"; };
+		5282724C2561275E00A63410 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5282724D2561275E00A63410 /* CustomBBItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBBItem.swift; sourceTree = "<group>"; };
+		5282724E2561275E00A63410 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		528272582561277600A63410 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		528272592561277600A63410 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5282725A2561277600A63410 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		5282725B2561277600A63410 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5282725C2561277600A63410 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		5282725D2561277600A63410 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		5282725E2561277600A63410 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		5282725F2561277600A63410 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		528272602561277600A63410 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		528272612561277600A63410 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		528272622561277600A63410 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		528272632561277600A63410 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		528272652561277600A63410 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		528272662561277600A63410 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		52B909AD2561238400FC2908 /* English dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B909B02561238400FC2908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B909B42561238400FC2908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +75,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		528272432561260200A63410 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				52B909B02561238400FC2908 /* AppDelegate.swift */,
+				52B909B92561238800FC2908 /* Assets.xcassets */,
+				52B909BB2561238800FC2908 /* LaunchScreen.storyboard */,
+				52B909BE2561238800FC2908 /* Info.plist */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		528272442561261D00A63410 /* Support classes */ = {
+			isa = PBXGroup;
+			children = (
+				5282724B2561275E00A63410 /* BaseVC */,
+				5282724A2561275E00A63410 /* DefaultUtils.swift */,
+				528272482561275E00A63410 /* EnumStoryboard.swift */,
+				528272492561275E00A63410 /* Vibro.swift */,
+			);
+			path = "Support classes";
+			sourceTree = "<group>";
+		};
+		5282724B2561275E00A63410 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				5282724C2561275E00A63410 /* BaseViewController.swift */,
+				5282724D2561275E00A63410 /* CustomBBItem.swift */,
+				5282724E2561275E00A63410 /* NavigationController.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		528272572561277600A63410 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				528272582561277600A63410 /* Date.swift */,
+				528272592561277600A63410 /* UIView.swift */,
+				5282725A2561277600A63410 /* Array.swift */,
+				5282725B2561277600A63410 /* UIColor.swift */,
+				5282725C2561277600A63410 /* NSObject.swift */,
+				5282725D2561277600A63410 /* UITableView.swift */,
+				5282725E2561277600A63410 /* UITextField.swift */,
+				5282725F2561277600A63410 /* UITableViewCell.swift */,
+				528272602561277600A63410 /* String.swift */,
+				528272612561277600A63410 /* UIButton.swift */,
+				528272622561277600A63410 /* UIViewController.swift */,
+				528272632561277600A63410 /* UIWindow.swift */,
+				528272652561277600A63410 /* UIApplication.swift */,
+				528272662561277600A63410 /* UITextView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		52B909A42561238400FC2908 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +147,11 @@
 		52B909AF2561238400FC2908 /* English dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				52B909B02561238400FC2908 /* AppDelegate.swift */,
+				528272432561260200A63410 /* Resourses */,
 				52B909B42561238400FC2908 /* ViewController.swift */,
+				528272572561277600A63410 /* Extension */,
+				528272442561261D00A63410 /* Support classes */,
 				52B909B62561238400FC2908 /* Main.storyboard */,
-				52B909B92561238800FC2908 /* Assets.xcassets */,
-				52B909BB2561238800FC2908 /* LaunchScreen.storyboard */,
-				52B909BE2561238800FC2908 /* Info.plist */,
 			);
 			path = "English dictionary";
 			sourceTree = "<group>";
@@ -135,8 +227,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528272682561277600A63410 /* UIView.swift in Sources */,
+				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
+				5282726A2561277600A63410 /* UIColor.swift in Sources */,
+				528272712561277600A63410 /* UIViewController.swift in Sources */,
 				52B909B52561238400FC2908 /* ViewController.swift in Sources */,
+				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
+				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,
+				528272722561277600A63410 /* UIWindow.swift in Sources */,
+				528272562561275E00A63410 /* NavigationController.swift in Sources */,
+				528272522561275E00A63410 /* Vibro.swift in Sources */,
+				528272692561277600A63410 /* Array.swift in Sources */,
+				5282726B2561277600A63410 /* NSObject.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
+				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
+				528272742561277600A63410 /* UIApplication.swift in Sources */,
+				5282726D2561277600A63410 /* UITextField.swift in Sources */,
+				528272672561277600A63410 /* Date.swift in Sources */,
+				5282726F2561277600A63410 /* String.swift in Sources */,
+				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
+				5282726C2561277600A63410 /* UITableView.swift in Sources */,
+				528272702561277600A63410 /* UIButton.swift in Sources */,
+				528272752561277600A63410 /* UITextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,16 +393,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
-				INFOPLIST_FILE = "English dictionary/Info.plist";
+				INFOPLIST_FILE = "English dictionary/Resourses/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SRv2.0.English-dictionary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,16 +414,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
-				INFOPLIST_FILE = "English dictionary/Info.plist";
+				INFOPLIST_FILE = "English dictionary/Resourses/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SRv2.0.English-dictionary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
