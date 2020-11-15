@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-820" y="100"/>
         </scene>
-        <!--Start View Controller-->
+        <!--СЛОВАРИ-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,11 +32,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hJt-B6-Yii">
-                                <rect key="frame" x="0.0" y="158" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="315" width="414" height="581"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите тему" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-UP-w8S">
-                                <rect key="frame" x="20" y="101" width="374" height="35"/>
+                                <rect key="frame" x="20" y="258" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="cct-bO-tcc"/>
                                 </constraints>
@@ -44,21 +44,55 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmT-ML-ysS">
+                                <rect key="frame" x="20" y="108" width="374" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="zba-gM-fvB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="ВСЕ СЛОВА">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="3UN-KS-lwh" eventType="touchUpInside" id="qxQ-XJ-8AI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0S-rd-mR4">
+                                <rect key="frame" x="20" y="183" width="374" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="LaW-cb-qiE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="ОСНОВНОЙ СЛОВАРЬ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="3UN-KS-lwh" eventType="touchUpInside" id="GXB-iL-uyC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gdX-UP-w8S" secondAttribute="trailing" constant="20" id="5LO-eF-jmc"/>
+                            <constraint firstItem="a0S-rd-mR4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ZD-GY-s5d"/>
+                            <constraint firstItem="NmT-ML-ysS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7gK-xB-4F6"/>
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Anf-9E-VWm"/>
                             <constraint firstItem="gdX-UP-w8S" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FQf-k6-2rV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NmT-ML-ysS" secondAttribute="trailing" constant="20" id="Fb2-hR-CjH"/>
+                            <constraint firstItem="NmT-ML-ysS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="G8M-j2-tkU"/>
                             <constraint firstAttribute="bottom" secondItem="hJt-B6-Yii" secondAttribute="bottom" id="Ow9-8L-ocI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a0S-rd-mR4" secondAttribute="trailing" constant="20" id="Sap-mU-n3R"/>
+                            <constraint firstItem="gdX-UP-w8S" firstAttribute="top" secondItem="a0S-rd-mR4" secondAttribute="bottom" constant="20" id="UVE-Qn-Xex"/>
                             <constraint firstItem="gdX-UP-w8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WJt-D5-eFW"/>
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="top" secondItem="gdX-UP-w8S" secondAttribute="bottom" constant="22" id="amf-GZ-kvm"/>
-                            <constraint firstItem="gdX-UP-w8S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="d0i-09-Vcc"/>
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sst-L4-U7A"/>
+                            <constraint firstItem="a0S-rd-mR4" firstAttribute="top" secondItem="NmT-ML-ysS" secondAttribute="bottom" constant="20" id="wDQ-p8-vY8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vpS-BX-haS">
+                    <navigationItem key="navigationItem" title="СЛОВАРИ" id="vpS-BX-haS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ibr-PG-pYk">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
@@ -67,6 +101,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allWords" destination="NmT-ML-ysS" id="iWK-1M-daZ"/>
+                        <outlet property="capitalDictionary" destination="a0S-rd-mR4" id="nfO-PV-Sjl"/>
                         <outlet property="tableView" destination="hJt-B6-Yii" id="0gQ-cU-2VG"/>
                     </connections>
                 </viewController>

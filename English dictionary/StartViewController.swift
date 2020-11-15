@@ -12,9 +12,14 @@ class StartViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
+	@IBOutlet weak var allWords: UIButton!
+	@IBOutlet weak var capitalDictionary: UIButton!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		
+		allWords.addRadius(number: 8)
+		capitalDictionary.addRadius(number: 8)
 	}
 
 	@IBAction func goNewTheme(_ sender: Any) {
