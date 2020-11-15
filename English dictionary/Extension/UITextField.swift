@@ -17,4 +17,10 @@ extension UITextField {
         return text.replacingCharacters(in: range, with: string)
     }
 
+    func resultStringOptional(string: String, range: NSRange) -> String? {
+        let text: NSString = (self.text ?? "") as NSString
+		let newText = text.replacingCharacters(in: range, with: string)
+		return newText.textEditor
+    }
+	
 }

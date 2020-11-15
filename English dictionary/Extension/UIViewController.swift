@@ -26,10 +26,6 @@ extension UIViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = color
     }
     
-    
-    
-    
-
 }
 
 

@@ -11,17 +11,7 @@ import UIKit
 
 enum EnumStoryboard: String {
     
-    case auth                   = "Auth"
-    case detailTask             = "DetailTask"
-    case datePicker             = "DatePicker"
-    case tasks                  = "Tasks"
-    case favorits               = "Favorits"
-    case archive                = "Archive"
-    case reports                = "Reports"
-    case notification           = "Notification"
-    case profile                = "Profile"
     case main                   = "Main"
-    case supportStoryboard      = "SupportStoryboard"
     
     var storyboard: UIStoryboard{
         return UIStoryboard(name: self.rawValue, bundle: nil)

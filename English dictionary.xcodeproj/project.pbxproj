@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5206502825612F2600DBE169 /* NewThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206502725612F2600DBE169 /* NewThemeViewController.swift */; };
 		528272512561275E00A63410 /* EnumStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272482561275E00A63410 /* EnumStoryboard.swift */; };
 		528272522561275E00A63410 /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272492561275E00A63410 /* Vibro.swift */; };
 		528272532561275E00A63410 /* DefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724A2561275E00A63410 /* DefaultUtils.swift */; };
@@ -28,13 +29,14 @@
 		528272742561277600A63410 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272652561277600A63410 /* UIApplication.swift */; };
 		528272752561277600A63410 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272662561277600A63410 /* UITextView.swift */; };
 		52B909B12561238400FC2908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B02561238400FC2908 /* AppDelegate.swift */; };
-		52B909B52561238400FC2908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B42561238400FC2908 /* ViewController.swift */; };
+		52B909B52561238400FC2908 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B42561238400FC2908 /* StartViewController.swift */; };
 		52B909B82561238400FC2908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B62561238400FC2908 /* Main.storyboard */; };
 		52B909BA2561238800FC2908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B92561238800FC2908 /* Assets.xcassets */; };
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5206502725612F2600DBE169 /* NewThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewThemeViewController.swift; sourceTree = "<group>"; };
 		528272482561275E00A63410 /* EnumStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumStoryboard.swift; sourceTree = "<group>"; };
 		528272492561275E00A63410 /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		5282724A2561275E00A63410 /* DefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUtils.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		528272662561277600A63410 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		52B909AD2561238400FC2908 /* English dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B909B02561238400FC2908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52B909B42561238400FC2908 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52B909B42561238400FC2908 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		52B909B72561238400FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52B909B92561238800FC2908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B909BC2561238800FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,10 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				528272432561260200A63410 /* Resourses */,
-				52B909B42561238400FC2908 /* ViewController.swift */,
+				52B909B42561238400FC2908 /* StartViewController.swift */,
+				5206502725612F2600DBE169 /* NewThemeViewController.swift */,
+				52B909B62561238400FC2908 /* Main.storyboard */,
 				528272572561277600A63410 /* Extension */,
 				528272442561261D00A63410 /* Support classes */,
-				52B909B62561238400FC2908 /* Main.storyboard */,
 			);
 			path = "English dictionary";
 			sourceTree = "<group>";
@@ -231,7 +234,7 @@
 				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
 				5282726A2561277600A63410 /* UIColor.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
-				52B909B52561238400FC2908 /* ViewController.swift in Sources */,
+				52B909B52561238400FC2908 /* StartViewController.swift in Sources */,
 				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
 				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,
 				528272722561277600A63410 /* UIWindow.swift in Sources */,
@@ -241,6 +244,7 @@
 				5282726B2561277600A63410 /* NSObject.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
+				5206502825612F2600DBE169 /* NewThemeViewController.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
 				528272672561277600A63410 /* Date.swift in Sources */,
