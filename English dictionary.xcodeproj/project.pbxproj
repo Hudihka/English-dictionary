@@ -37,6 +37,10 @@
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
 		B283EBD225737B9000284F55 /* Form+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD025737B9000284F55 /* Form+CD.swift */; };
 		B283EBD825737D3D00284F55 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD725737D3D00284F55 /* Constant.swift */; };
+		B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBDC25737F3100284F55 /* AllWordCell.swift */; };
+		B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBDD25737F3100284F55 /* AllWordCell.xib */; };
+		B283EBE32573829300284F55 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE12573829300284F55 /* ThemeCell.swift */; };
+		B283EBE42573829300284F55 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBE22573829300284F55 /* ThemeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B283EBD025737B9000284F55 /* Form+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form+CD.swift"; sourceTree = "<group>"; };
 		B283EBD725737D3D00284F55 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B283EBDC25737F3100284F55 /* AllWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordCell.swift; sourceTree = "<group>"; };
+		B283EBDD25737F3100284F55 /* AllWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllWordCell.xib; sourceTree = "<group>"; };
+		B283EBE12573829300284F55 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		B283EBE22573829300284F55 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				528272432561260200A63410 /* Resourses */,
-				52B909B42561238400FC2908 /* StartViewController.swift */,
-				5206502725612F2600DBE169 /* NewThemeViewController.swift */,
-				52B909B62561238400FC2908 /* Main.storyboard */,
+				B283EBDA25737EAB00284F55 /* ViewControllers */,
 				B283EBC925737A6F00284F55 /* CoreData */,
 				528272572561277600A63410 /* Extension */,
 				528272442561261D00A63410 /* Support classes */,
@@ -177,6 +183,28 @@
 				B283EBD025737B9000284F55 /* Form+CD.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B283EBDA25737EAB00284F55 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B283EBDB25737F0700284F55 /* StartVC */,
+				5206502725612F2600DBE169 /* NewThemeViewController.swift */,
+				52B909B62561238400FC2908 /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B283EBDB25737F0700284F55 /* StartVC */ = {
+			isa = PBXGroup;
+			children = (
+				52B909B42561238400FC2908 /* StartViewController.swift */,
+				B283EBDC25737F3100284F55 /* AllWordCell.swift */,
+				B283EBDD25737F3100284F55 /* AllWordCell.xib */,
+				B283EBE12573829300284F55 /* ThemeCell.swift */,
+				B283EBE22573829300284F55 /* ThemeCell.xib */,
+			);
+			path = StartVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
+				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
+				B283EBE42573829300284F55 /* ThemeCell.xib in Resources */,
 				52B909B82561238400FC2908 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +295,10 @@
 				528272692561277600A63410 /* Array.swift in Sources */,
 				5282726B2561277600A63410 /* NSObject.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
+				B283EBE32573829300284F55 /* ThemeCell.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				5206502825612F2600DBE169 /* NewThemeViewController.swift in Sources */,
+				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
 				528272672561277600A63410 /* Date.swift in Sources */,
