@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="sLs-bq-Wnu">
             <objects>
-                <navigationController id="hqd-4t-cx7" sceneMemberID="viewController">
+                <navigationController id="hqd-4t-cx7" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Tj-3K-nSX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

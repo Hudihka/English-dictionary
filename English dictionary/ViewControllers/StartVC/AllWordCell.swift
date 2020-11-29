@@ -14,7 +14,7 @@ class AllWordCell: UITableViewCell {
     
     var valueSelected: Bool = false {
         didSet{
-            self.contentView.backgroundColor = valueSelected ? .red : .white
+            self.contentView.backgroundColor = valueSelected ? grayColor : .white
             self.labelAll.textColor = valueSelected ? .white : .black
         }
     }

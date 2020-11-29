@@ -14,7 +14,6 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         
         self.clearBar()
-        self.fontBar(font: UIFont(name: "SFProText-Regular", size: 17), color: .white)
     }
     
 

@@ -12,18 +12,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HederCells" customModule="English_dictionary" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nID-St-fZo">
-                    <rect key="frame" x="0.0" y="29" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="39" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="IpY-eC-aUl"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsX-eB-uKz">
-                    <rect key="frame" x="352" y="4" width="42" height="21"/>
+                    <rect key="frame" x="352" y="9" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="DUb-eM-bYP"/>
                         <constraint firstAttribute="height" constant="21" id="jrZ-xg-Kry"/>
@@ -36,7 +36,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="nID-St-fZo" firstAttribute="top" secondItem="AsX-eB-uKz" secondAttribute="bottom" constant="4" id="8kc-cX-MTa"/>
+                <constraint firstItem="AsX-eB-uKz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="2I8-Fg-JXO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AsX-eB-uKz" secondAttribute="trailing" constant="20" id="Bx1-tg-X51"/>
                 <constraint firstItem="nID-St-fZo" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ERQ-Wh-mXv"/>
                 <constraint firstItem="nID-St-fZo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WvT-7H-Eof"/>
@@ -46,7 +46,7 @@
             <connections>
                 <outlet property="titleLable" destination="AsX-eB-uKz" id="UHZ-y0-nIW"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="310.71428571428572"/>
+            <point key="canvasLocation" x="140.57971014492756" y="314.0625"/>
         </view>
     </objects>
     <resources>

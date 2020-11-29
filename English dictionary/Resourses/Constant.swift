@@ -11,7 +11,7 @@ import UIKit
 
 typealias JSON = [String : Any?]
 
-
+let grayColor = UIColor(red: 65/255, green: 66/255, blue:68/255, alpha: 1)
 
 let hDdevice: CGFloat = UIScreen.main.bounds.size.height
 let wDdevice: CGFloat = UIScreen.main.bounds.size.width

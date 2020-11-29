@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: BaseViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -26,6 +26,7 @@ class StartViewController: UIViewController {
 		
         startedChek.addRadius(number: 8)
         startedChek.isEnabled = false
+        startedChek.alpha = 0.2
         
         seeButton.isEnabled = false
         
@@ -125,6 +126,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         seeButton.isEnabled = !selectedTheme.isEmpty
+        startedChek.alpha = selectedTheme.isEmpty ? 0.2 : 1
         startedChek.isEnabled = !selectedTheme.isEmpty
         tableView.reloadData()
     }
@@ -143,6 +145,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 40
+        
     }
 }
