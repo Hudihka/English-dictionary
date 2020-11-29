@@ -12,8 +12,8 @@ class StartViewController: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
-	@IBOutlet weak var allWords: UIButton!
-	@IBOutlet weak var capitalDictionary: UIButton!
+	@IBOutlet weak var startedChek: UIButton!
+    @IBOutlet weak var seeButton: UIBarButtonItem!
     
     
     fileprivate var dataArray: [Theme] = []
@@ -24,18 +24,25 @@ class StartViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		allWords.addRadius(number: 8)
-		capitalDictionary.addRadius(number: 8)
+        startedChek.addRadius(number: 8)
+        startedChek.isEnabled = false
+        
+        seeButton.isEnabled = false
         
         dataArray = Theme.findAll()
+        settingsTV()
 	}
 
 	@IBAction func goNewTheme(_ sender: Any) {
 		
-		NewThemeViewController.route(activeVC: self) {
-			self.tableView.reloadData()
-		}
+
 	}
+    
+    @IBAction func stratedChek(_ sender: Any) {
+        
+        
+    }
+    
 	
 }
 
@@ -83,24 +90,43 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         let theme = dataArray[indexPath.row]
         cell.theme = theme
         
-        if selectedAllTheme {
-            cell.valueSelected = true
-        } else {
-            cell.valueSelected = selectedTheme.contains(theme)
-        }
+        cell.valueSelected = selectedTheme.contains(theme)
         
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = users[indexPath.row]
-////        if let index = selectedUserIDs.firstIndex(of: user.id ?? -1) {
-////            selectedUserIDs.remove(at: index)
-////        } else {
-////            selectedUserIDs.append(user.id ?? -1)
-////        }
-//        tableView.reloadData()
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 {
+            
+            if selectedAllTheme == false {
+                selectedAllTheme = true
+                selectedTheme = dataArray
+            } else {
+                selectedAllTheme = false
+                selectedTheme = []
+            }
+        
+        } else {
+            let theme = dataArray[indexPath.row]
+            
+            if selectedTheme.contains(theme) {
+                selectedTheme = selectedTheme.filter({$0 != theme})
+                if selectedTheme.isEmpty, selectedAllTheme{
+                    selectedAllTheme = false
+                }
+            } else {
+                selectedTheme.append(theme)
+            }
+            
+        }
+        
+        seeButton.isEnabled = !selectedTheme.isEmpty
+        startedChek.isEnabled = !selectedTheme.isEmpty
+        tableView.reloadData()
     }
 
 	
