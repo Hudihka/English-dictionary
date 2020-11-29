@@ -45,6 +45,9 @@
 		B283EBE82573852500284F55 /* Theme+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE62573852500284F55 /* Theme+CD.swift */; };
 		B283EBF02573893300284F55 /* HederCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBEF2573893300284F55 /* HederCells.swift */; };
 		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
+		B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABAF2573AFD900F4118E /* ChekViewController.swift */; };
+		B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABB32573B2D000F4118E /* ChekCell.swift */; };
+		B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B295ABB42573B2D000F4118E /* ChekCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		B283EBE62573852500284F55 /* Theme+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CD.swift"; sourceTree = "<group>"; };
 		B283EBEF2573893300284F55 /* HederCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HederCells.swift; sourceTree = "<group>"; };
 		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
+		B295ABAF2573AFD900F4118E /* ChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekViewController.swift; sourceTree = "<group>"; };
+		B295ABB32573B2D000F4118E /* ChekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekCell.swift; sourceTree = "<group>"; };
+		B295ABB42573B2D000F4118E /* ChekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 				B283EBDB25737F0700284F55 /* StartVC */,
 				B27429C62573A8AF005551AD /* SettingsChek */,
 				52B909B62561238400FC2908 /* Main.storyboard */,
+				B295ABB22573B2AB00F4118E /* ChekViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +232,16 @@
 				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
 			path = StartVC;
+			sourceTree = "<group>";
+		};
+		B295ABB22573B2AB00F4118E /* ChekViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B295ABAF2573AFD900F4118E /* ChekViewController.swift */,
+				B295ABB32573B2D000F4118E /* ChekCell.swift */,
+				B295ABB42573B2D000F4118E /* ChekCell.xib */,
+			);
+			path = ChekViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */,
 				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
@@ -301,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */,
 				528272682561277600A63410 /* UIView.swift in Sources */,
 				B283EBF02573893300284F55 /* HederCells.swift in Sources */,
 				B283EBE82573852500284F55 /* Theme+CD.swift in Sources */,
@@ -328,6 +347,7 @@
 				B283EBD825737D3D00284F55 /* Constant.swift in Sources */,
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
+				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
 				B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */,
 				B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */,

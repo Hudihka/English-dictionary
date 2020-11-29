@@ -11,33 +11,34 @@ import UIKit
 class SettingsChekViewController: BaseViewController {
 	
 
-	@IBOutlet fileprivate weak var goButton: UIButton!
+    @IBOutlet fileprivate weak var segmentControll: UISegmentedControl!
+    @IBOutlet fileprivate weak var switchStatistic: UISwitch!
+    @IBOutlet fileprivate weak var switchOneTheme: UISwitch!
+    
+    
+    
+    @IBOutlet fileprivate weak var goButton: UIButton!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-        goButton.add
+        goButton.addRadius(number: 8)
     }
     
-	static func route(activeVC: UIViewController, compl: () -> ()){
 
-        
-		
-	}
     
-    @IBAction func segmentControll(_ sender: Any) {
+    @IBAction func dissmis(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func switchStatistic(_ sender: Any) {
-    }
-    
-    @IBAction func switchOneTheme(_ sender: Any) {
-    }
-    
     
     @IBAction func goButtonAction(_ sender: Any) {
-		self.saveBlock()
-		self.navigationController?.dismiss(animated: true, completion: nil)
+        ManagerSettings.shared.newSettings(rusAnglTranslate: segmentControll.selectedSegmentIndex == 0,
+                                           visibleStatistic: switchStatistic.isOn,
+                                           oneThemeQestion: switchOneTheme.isOn)
+        
+        let VC = ChekViewController.route()
+        self.navigationController?.pushViewController(VC, animated: true)
+        
 	}
 	
 
