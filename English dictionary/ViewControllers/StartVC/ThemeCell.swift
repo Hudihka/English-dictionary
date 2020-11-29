@@ -21,6 +21,17 @@ class ThemeCell: UITableViewCell {
             self.labelCount.textColor = valueSelected ? .white : .black
         }
     }
+    
+    var theme: Theme? {
+        didSet{
+            if let theme = theme {
+                labelTheme.text = theme.name
+                labelCount.text = "\(theme.words?.count ?? 0) слов"
+            }
+        }
+    }
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

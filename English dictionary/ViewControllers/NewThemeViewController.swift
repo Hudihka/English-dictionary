@@ -28,11 +28,11 @@ class NewThemeViewController: UIViewController {
 	static func route(activeVC: UIViewController, compl: () -> ()){
 		if let NVC = EnumStoryboard.main.vc("NavigationNevTheme") as? UINavigationController{
 			
-			if let first = NVC.viewControllers.first as? NewThemeViewController{
-				first.saveBlock = {
-					compl()
-				}
-			}
+//			if let first = NVC.viewControllers.first as? NewThemeViewController{
+//				first.saveBlock = {
+//					compl()
+//				}
+//			}
 			
 			NVC.modalPresentationStyle = .fullScreen
 			activeVC.present(NVC, animated: true, completion: nil)

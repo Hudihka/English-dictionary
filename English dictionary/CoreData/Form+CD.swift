@@ -11,29 +11,6 @@ import Foundation
 import CoreData
 
 
-//public class Form: NSManagedObject {
-//
-//}
-//
-//
-//extension Form {
-//
-//    @nonobjc public class func fetchRequest() -> NSFetchRequest<Form> {
-//        return NSFetchRequest<Form>(entityName: "Word")
-//    }
-//
-//    @NSManaged public var id: String?
-//    @NSManaged public var theme: String?
-//    @NSManaged public var rusValue: String?
-//    @NSManaged public var engValue: String?
-//
-//}
-//
-//extension Form : Identifiable {
-//
-//}
-
-
 class Word: NSManagedObject {
     
     class var entityName: String {
@@ -158,22 +135,22 @@ class Word: NSManagedObject {
     }
     
     
-//    static func findAll(by: NSPredicate? = nil, context: NSManagedObjectContext? = nil) -> [Word] {
-//        guard let ctx = context ?? defaultContext else {return []}
-//
-//        var objects: [Form]?
-//        do {
-//            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-//            let sortDescriptors = NSSortDescriptor(key: "id", ascending: false)
-//            fetchRequest.predicate = by
-//            fetchRequest.sortDescriptors = [sortDescriptors]
-//            try objects = ctx.fetch(fetchRequest) as? [Form]
-//        } catch {
-//            print(error)
-//        }
-//
-//        return objects ?? []
-//    }
+    static func findAll(by: NSPredicate? = nil, context: NSManagedObjectContext? = nil) -> [Word] {
+        guard let ctx = context ?? defaultContext else {return []}
+
+        var objects: [Word]?
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+            let sortDescriptors = NSSortDescriptor(key: "id", ascending: false)
+            fetchRequest.predicate = by
+            fetchRequest.sortDescriptors = [sortDescriptors]
+            try objects = ctx.fetch(fetchRequest) as? [Word]
+        } catch {
+            print(error)
+        }
+
+        return objects ?? []
+    }
     
     //MARK: DELETE
     

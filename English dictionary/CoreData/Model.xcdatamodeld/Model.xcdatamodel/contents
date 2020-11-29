@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Theme" representedClassName=".Theme" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="Без темы"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="themeRelationship" inverseEntity="Word"/>
+    </entity>
     <entity name="Word" representedClassName=".Form" syncable="YES">
         <attribute name="descript" optional="YES" attributeType="String"/>
         <attribute name="engValue" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="rusValue" optional="YES" attributeType="String"/>
-        <attribute name="theme" optional="YES" attributeType="String"/>
+        <attribute name="theme" optional="YES" attributeType="String" defaultValueString="Без темы"/>
+        <relationship name="themeRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Theme" inverseName="words" inverseEntity="Theme"/>
     </entity>
     <elements>
-        <element name="Word" positionX="-63" positionY="-99" width="128" height="118"/>
+        <element name="Word" positionX="-44.66796875" positionY="-250.75" width="128" height="133"/>
+        <element name="Theme" positionX="-251.1484375" positionY="-190.8125" width="128" height="73"/>
     </elements>
 </model>

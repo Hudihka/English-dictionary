@@ -41,6 +41,9 @@
 		B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBDD25737F3100284F55 /* AllWordCell.xib */; };
 		B283EBE32573829300284F55 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE12573829300284F55 /* ThemeCell.swift */; };
 		B283EBE42573829300284F55 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBE22573829300284F55 /* ThemeCell.xib */; };
+		B283EBE82573852500284F55 /* Theme+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE62573852500284F55 /* Theme+CD.swift */; };
+		B283EBF02573893300284F55 /* HederCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBEF2573893300284F55 /* HederCells.swift */; };
+		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		B283EBDD25737F3100284F55 /* AllWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllWordCell.xib; sourceTree = "<group>"; };
 		B283EBE12573829300284F55 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		B283EBE22573829300284F55 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		B283EBE62573852500284F55 /* Theme+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CD.swift"; sourceTree = "<group>"; };
+		B283EBEF2573893300284F55 /* HederCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HederCells.swift; sourceTree = "<group>"; };
+		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 				B283EBCA25737A6F00284F55 /* CoreDataManager.swift */,
 				B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */,
 				B283EBD025737B9000284F55 /* Form+CD.swift */,
+				B283EBE62573852500284F55 /* Theme+CD.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -203,6 +210,8 @@
 				B283EBDD25737F3100284F55 /* AllWordCell.xib */,
 				B283EBE12573829300284F55 /* ThemeCell.swift */,
 				B283EBE22573829300284F55 /* ThemeCell.xib */,
+				B283EBEF2573893300284F55 /* HederCells.swift */,
+				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
 			path = StartVC;
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
@@ -281,6 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				528272682561277600A63410 /* UIView.swift in Sources */,
+				B283EBF02573893300284F55 /* HederCells.swift in Sources */,
+				B283EBE82573852500284F55 /* Theme+CD.swift in Sources */,
 				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
 				5282726A2561277600A63410 /* UIColor.swift in Sources */,
 				B283EBD225737B9000284F55 /* Form+CD.swift in Sources */,
