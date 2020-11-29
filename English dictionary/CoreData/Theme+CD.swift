@@ -28,7 +28,7 @@ class Theme: NSManagedObject {
         }
         
         if let allWords = json["allWords"] as? [JSON]{
-            let wordsInTheme = Word.findCreate(jsonArray: allWords)
+            let wordsInTheme = Word.findCreate(jsonArray: allWords, theme: self.name)
             words = NSSet(object: wordsInTheme)
         }
         

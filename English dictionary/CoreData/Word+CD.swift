@@ -18,18 +18,15 @@ class Word: NSManagedObject {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var theme: String?
     @NSManaged public var rusValue: String?
     @NSManaged public var engValue: String?
     @NSManaged public var descript: String?
+    @NSManaged public var theme: String?
 
     
     
-    private func parse(json: JSON){
+    private func parse(json: JSON, theme: String?){
         
-        if let temp = json["theme"] as? String {
-            theme = temp
-        }
         
         if let temp = json["rusValue"] as? String {
             rusValue = temp
@@ -43,24 +40,31 @@ class Word: NSManagedObject {
             descript = temp
         }
         
+        if let theme = theme{
+            self.theme = theme
+        }
+        
         
         let descriptionID = descript ?? ""
-        let themeID = theme ?? "theme"
         let rusID = rusValue ?? "rusValue"
         let engID = engValue ?? "engValue"
+        let themeID = self.theme ?? "theme"
         
-        id = "\(themeID)_\(descriptionID)_\(rusID)_\(engID)"
+        id = "\(rusID)_\(engID)_\(descriptionID)_\(themeID)"
         
     }
         
     //MARK: CREATE
     
-    @discardableResult static func findCreate(jsonArray: [JSON], context: NSManagedObjectContext? = nil) -> [Word] {
-        return jsonArray.map({Word.findCreate(json: $0, context: context)})
+    @discardableResult static func findCreate(jsonArray: [JSON],
+                                              theme: String?,
+                                              context: NSManagedObjectContext? = nil) -> [Word] {
+        
+        return jsonArray.map({Word.findCreate(json: $0, theme: theme, context: context)})
     }
     
     
-    @discardableResult static func findCreate(json: JSON, context: NSManagedObjectContext? = nil) -> Word {
+    @discardableResult static func findCreate(json: JSON, theme: String?, context: NSManagedObjectContext? = nil) -> Word {
         
         let identifier: String = (json["id"] as? String) ?? ""
         let ctx = context ?? defaultContext
@@ -71,7 +75,7 @@ class Word: NSManagedObject {
             object = Word(entity: entityDescription, insertInto: ctx)
         }
         
-        object?.parse(json: json)
+        object?.parse(json: json, theme: theme)
         
         return object!
     }

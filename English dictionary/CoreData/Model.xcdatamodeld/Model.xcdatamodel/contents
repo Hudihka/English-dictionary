@@ -13,7 +13,7 @@
         <relationship name="themeRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Theme" inverseName="words" inverseEntity="Theme"/>
     </entity>
     <elements>
-        <element name="Word" positionX="-44.66796875" positionY="-250.75" width="128" height="133"/>
         <element name="Theme" positionX="-251.1484375" positionY="-190.8125" width="128" height="73"/>
+        <element name="Word" positionX="-33.93359375" positionY="-239.08203125" width="128" height="133"/>
     </elements>
 </model>

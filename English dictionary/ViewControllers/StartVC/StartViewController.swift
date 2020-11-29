@@ -40,8 +40,11 @@ class StartViewController: BaseViewController {
 	}
     
     @IBAction func stratedChek(_ sender: Any) {
+        ManagerSettings.shared.createTheme(selectedTheme: self.selectedTheme)
         
-        
+        let NVC = EnumStoryboard.main.vc("ChekNavigationController")
+        NVC.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(NVC, animated: true, completion: nil)
     }
     
 	
