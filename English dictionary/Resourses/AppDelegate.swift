@@ -17,12 +17,12 @@ var appDelegateShared: AppDelegate {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//    private var CDManager = CoreDataManager.shared
+    private var CDManager = CoreDataManager.shared
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        CDManager.initialize()
+        CDManager.initialize()
         
         
         return true
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {}
 
     func applicationDidEnterBackground(_ application: UIApplication){
-//        CDManager.saveContext()
+        CDManager.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {}
@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {}
 
     func applicationWillTerminate(_ application: UIApplication) {
-//        CDManager.saveContext()
+        CDManager.deleteAll(ctx: nil)
+        CDManager.saveContext()
     }
 
 }

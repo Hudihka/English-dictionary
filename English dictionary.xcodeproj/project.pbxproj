@@ -33,6 +33,10 @@
 		52B909B82561238400FC2908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B62561238400FC2908 /* Main.storyboard */; };
 		52B909BA2561238800FC2908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B92561238800FC2908 /* Assets.xcassets */; };
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
+		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
+		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
+		B283EBD225737B9000284F55 /* Form+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD025737B9000284F55 /* Form+CD.swift */; };
+		B283EBD825737D3D00284F55 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD725737D3D00284F55 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		52B909B92561238800FC2908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B909BC2561238800FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B909BE2561238800FC2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		B283EBD025737B9000284F55 /* Form+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Form+CD.swift"; sourceTree = "<group>"; };
+		B283EBD725737D3D00284F55 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				52B909B02561238400FC2908 /* AppDelegate.swift */,
+				B283EBD725737D3D00284F55 /* Constant.swift */,
 				52B909B92561238800FC2908 /* Assets.xcassets */,
 				52B909BB2561238800FC2908 /* LaunchScreen.storyboard */,
 				52B909BE2561238800FC2908 /* Info.plist */,
@@ -153,10 +162,21 @@
 				52B909B42561238400FC2908 /* StartViewController.swift */,
 				5206502725612F2600DBE169 /* NewThemeViewController.swift */,
 				52B909B62561238400FC2908 /* Main.storyboard */,
+				B283EBC925737A6F00284F55 /* CoreData */,
 				528272572561277600A63410 /* Extension */,
 				528272442561261D00A63410 /* Support classes */,
 			);
 			path = "English dictionary";
+			sourceTree = "<group>";
+		};
+		B283EBC925737A6F00284F55 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B283EBCA25737A6F00284F55 /* CoreDataManager.swift */,
+				B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */,
+				B283EBD025737B9000284F55 /* Form+CD.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +253,11 @@
 				528272682561277600A63410 /* UIView.swift in Sources */,
 				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
 				5282726A2561277600A63410 /* UIColor.swift in Sources */,
+				B283EBD225737B9000284F55 /* Form+CD.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
 				52B909B52561238400FC2908 /* StartViewController.swift in Sources */,
 				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
+				B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */,
 				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,
 				528272722561277600A63410 /* UIWindow.swift in Sources */,
 				528272562561275E00A63410 /* NavigationController.swift in Sources */,
@@ -248,9 +270,11 @@
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
 				528272672561277600A63410 /* Date.swift in Sources */,
+				B283EBD825737D3D00284F55 /* Constant.swift in Sources */,
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
+				B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */,
 				528272702561277600A63410 /* UIButton.swift in Sources */,
 				528272752561277600A63410 /* UITextView.swift in Sources */,
 			);
@@ -456,6 +480,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B283EBCC25737A6F00284F55 /* Model.xcdatamodel */,
+			);
+			currentVersion = B283EBCC25737A6F00284F55 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52B909A52561238400FC2908 /* Project object */;
 }
