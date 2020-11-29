@@ -62,4 +62,40 @@ class ManagerSettings {
         return "Слов: \(countWord)/nОшибок: \(countError)"
     }
     
+    var createRandom: (word: Word, arrayWord: [Word]){
+        
+        let theme: [Theme] = oneThemeQestion ? selectedTheme[randomPick: 1] : selectedTheme //список тем в которых будем искать
+        
+        
+        
+        if oneThemeQestion {
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+}
+
+
+
+extension Array {
+    subscript (randomPick n: Int) -> [Element] {
+        var indices = [Int](0..<count)
+        var randoms = [Int]()
+        for _ in 0..<n {
+            randoms.append(indices.remove(at: Int(arc4random_uniform(UInt32(indices.count)))))
+        }
+        return randoms.map { self[$0] }
+    }
 }

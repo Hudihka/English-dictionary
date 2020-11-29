@@ -81,10 +81,37 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChekCell") as! ChekCell
-        
-//        cell.valueSelected = selectedAllTheme
+        cell.word = dataArray[indexPath.row]
+        cell.itsError = indexsesError.contains(indexPath)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let selectedWord = selectedWord, indexsesError.contains(indexPath) == false else {
+            tableView.reloadData()
+            return
+        }
+        
+        let word = dataArray[indexPath.row]
+        
+        if selectedWord == word {
+            //выбираем новое слово и новый архив
+            //чистим архив ошибок
+            //делаем все прозрачным
+            //меняем тексты
+            //labelDescription.text = manager.textStatistic(newWord: true, itsError: false)
+            //делаем все видимым
+            
+            Vibro.weak()
+        } else {
+            Vibro.strong()
+            indexsesError.append(indexPath)
+            tableView.reloadData()
+        }
+        
     }
     
     

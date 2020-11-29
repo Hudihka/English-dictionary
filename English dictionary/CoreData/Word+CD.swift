@@ -48,7 +48,7 @@ class Word: NSManagedObject {
         let descriptionID = descript ?? ""
         let rusID = rusValue ?? "rusValue"
         let engID = engValue ?? "engValue"
-        let themeID = self.theme ?? "theme"
+        let themeID = self.theme ?? "Без темы"
         
         id = "\(rusID)_\(engID)_\(descriptionID)_\(themeID)"
         
@@ -100,19 +100,29 @@ class Word: NSManagedObject {
     
     
     //предикат для поиска
-    class func predicate(newIds:[Int]? = nil,
-                         archived: Bool? = nil,
+//    class func predicate(theme:[Theme],
+//                         dontValue: String? = nil,
+    
+    class func predicate(theme:[Theme],
+                         dontValue: Word? = nil,
                          assignedToMe: Bool? = nil,
                          assignedByMe: Bool? = nil,
                          favorite: Bool? = nil) -> NSPredicate {
         var predicates: [NSPredicate] = []
 
-        if newIds != nil{
-            let predicateNot = NSPredicate(format: "NOT (id in %d)", newIds!)
+        let themes: [String] = theme.compactMap({$0.name})
+        
+        if themes.isEmpty == false {
+            let predicateNot = NSPredicate(format: "theme in %@", themes)
             predicates.append(predicateNot)
         }
-
+        
         if assignedToMe != nil {
+            let toUser = NSPredicate(format: "toMe == %@", NSNumber(value: assignedToMe!))
+            predicates.append(toUser)
+        }
+
+        if dontValue != nil {
             let toUser = NSPredicate(format: "toMe == %@", NSNumber(value: assignedToMe!))
             predicates.append(toUser)
         }
