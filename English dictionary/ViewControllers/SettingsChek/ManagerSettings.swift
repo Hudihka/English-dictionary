@@ -62,25 +62,25 @@ class ManagerSettings {
         return "Слов: \(countWord)/nОшибок: \(countError)"
     }
     
-    var createRandom: (word: Word, arrayWord: [Word]){
+    var createRandom: (word: Word?, arrayWord: [Word]){
         
         let theme: [Theme] = oneThemeQestion ? selectedTheme[randomPick: 1] : selectedTheme //список тем в которых будем искать
         
+		let selectedWordPredicate = Word.predicate(theme: theme)
+		let selectedWord = Word.findAll(by: selectedWordPredicate, context: nil)[randomPick: 1].first //рандомно выбранное слово
+		
+		let random3WordPredicate = Word.predicate(theme: theme, dontValue: selectedWord)
+		var random3Word = Word.findAll(by: random3WordPredicate, context: nil)[randomPick: 3] //рандомно выбранные 3 слова
+		
+		if let selectedWord = selectedWord, random3Word.count == 3 {
+			
+			let randomIndex = Int(arc4random() % 4)
+			random3Word.insert(selectedWord, at: randomIndex)
+			
+			return (word: selectedWord, arrayWord: random3Word)
+		}
         
-        
-        if oneThemeQestion {
-            
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        return (word: nil, arrayWord: [])
     }
     
     

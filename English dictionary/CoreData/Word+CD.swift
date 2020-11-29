@@ -104,10 +104,7 @@ class Word: NSManagedObject {
 //                         dontValue: String? = nil,
     
     class func predicate(theme:[Theme],
-                         dontValue: Word? = nil,
-                         assignedToMe: Bool? = nil,
-                         assignedByMe: Bool? = nil,
-                         favorite: Bool? = nil) -> NSPredicate {
+                         dontValue: Word? = nil) -> NSPredicate {
         var predicates: [NSPredicate] = []
 
         let themes: [String] = theme.compactMap({$0.name})
@@ -117,30 +114,15 @@ class Word: NSManagedObject {
             predicates.append(predicateNot)
         }
         
-        if assignedToMe != nil {
-            let toUser = NSPredicate(format: "toMe == %@", NSNumber(value: assignedToMe!))
+		if let rusDont = dontValue?.rusValue {
+            let toUser = NSPredicate(format: "rusValue != %@", rusDont)
             predicates.append(toUser)
         }
-
-        if dontValue != nil {
-            let toUser = NSPredicate(format: "toMe == %@", NSNumber(value: assignedToMe!))
+		
+		if let engDont = dontValue?.engValue {
+            let toUser = NSPredicate(format: "rusValue != %@", engDont)
             predicates.append(toUser)
         }
-        if assignedByMe != nil {
-            let byUser = NSPredicate(format: "byMe == %@", NSNumber(value:assignedByMe!))
-            predicates.append(byUser)
-        }
-        
-        if archived != nil {
-            let archiveP = NSPredicate(format: "archive == %@", NSNumber(value:archived!))
-            predicates.append(archiveP)
-        }
-        
-        if favorite != nil {
-            let favorits = NSPredicate(format: "favorite == %@", NSNumber(value:favorite!))
-            predicates.append(favorits)
-        }
-
 
 
         let comp = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
