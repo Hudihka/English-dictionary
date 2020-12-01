@@ -28,7 +28,28 @@ class ChekViewController: BaseViewController {
 
         barButtomItemDesing()
         settingsTV()
+		
+		startDesing()
     }
+	
+	override func viewDidAppear(_ animated: Bool){
+		 super.viewDidAppear(animated)
+
+		UIView.animate(withDuration: 0.4) {
+			self.labelStatistic.alpha = 1
+			self.labelWord.alpha = 1
+			self.labelDescription.alpha = 1
+		}
+		
+		UIView.transition(with: self.tableView,
+						  duration: 0.4,
+						  options: .transitionCrossDissolve,
+						  animations: {
+			self.tableView.reloadData()
+		})
+		
+	 }
+	
     
     static func route() -> UIViewController{
         
@@ -49,6 +70,20 @@ class ChekViewController: BaseViewController {
         self.navigationItem.leftBarButtonItem = cancelButton
         
     }
+	
+	private func startDesing(){
+		
+		let tupl = manager.createRandom
+		dataArray = tupl.arrayWord
+		selectedWord = tupl.word
+		
+		labelStatistic.alpha = 0
+		labelWord.alpha = 0
+		labelDescription.alpha = 0
+		
+		labelStatistic.text = manager.textStatistic(newWord: false, itsError: false)
+	}
+	
     
     @objc private func cancel(){
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -98,24 +133,64 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
         let word = dataArray[indexPath.row]
         
         if selectedWord == word {
-            //выбираем новое слово и новый архив
-            //чистим архив ошибок
-            //делаем все прозрачным
-            //меняем тексты
-            //labelDescription.text = manager.textStatistic(newWord: true, itsError: false)
-            //делаем все видимым
+            animateReloadDataOne()
             
             Vibro.weak()
         } else {
             Vibro.strong()
+			if indexsesError.isEmpty {
+				labelDescription.text = manager.textStatistic(newWord: false, itsError: true)
+			}
+			
             indexsesError.append(indexPath)
             tableView.reloadData()
         }
         
     }
     
+	
+	private func animateReloadDataOne(){
+		
+		
+		let tupl = manager.createRandom
+		dataArray = tupl.arrayWord
+		selectedWord = tupl.word
+		
+		let textSlected = ManagerSettings.shared.rusAnglTranslate ? selectedWord?.rusValue : selectedWord?.engValue
+		
+		indexsesError = []
+		
+		UIView.animate(withDuration: 0.2, animations: {
+			
+			self.labelWord.alpha = 0
+			self.labelDescription.alpha = 0
+			
+		}) {[weak self] (compl) in
+			if compl {
+				
+				self?.labelWord.text = textSlected
+				self?.labelDescription.text = self?.selectedWord?.descript
+				self?.labelStatistic.text = self?.manager.textStatistic(newWord: true, itsError: false)
+				
+				self?.aniateReloadDataTwo()
+			}
+		}
+		
+		
+		UIView.transition(with: self.tableView,
+						  duration: 0.4,
+						  options: .transitionCrossDissolve,
+						  animations: {
+			self.tableView.reloadData()
+		})
+	}
     
-    
+	private func aniateReloadDataTwo(){
+		UIView.animate(withDuration: 0.2) {
+			self.labelWord.alpha = 1
+			self.labelDescription.alpha = 1
+		}
+	}
     
     
 }
