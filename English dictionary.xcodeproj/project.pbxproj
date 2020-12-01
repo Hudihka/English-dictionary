@@ -33,6 +33,8 @@
 		52B909B82561238400FC2908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B62561238400FC2908 /* Main.storyboard */; };
 		52B909BA2561238800FC2908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B92561238800FC2908 /* Assets.xcassets */; };
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
+		52DD1BF425769ECA008F7EE9 /* AllThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF325769ECA008F7EE9 /* AllThemes.swift */; };
+		52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF525769F1F008F7EE9 /* NotTheme.swift */; };
 		B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27429C72573A8EF005551AD /* ManagerSettings.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
@@ -79,6 +81,8 @@
 		52B909B92561238800FC2908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B909BC2561238800FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B909BE2561238800FC2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52DD1BF325769ECA008F7EE9 /* AllThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllThemes.swift; sourceTree = "<group>"; };
+		52DD1BF525769F1F008F7EE9 /* NotTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTheme.swift; sourceTree = "<group>"; };
 		B27429C72573A8EF005551AD /* ManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSettings.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = "English dictionary";
 			sourceTree = "<group>";
 		};
+		52DD1BF225769E09008F7EE9 /* CONTENT */ = {
+			isa = PBXGroup;
+			children = (
+				52DD1BF325769ECA008F7EE9 /* AllThemes.swift */,
+				52DD1BF525769F1F008F7EE9 /* NotTheme.swift */,
+			);
+			path = CONTENT;
+			sourceTree = "<group>";
+		};
 		B27429C62573A8AF005551AD /* SettingsChek */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +218,7 @@
 				B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */,
 				B283EBD025737B9000284F55 /* Word+CD.swift */,
 				B283EBE62573852500284F55 /* Theme+CD.swift */,
+				52DD1BF225769E09008F7EE9 /* CONTENT */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -324,6 +338,7 @@
 				B283EBF02573893300284F55 /* HederCells.swift in Sources */,
 				B283EBE82573852500284F55 /* Theme+CD.swift in Sources */,
 				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
+				52DD1BF425769ECA008F7EE9 /* AllThemes.swift in Sources */,
 				5282726A2561277600A63410 /* UIColor.swift in Sources */,
 				B283EBD225737B9000284F55 /* Word+CD.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
@@ -345,6 +360,7 @@
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
 				528272672561277600A63410 /* Date.swift in Sources */,
 				B283EBD825737D3D00284F55 /* Constant.swift in Sources */,
+				52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */,
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
