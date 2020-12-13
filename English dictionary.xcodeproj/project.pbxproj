@@ -35,6 +35,8 @@
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
 		52DD1BF425769ECA008F7EE9 /* AllThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF325769ECA008F7EE9 /* AllThemes.swift */; };
 		52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF525769F1F008F7EE9 /* NotTheme.swift */; };
+		52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D65925867078003C9DE6 /* SearchViewController.swift */; };
+		52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D65B258670E0003C9DE6 /* EnumNotification.swift */; };
 		B24574572585E1EB0038053D /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574562585E1EB0038053D /* BodyParts.swift */; };
 		B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745A2585E2380038053D /* ProfessionAndWork.swift */; };
 		B245745F2585E28B0038053D /* Verbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745E2585E28B0038053D /* Verbs.swift */; };
@@ -100,6 +102,8 @@
 		52B909BE2561238800FC2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52DD1BF325769ECA008F7EE9 /* AllThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllThemes.swift; sourceTree = "<group>"; };
 		52DD1BF525769F1F008F7EE9 /* NotTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTheme.swift; sourceTree = "<group>"; };
+		52E4D65925867078003C9DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		52E4D65B258670E0003C9DE6 /* EnumNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNotification.swift; sourceTree = "<group>"; };
 		B24574562585E1EB0038053D /* BodyParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParts.swift; sourceTree = "<group>"; };
 		B245745A2585E2380038053D /* ProfessionAndWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionAndWork.swift; sourceTree = "<group>"; };
 		B245745E2585E28B0038053D /* Verbs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verbs.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				5282724A2561275E00A63410 /* DefaultUtils.swift */,
 				528272482561275E00A63410 /* EnumStoryboard.swift */,
 				528272492561275E00A63410 /* Vibro.swift */,
+				52E4D65B258670E0003C9DE6 /* EnumNotification.swift */,
 			);
 			path = "Support classes";
 			sourceTree = "<group>";
@@ -249,6 +254,14 @@
 			path = CONTENT;
 			sourceTree = "<group>";
 		};
+		52E4D6582586702F003C9DE6 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52E4D65925867078003C9DE6 /* SearchViewController.swift */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
 		B27429C62573A8AF005551AD /* SettingsChek */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +289,7 @@
 				B283EBDB25737F0700284F55 /* StartVC */,
 				B27429C62573A8AF005551AD /* SettingsChek */,
 				52B909B62561238400FC2908 /* Main.storyboard */,
+				52E4D6582586702F003C9DE6 /* SearchViewController */,
 				B295ABB22573B2AB00F4118E /* ChekViewController */,
 			);
 			path = ViewControllers;
@@ -420,6 +434,7 @@
 				B245747F2585E3C10038053D /* Adjectives.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
+				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,
 				5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */,
 				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
@@ -433,6 +448,7 @@
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
+				52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */,
 				B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */,
 				B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */,
 				528272702561277600A63410 /* UIButton.swift in Sources */,
