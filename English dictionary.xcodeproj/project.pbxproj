@@ -35,6 +35,19 @@
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
 		52DD1BF425769ECA008F7EE9 /* AllThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF325769ECA008F7EE9 /* AllThemes.swift */; };
 		52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF525769F1F008F7EE9 /* NotTheme.swift */; };
+		B24574572585E1EB0038053D /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574562585E1EB0038053D /* BodyParts.swift */; };
+		B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745A2585E2380038053D /* ProfessionAndWork.swift */; };
+		B245745F2585E28B0038053D /* Verbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745E2585E28B0038053D /* Verbs.swift */; };
+		B24574622585E2C30038053D /* DestinationsAndLocations .swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574612585E2C30038053D /* DestinationsAndLocations .swift */; };
+		B24574652585E2D40038053D /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574642585E2D40038053D /* Food.swift */; };
+		B24574692585E2F70038053D /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574682585E2F70038053D /* Clothes.swift */; };
+		B245746D2585E30B0038053D /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245746C2585E30B0038053D /* Time.swift */; };
+		B24574702585E3260038053D /* Funiture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245746F2585E3260038053D /* Funiture.swift */; };
+		B24574732585E33E0038053D /* Prepositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574722585E33E0038053D /* Prepositions.swift */; };
+		B24574762585E3590038053D /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574752585E3590038053D /* Phrases.swift */; };
+		B24574792585E3730038053D /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574782585E3730038053D /* Subjects.swift */; };
+		B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747B2585E3A50038053D /* FamilyAndHobbies .swift */; };
+		B245747F2585E3C10038053D /* Adjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747E2585E3C10038053D /* Adjectives.swift */; };
 		B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27429C72573A8EF005551AD /* ManagerSettings.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
@@ -83,6 +96,19 @@
 		52B909BE2561238800FC2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52DD1BF325769ECA008F7EE9 /* AllThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllThemes.swift; sourceTree = "<group>"; };
 		52DD1BF525769F1F008F7EE9 /* NotTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTheme.swift; sourceTree = "<group>"; };
+		B24574562585E1EB0038053D /* BodyParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParts.swift; sourceTree = "<group>"; };
+		B245745A2585E2380038053D /* ProfessionAndWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionAndWork.swift; sourceTree = "<group>"; };
+		B245745E2585E28B0038053D /* Verbs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verbs.swift; sourceTree = "<group>"; };
+		B24574612585E2C30038053D /* DestinationsAndLocations .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DestinationsAndLocations .swift"; sourceTree = "<group>"; };
+		B24574642585E2D40038053D /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		B24574682585E2F70038053D /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		B245746C2585E30B0038053D /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		B245746F2585E3260038053D /* Funiture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funiture.swift; sourceTree = "<group>"; };
+		B24574722585E33E0038053D /* Prepositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prepositions.swift; sourceTree = "<group>"; };
+		B24574752585E3590038053D /* Phrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
+		B24574782585E3730038053D /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		B245747B2585E3A50038053D /* FamilyAndHobbies .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyAndHobbies .swift"; sourceTree = "<group>"; };
+		B245747E2585E3C10038053D /* Adjectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjectives.swift; sourceTree = "<group>"; };
 		B27429C72573A8EF005551AD /* ManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSettings.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -198,6 +224,19 @@
 			children = (
 				52DD1BF325769ECA008F7EE9 /* AllThemes.swift */,
 				52DD1BF525769F1F008F7EE9 /* NotTheme.swift */,
+				B24574562585E1EB0038053D /* BodyParts.swift */,
+				B245745A2585E2380038053D /* ProfessionAndWork.swift */,
+				B245745E2585E28B0038053D /* Verbs.swift */,
+				B24574612585E2C30038053D /* DestinationsAndLocations .swift */,
+				B24574642585E2D40038053D /* Food.swift */,
+				B24574682585E2F70038053D /* Clothes.swift */,
+				B245746C2585E30B0038053D /* Time.swift */,
+				B245746F2585E3260038053D /* Funiture.swift */,
+				B24574722585E33E0038053D /* Prepositions.swift */,
+				B24574752585E3590038053D /* Phrases.swift */,
+				B24574782585E3730038053D /* Subjects.swift */,
+				B245747B2585E3A50038053D /* FamilyAndHobbies .swift */,
+				B245747E2585E3C10038053D /* Adjectives.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -333,12 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24574652585E2D40038053D /* Food.swift in Sources */,
 				B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */,
 				528272682561277600A63410 /* UIView.swift in Sources */,
+				B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */,
+				B24574732585E33E0038053D /* Prepositions.swift in Sources */,
 				B283EBF02573893300284F55 /* HederCells.swift in Sources */,
 				B283EBE82573852500284F55 /* Theme+CD.swift in Sources */,
 				5282726E2561277600A63410 /* UITableViewCell.swift in Sources */,
 				52DD1BF425769ECA008F7EE9 /* AllThemes.swift in Sources */,
+				B24574572585E1EB0038053D /* BodyParts.swift in Sources */,
 				5282726A2561277600A63410 /* UIColor.swift in Sources */,
 				B283EBD225737B9000284F55 /* Word+CD.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
@@ -346,14 +389,21 @@
 				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
 				B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */,
 				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,
+				B24574622585E2C30038053D /* DestinationsAndLocations .swift in Sources */,
 				528272722561277600A63410 /* UIWindow.swift in Sources */,
 				528272562561275E00A63410 /* NavigationController.swift in Sources */,
+				B245745F2585E28B0038053D /* Verbs.swift in Sources */,
+				B24574702585E3260038053D /* Funiture.swift in Sources */,
 				528272522561275E00A63410 /* Vibro.swift in Sources */,
 				528272692561277600A63410 /* Array.swift in Sources */,
 				5282726B2561277600A63410 /* NSObject.swift in Sources */,
+				B245746D2585E30B0038053D /* Time.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
+				B24574762585E3590038053D /* Phrases.swift in Sources */,
 				B283EBE32573829300284F55 /* ThemeCell.swift in Sources */,
+				B245747F2585E3C10038053D /* Adjectives.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
+				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
 				5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */,
 				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
@@ -364,6 +414,8 @@
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
+				B24574692585E2F70038053D /* Clothes.swift in Sources */,
+				B24574792585E3730038053D /* Subjects.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
 				B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */,
 				B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */,
