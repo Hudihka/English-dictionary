@@ -20,6 +20,7 @@ class StartViewController: BaseViewController {
     
     fileprivate var selectedTheme: [Theme] = []
     fileprivate var selectedAllTheme = false
+    fileprivate var selectedFavorite = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -74,6 +75,9 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.register( UINib(nibName: "ThemeCell", bundle: nil),
                         forCellReuseIdentifier: "ThemeCell")
         
+        tableView.register( UINib(nibName: "FavoriteWords", bundle: nil),
+                        forCellReuseIdentifier: "FavoriteWords")
+        
         
         tableView.register(UINib(nibName: "HederCells", bundle: nil),
                        forHeaderFooterViewReuseIdentifier: "HederCells")
@@ -85,7 +89,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return Word.allCountFavorite < 5 ? 1 : 2
         }
         
         return dataArray.count
@@ -94,10 +98,19 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AllWordCell") as! AllWordCell
-            cell.valueSelected = selectedAllTheme
+            
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AllWordCell") as! AllWordCell
+                cell.valueSelected = selectedAllTheme
+                
+                return cell
+            }
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteWords") as! FavoriteWords
+            cell.valueSelected = selectedFavorite
             
             return cell
+            
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ThemeCell") as! ThemeCell
@@ -116,13 +129,25 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.section == 0 {
             
-            if selectedAllTheme == false {
-                selectedAllTheme = true
-                selectedTheme = dataArray
-            } else {
-                selectedAllTheme = false
-                selectedTheme = []
+            if indexPath.row == 0 {
+                
+                if selectedAllTheme == false {
+                    selectedAllTheme = true
+                    selectedFavorite = true
+                    selectedTheme = dataArray
+                } else {
+                    selectedAllTheme = false
+                    selectedFavorite = false
+                    selectedTheme = []
+                }
+                
+            } else {//фаворит ячейка
+                
+                selectedFavorite = !selectedFavorite
+                
             }
+            
+
         
         } else {
             let theme = dataArray[indexPath.row]
@@ -138,9 +163,15 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
             
         }
         
-        seeButton.isEnabled = !selectedTheme.isEmpty
-        startedChek.alpha = selectedTheme.isEmpty ? 0.2 : 1
-        startedChek.isEnabled = !selectedTheme.isEmpty
+        var selectedEmpty = true
+        
+        if !selectedTheme.isEmpty || selectedFavorite {
+            selectedEmpty = false
+        }
+        
+        seeButton.isEnabled = !selectedEmpty
+        startedChek.alpha = selectedEmpty ? 0.2 : 1
+        startedChek.isEnabled = !selectedEmpty
         tableView.reloadData()
     }
 

@@ -66,11 +66,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="HaF-I4-GiM"/>
             <connections>
-                <outlet property="countFavorite" destination="MZW-U8-6ZN" id="mcD-hv-d5a"/>
-                <outlet property="favoritImage" destination="DmX-cc-1Z8" id="Bj3-cP-K1a"/>
                 <outlet property="labelCount" destination="MZW-U8-6ZN" id="JK8-mr-tMx"/>
                 <outlet property="labelFavorite" destination="Pc3-zI-yb0" id="08b-tQ-LHu"/>
-                <outlet property="labelTheme" destination="Pc3-zI-yb0" id="h39-J8-sm5"/>
             </connections>
             <point key="canvasLocation" x="228" y="105"/>
         </tableViewCell>
