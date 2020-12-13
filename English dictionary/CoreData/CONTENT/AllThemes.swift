@@ -11,7 +11,20 @@ import Foundation
 class AllThemes{
 	
 	static let jsonAllContent: [JSON] = [
-//		NotTheme.allContent
+		NotTheme.allContent,
+        BodyParts.allContent,
+        ProfessionAndWork.allContent,
+        Verbs.allContent,
+        DestinationsAndLocations.allContent,
+        Food.allContent,
+        Clothes.allContent,
+        Time.allContent,
+        Funiture.allContent,
+        Prepositions.allContent,
+        Phrases.allContent,
+        Subjects.allContent,
+        FamilyAndHobbies.allContent,
+        Adjectives.allContent
 	]
 	
 	
