@@ -32,6 +32,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Варианты:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xzg-yP-DiN">
+                    <rect key="frame" x="10" y="9" width="90" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="3DX-ni-D7I"/>
+                        <constraint firstAttribute="height" constant="21" id="LpN-G4-dJ5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,11 +49,16 @@
                 <constraint firstItem="AsX-eB-uKz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="2I8-Fg-JXO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AsX-eB-uKz" secondAttribute="trailing" constant="20" id="Bx1-tg-X51"/>
                 <constraint firstItem="nID-St-fZo" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ERQ-Wh-mXv"/>
+                <constraint firstItem="Xzg-yP-DiN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="JIm-Ff-kEj"/>
+                <constraint firstItem="Xzg-yP-DiN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OYa-Xc-FWV"/>
                 <constraint firstItem="nID-St-fZo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WvT-7H-Eof"/>
+                <constraint firstItem="nID-St-fZo" firstAttribute="top" secondItem="Xzg-yP-DiN" secondAttribute="bottom" constant="9" id="Yl3-4z-bbg"/>
                 <constraint firstItem="nID-St-fZo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tV6-zE-noC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="labelChecVC" destination="Xzg-yP-DiN" id="1mc-cV-5oy"/>
+                <outlet property="separator" destination="nID-St-fZo" id="tot-k7-fda"/>
                 <outlet property="titleLable" destination="AsX-eB-uKz" id="UHZ-y0-nIW"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="314.0625"/>

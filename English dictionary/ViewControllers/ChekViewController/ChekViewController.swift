@@ -12,16 +12,12 @@ class ChekViewController: BaseViewController {
     
     fileprivate let manager = ManagerSettings.shared
     
-    @IBOutlet fileprivate weak var labelStatistic: UILabel!
-    @IBOutlet fileprivate weak var labelWord: UILabel!
-    @IBOutlet fileprivate weak var labelDescription: UILabel!
-    
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     fileprivate var dataArray = [Word]()
     fileprivate var indexsesError = [IndexPath]()
     fileprivate var selectedWord: Word? = nil
-    
+    fileprivate var textStatistic: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +30,8 @@ class ChekViewController: BaseViewController {
 	
 	override func viewDidAppear(_ animated: Bool){
 		 super.viewDidAppear(animated)
-
-		UIView.animate(withDuration: 0.4) {
-			self.labelStatistic.alpha = 1
-			self.labelWord.alpha = 1
-			self.labelDescription.alpha = 1
-		}
 		
-		UIView.transition(with: self.tableView,
-						  duration: 0.4,
-						  options: .transitionCrossDissolve,
-						  animations: {
-			self.tableView.reloadData()
-		})
-		
+        animateReloadData()
 	 }
 	
     
@@ -76,17 +60,23 @@ class ChekViewController: BaseViewController {
 		let tupl = manager.createRandom
 		dataArray = tupl.arrayWord
 		selectedWord = tupl.word
-		
-		labelStatistic.alpha = 0
-		labelWord.alpha = 0
-		labelDescription.alpha = 0
-		
-		labelStatistic.text = manager.textStatistic(newWord: false, itsError: false)
+    
+        textStatistic = manager.textStatistic(newWord: false, itsError: false)
 	}
 	
     
     @objc private func cancel(){
         self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    fileprivate func animateReloadData(){
+        UIView.transition(with: self.tableView,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.tableView.reloadData()
+        })
     }
     
 }
@@ -104,17 +94,42 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
         tableView.register(UINib(nibName: "ChekCell", bundle: nil),
                        forCellReuseIdentifier: "ChekCell")
         
+        tableView.register(UINib(nibName: "ChekWordInfoCell", bundle: nil),
+                       forCellReuseIdentifier: "ChekWordInfoCell")
+        
+        tableView.register(UINib(nibName: "HederCells", bundle: nil),
+                       forHeaderFooterViewReuseIdentifier: "HederCells")
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            return 1
+        }
+        
         return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChekWordInfoCell") as! ChekWordInfoCell
+            cell.word = selectedWord
+            cell.textStatistic = textStatistic
+            
+            return cell
+        }
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChekCell") as! ChekCell
         cell.word = dataArray[indexPath.row]
         cell.itsError = indexsesError.contains(indexPath)
@@ -123,6 +138,12 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 {
+            return
+        }
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let selectedWord = selectedWord, indexsesError.contains(indexPath) == false else {
@@ -133,13 +154,14 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
         let word = dataArray[indexPath.row]
         
         if selectedWord == word {
-            animateReloadDataOne()
+            reloadWord()
             
             Vibro.weak()
         } else {
             Vibro.strong()
+            
 			if indexsesError.isEmpty {
-				labelDescription.text = manager.textStatistic(newWord: false, itsError: true)
+				textStatistic = manager.textStatistic(newWord: false, itsError: true)
 			}
 			
             indexsesError.append(indexPath)
@@ -149,48 +171,47 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 	
-	private func animateReloadDataOne(){
+	private func reloadWord(){
 		
 		
 		let tupl = manager.createRandom
 		dataArray = tupl.arrayWord
 		selectedWord = tupl.word
 		
-		let textSlected = ManagerSettings.shared.rusAnglTranslate ? selectedWord?.rusValue : selectedWord?.engValue
 		
 		indexsesError = []
 		
-		UIView.animate(withDuration: 0.2, animations: {
-			
-			self.labelWord.alpha = 0
-			self.labelDescription.alpha = 0
-			
-		}) {[weak self] (compl) in
-			if compl {
-				
-				self?.labelWord.text = textSlected
-				self?.labelDescription.text = self?.selectedWord?.descript
-				self?.labelStatistic.text = self?.manager.textStatistic(newWord: true, itsError: false)
-				
-				self?.aniateReloadDataTwo()
-			}
-		}
+        textStatistic = manager.textStatistic(newWord: true, itsError: false)
 		
 		
-		UIView.transition(with: self.tableView,
-						  duration: 0.4,
-						  options: .transitionCrossDissolve,
-						  animations: {
-			self.tableView.reloadData()
-		})
+		animateReloadData()
 	}
     
-	private func aniateReloadDataTwo(){
-		UIView.animate(withDuration: 0.2) {
-			self.labelWord.alpha = 1
-			self.labelDescription.alpha = 1
-		}
-	}
+    //MARK: -HEDERS
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0 {
+            return nil
+        }
+        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HederCells") as! HederCells
+        
+        cell.titleLable.isHidden = true
+        cell.labelChecVC.isHidden = false
+        cell.separator.isHidden = true
+        
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 0 {
+            return 0.00001
+        }
+        
+        return 40
+        
+    }
     
     
 }

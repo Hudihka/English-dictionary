@@ -13,7 +13,7 @@ class ManagerSettings {
     
     static let shared = ManagerSettings()
     
-    private var selectedTheme = [Theme]()
+   var selectedTheme = [Theme]()
     
     var rusAnglTranslate = true
     private var visibleStatistic = true
@@ -59,7 +59,7 @@ class ManagerSettings {
             countError += 1
         }
         
-        return "Слов: \(countWord)/nОшибок: \(countError)"
+        return "Слов: \(countWord)\nОшибок: \(countError)"
     }
     
     var createRandom: (word: Word?, arrayWord: [Word]){

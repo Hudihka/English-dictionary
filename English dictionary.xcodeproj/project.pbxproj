@@ -48,6 +48,8 @@
 		B24574792585E3730038053D /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574782585E3730038053D /* Subjects.swift */; };
 		B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747B2585E3A50038053D /* FamilyAndHobbies .swift */; };
 		B245747F2585E3C10038053D /* Adjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747E2585E3C10038053D /* Adjectives.swift */; };
+		B24574872585F22B0038053D /* ChekWordInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574852585F22B0038053D /* ChekWordInfoCell.swift */; };
+		B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24574862585F22B0038053D /* ChekWordInfoCell.xib */; };
 		B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27429C72573A8EF005551AD /* ManagerSettings.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
@@ -109,6 +111,8 @@
 		B24574782585E3730038053D /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		B245747B2585E3A50038053D /* FamilyAndHobbies .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyAndHobbies .swift"; sourceTree = "<group>"; };
 		B245747E2585E3C10038053D /* Adjectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjectives.swift; sourceTree = "<group>"; };
+		B24574852585F22B0038053D /* ChekWordInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordInfoCell.swift; sourceTree = "<group>"; };
+		B24574862585F22B0038053D /* ChekWordInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordInfoCell.xib; sourceTree = "<group>"; };
 		B27429C72573A8EF005551AD /* ManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSettings.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				B295ABAF2573AFD900F4118E /* ChekViewController.swift */,
 				B295ABB32573B2D000F4118E /* ChekCell.swift */,
 				B295ABB42573B2D000F4118E /* ChekCell.xib */,
+				B24574852585F22B0038053D /* ChekWordInfoCell.swift */,
+				B24574862585F22B0038053D /* ChekWordInfoCell.xib */,
 			);
 			path = ChekViewController;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */,
 				B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */,
 				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
@@ -386,6 +393,7 @@
 				B283EBD225737B9000284F55 /* Word+CD.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
 				52B909B52561238400FC2908 /* StartViewController.swift in Sources */,
+				B24574872585F22B0038053D /* ChekWordInfoCell.swift in Sources */,
 				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
 				B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */,
 				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,

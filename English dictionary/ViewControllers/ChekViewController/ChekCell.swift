@@ -15,7 +15,7 @@ class ChekCell: UITableViewCell {
     var word: Word? {
         didSet{
             if let word = word{
-                labelText.text = ManagerSettings.shared.rusAnglTranslate ? word.rusValue : word.engValue
+                labelText.text = !ManagerSettings.shared.rusAnglTranslate ? word.rusValue : word.engValue
             }
         }
     }

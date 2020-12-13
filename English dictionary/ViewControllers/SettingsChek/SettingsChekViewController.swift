@@ -23,6 +23,10 @@ class SettingsChekViewController: BaseViewController {
         super.viewDidLoad()
 
         goButton.addRadius(number: 8)
+        
+        if ManagerSettings.shared.selectedTheme.count == 1 {
+            switchOneTheme.isEnabled = false
+        }
     }
     
 
@@ -32,9 +36,11 @@ class SettingsChekViewController: BaseViewController {
     }
     
     @IBAction func goButtonAction(_ sender: Any) {
+        let oneTheme = ManagerSettings.shared.selectedTheme.count == 1 ? true : switchOneTheme.isOn
+        
         ManagerSettings.shared.newSettings(rusAnglTranslate: segmentControll.selectedSegmentIndex == 0,
                                            visibleStatistic: switchStatistic.isOn,
-                                           oneThemeQestion: switchOneTheme.isOn)
+                                           oneThemeQestion: oneTheme)
         
         let VC = ChekViewController.route()
         self.navigationController?.pushViewController(VC, animated: true)
