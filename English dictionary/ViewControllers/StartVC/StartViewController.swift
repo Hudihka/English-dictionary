@@ -46,8 +46,9 @@ class StartViewController: BaseViewController {
     
 
 	@IBAction func goNewTheme(_ sender: Any) {
-		
-
+		SearchViewController.presentSertchWord(activeVC: self,
+											   sectedThemes: [],
+											   favorite: true)
 	}
     
     @IBAction func stratedChek(_ sender: Any) {

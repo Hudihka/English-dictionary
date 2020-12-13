@@ -8,24 +8,24 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
+class SearchViewController: UIViewController {
     
     @IBOutlet fileprivate weak var labelCount: UILabel!
     @IBOutlet fileprivate weak var table: UITableView!
-	@IBOutlet weak var labelClear: UILabel!
+	@IBOutlet fileprivate weak var labelClear: UILabel!
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
     @IBOutlet fileprivate var seartchView: UISearchBar!
 	
-	@IBOutlet weak var botomConstreint: NSLayoutConstraint!
-	fileprivate var allForm: [Word] = []
+	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
+	fileprivate var dataArray: [Word] = []
 	
 	fileprivate var selectedTheme = [Theme]()
     fileprivate var favorit = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		
         settingsTV()
         
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
@@ -33,8 +33,6 @@ class SearchViewController: BaseViewController {
         
         settingsSeartchView()
         
-        contentSettings(allClear: true, animatet: false)
-	
 
     }
     
@@ -49,26 +47,16 @@ class SearchViewController: BaseViewController {
         
         let NVC = EnumStoryboard.main.vc("SeartchWordNavigationController")
         NVC.modalPresentationStyle = .fullScreen
+		NVC.view.backgroundColor = .white
 		
 		if let nvc = NVC as? UINavigationController, let SVC = nvc.viewControllers.first as? SearchViewController {
 			SVC.selectedTheme = sectedThemes
 			SVC.favorit = favorite
 		}
         
-        activeVC.present(NVC, animated: false, completion: nil)
+        activeVC.present(NVC, animated: true, completion: nil)
     }
     
-    private func contentSettings(allClear: Bool, animatet: Bool = true){
-        
-        UIView.animate(withDuration: animatet ? 0.25 : 0) {
-            self.labelCount.alpha = allClear ? 0 : 1
-            
-            self.table.alpha = allClear ? 0 : 1
-            
-            self.view.alpha = allClear ? 0.65 : 1
-        }
-        
-    }
     
     private func settingsGesters(addGesters: Bool){
         
@@ -84,11 +72,10 @@ class SearchViewController: BaseViewController {
     
     private func settingsSeartchView(){
         navigationItem.titleView = seartchView
-        seartchView.becomeFirstResponder()
         
         seartchView.delegate = self
         
-        addCancelButton(selector: #selector(cancel), isLeft: false)
+//        addCancelButton(selector: #selector(cancel), isLeft: false)
         
     }
     
@@ -108,7 +95,7 @@ class SearchViewController: BaseViewController {
             let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
 			
 			UIView.animate(withDuration: 0.27, animations: {
-				self.bottomTableConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
+				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
 			}) {[weak self] (compl) in
 				if compl {
                     self?.settingsGesters(addGesters: !removeKeyboard)
@@ -127,10 +114,13 @@ class SearchViewController: BaseViewController {
         seartchView.resignFirstResponder()
     }
 
-    
-    @objc private func cancel(){
+	@IBAction fileprivate func dismiss(_ sender: Any) {
+        cancel()
+	}
+	
+    fileprivate func cancel(){
         seartchView.resignFirstResponder()
-        self.navigationController?.dismiss(animated: false, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     fileprivate func reloadAllData(){
@@ -149,13 +139,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         table.delegate = self
         table.dataSource = self
-        
-        table.backgroundColor = .clear
-        table.separatorStyle = .none
 		
-		
+		table.estimatedRowHeight = 106
         
-        table.register(UINib(nibName: "NotificationCell", bundle: nil), forCellReuseIdentifier: "NotificationCell")
+        table.register(UINib(nibName: "SearchDescriptionCell", bundle: nil),
+					   forCellReuseIdentifier: "SearchDescriptionCell")
+		
+		table.register(UINib(nibName: "SearchCell", bundle: nil),
+					   forCellReuseIdentifier: "SearchCell")
         
     }
     
@@ -163,19 +154,29 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allForm.count
+		
+		labelClear.isHidden = !dataArray.isEmpty
+        return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = table.dequeueReusableCell(withIdentifier: "NotificationCell") as! NotificationCell
-//
-//        cell.notific = dataArray[indexPath.row]
+		
+		let word = dataArray[indexPath.row]
+		
+		if word.descript != nil {
+			let cell = table.dequeueReusableCell(withIdentifier: "SearchDescriptionCell") as! SearchDescriptionCell
+			
+			
+			return cell
+		}
+		
+        let cell = table.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 92
+		return UITableView.automaticDimension
     }
     
     
