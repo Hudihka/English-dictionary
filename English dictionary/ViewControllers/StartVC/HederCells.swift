@@ -14,11 +14,15 @@ class HederCells: UITableViewHeaderFooterView {
     @IBOutlet weak var labelChecVC: UILabel!
     @IBOutlet weak var separator: UIView!
     
+    
+    var text: String? {
+        didSet{
+            titleLable.text = text
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let count = Word.findAll().count
-        titleLable.text = "Всего \(count) слов"
         
         labelChecVC.isHidden = true
     }

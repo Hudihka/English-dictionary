@@ -110,14 +110,22 @@ class Word: NSManagedObject {
 //                         dontValue: String? = nil,
     
     class func predicate(theme:[Theme],
+                         favorite: Bool,
                          dontValue: Word? = nil) -> NSPredicate {
         var predicates: [NSPredicate] = []
 
         let themes: [String] = theme.compactMap({$0.name})
         
-        if themes.isEmpty == false {
-            let predicateNot = NSPredicate(format: "theme in %@", themes)
-            predicates.append(predicateNot)
+        if themes.isEmpty == false { //
+            
+            if favorite == false {
+                let predicateNot = NSPredicate(format: "theme in %@", themes)
+                predicates.append(predicateNot)
+            } else { //можем искать и в выбранных темах и среди фаворитных
+                let predicateNot = NSPredicate(format: "theme in %@ OR favorit == YES", themes)
+                predicates.append(predicateNot)
+            }
+            
         }
         
 		if let rusDont = dontValue?.rusValue {

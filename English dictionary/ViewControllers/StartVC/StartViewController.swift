@@ -51,7 +51,7 @@ class StartViewController: BaseViewController {
 	}
     
     @IBAction func stratedChek(_ sender: Any) {
-        ManagerSettings.shared.createTheme(selectedTheme: self.selectedTheme)
+        ManagerSettings.shared.createTheme(selectedTheme: self.selectedTheme, sertchFavorite: selectedFavorite)
         
         let NVC = EnumStoryboard.main.vc("ChekNavigationController")
         NVC.modalPresentationStyle = .fullScreen
@@ -108,6 +108,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteWords") as! FavoriteWords
             cell.valueSelected = selectedFavorite
+            cell.count = Word.allCountFavorite
             
             return cell
             
@@ -183,7 +184,14 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HederCells") as! HederCells
-        cell.titleLable.isHidden = section == 1
+        
+        if section == 1 {
+            cell.text = "Всего \(dataArray.count) тем"
+        } else if section == 0 {
+            let count = Word.findAll().count
+            cell.text = "Всего \(count) слов"
+        }
+        
         
         return cell
     }

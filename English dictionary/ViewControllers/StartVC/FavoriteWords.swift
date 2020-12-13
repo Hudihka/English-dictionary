@@ -20,11 +20,16 @@ class FavoriteWords: UITableViewCell {
             self.labelCount.textColor = valueSelected ? .white : .black
         }
     }
+    
+    var count: Int = 0{
+        didSet{
+            labelCount.text = "\(count)"
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        labelCount.text = "\(Word.allCountFavorite)"
     }
 
 

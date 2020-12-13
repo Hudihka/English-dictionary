@@ -127,7 +127,12 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
             cell.textStatistic = textStatistic
             
             cell.blockTapedFavorite = {
-                self.tableView.reloadData()
+                if Word.allCountFavorite < 5 {
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                } else {
+                    self.tableView.reloadData()
+                }
+                
             }
             
             return cell

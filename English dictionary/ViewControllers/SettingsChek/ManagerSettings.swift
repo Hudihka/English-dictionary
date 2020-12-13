@@ -18,15 +18,21 @@ class ManagerSettings {
     var rusAnglTranslate = true
     private var visibleStatistic = true
     private var oneThemeQestion = false
+    private var favoriteSelect = false
     
     private var countWord = 0
     private var countError = 0
     
-    func createTheme(selectedTheme: [Theme]){
+    func createTheme(selectedTheme: [Theme], sertchFavorite: Bool){
         
         self.rusAnglTranslate = true
         self.visibleStatistic = true
         self.oneThemeQestion = false
+        self.favoriteSelect = sertchFavorite
+        
+        if Word.allCountFavorite < 5 {
+            self.favoriteSelect = false
+        }
         
         self.countWord = 0
         self.countError = 0
@@ -66,10 +72,10 @@ class ManagerSettings {
         
         let theme: [Theme] = oneThemeQestion ? selectedTheme[randomPick: 1] : selectedTheme //список тем в которых будем искать
         
-		let selectedWordPredicate = Word.predicate(theme: theme)
+        let selectedWordPredicate = Word.predicate(theme: theme, favorite: favoriteSelect)
 		let selectedWord = Word.findAll(by: selectedWordPredicate, context: nil)[randomPick: 1].first //рандомно выбранное слово
 		
-		let random3WordPredicate = Word.predicate(theme: theme, dontValue: selectedWord)
+        let random3WordPredicate = Word.predicate(theme: theme, favorite: favoriteSelect, dontValue: selectedWord)
 		var random3Word = Word.findAll(by: random3WordPredicate, context: nil)[randomPick: 3] //рандомно выбранные 3 слова
 		
 		if let selectedWord = selectedWord, random3Word.count == 3 {
