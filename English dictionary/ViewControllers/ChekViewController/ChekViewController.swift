@@ -126,6 +126,10 @@ extension ChekViewController: UITableViewDelegate, UITableViewDataSource{
             cell.word = selectedWord
             cell.textStatistic = textStatistic
             
+            cell.blockTapedFavorite = {
+                self.tableView.reloadData()
+            }
+            
             return cell
         }
         

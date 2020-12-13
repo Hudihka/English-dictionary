@@ -9,6 +9,8 @@
 import UIKit
 
 class ChekWordInfoCell: UITableViewCell {
+    
+    var blockTapedFavorite: () -> () = {   }
 
     @IBOutlet private weak var labelStatistic: UILabel!
     @IBOutlet private weak var labelWord: UILabel!
@@ -21,7 +23,8 @@ class ChekWordInfoCell: UITableViewCell {
             if let word = self.word{
                 labelWord.text = ManagerSettings.shared.rusAnglTranslate ? word.rusValue : word.engValue
                 labelDescription.text = word.descript
-                
+                let image = word.favorit ? "favorit" : "not_favorit"
+                buttonFavorite.setImage(UIImage(named: image), for: .normal)
             }
         }
     }
@@ -40,6 +43,12 @@ class ChekWordInfoCell: UITableViewCell {
     }
 
     @IBAction private func actionFavorite(_ sender: Any) {
+        if let value = self.word?.favorit{
+            let newValue = !value
+            word?.favorit = newValue
+            blockTapedFavorite()
+        }
+        
     }
     
 }

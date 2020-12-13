@@ -22,7 +22,7 @@ class Word: NSManagedObject {
     @NSManaged public var engValue: String?
     @NSManaged public var descript: String?
     @NSManaged public var theme: String?
-
+    @NSManaged public var favorit: Bool
     
     
     private func parse(json: JSON, theme: String?){

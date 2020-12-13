@@ -45,13 +45,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQS-c8-mTo">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQS-c8-mTo">
                         <rect key="frame" x="254" y="0.0" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="UDk-Vj-F58"/>
                             <constraint firstAttribute="height" constant="50" id="esL-4X-JsD"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" image="not_favorit"/>
                         <connections>
                             <action selector="actionFavorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UpP-LP-liH"/>
                         </connections>
@@ -82,4 +82,7 @@
             <point key="canvasLocation" x="50.724637681159422" y="1.3392857142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="not_favorit" width="24" height="24"/>
+    </resources>
 </document>

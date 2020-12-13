@@ -34,6 +34,16 @@ class StartViewController: BaseViewController {
         settingsTV()
 	}
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        dataArray = Theme.findAll()
+        tableView.reloadData()
+    }
+    
+
 	@IBAction func goNewTheme(_ sender: Any) {
 		
 
@@ -43,7 +53,7 @@ class StartViewController: BaseViewController {
         ManagerSettings.shared.createTheme(selectedTheme: self.selectedTheme)
         
         let NVC = EnumStoryboard.main.vc("ChekNavigationController")
-        NVC.modalPresentationStyle = .overFullScreen
+        NVC.modalPresentationStyle = .fullScreen
         self.navigationController?.present(NVC, animated: true, completion: nil)
     }
     
@@ -149,6 +159,5 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
-        
     }
 }
