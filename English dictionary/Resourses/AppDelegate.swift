@@ -24,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CDManager.initialize()
 		
-		Theme.findCreate(jsonArray: AllThemes.jsonAllContent)
-        
+        if AllThemes.count != Word.findAll().count {
+            Theme.findCreate(jsonArray: AllThemes.jsonAllContent)
+        }
         
         return true
     }
@@ -41,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {}
 
     func applicationWillTerminate(_ application: UIApplication) {
-        CDManager.deleteAll(ctx: nil)
         CDManager.saveContext()
     }
 

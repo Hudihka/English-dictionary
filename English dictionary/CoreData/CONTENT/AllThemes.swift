@@ -26,6 +26,18 @@ class AllThemes{
         FamilyAndHobbies.allContent,
         Adjectives.allContent
 	]
+    
+    static var count: Int{
+        
+        var count = 0
+        AllThemes.jsonAllContent.forEach { (json) in
+            if let wordsJSON = json["allWords"] as? [JSON]{
+                count += wordsJSON.count
+            }
+        }
+        
+        return count
+    }
 	
 	
 	

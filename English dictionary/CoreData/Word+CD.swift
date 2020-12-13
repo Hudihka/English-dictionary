@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-
+@objc(Word)
 class Word: NSManagedObject {
     
     class var entityName: String {
@@ -36,7 +36,7 @@ class Word: NSManagedObject {
             engValue = temp
         }
         
-        if let temp = json["descript"] as? String {
+        if let temp = json["descript"] as? String, temp.textEditor != nil {
             descript = temp
         }
         
@@ -66,7 +66,13 @@ class Word: NSManagedObject {
     
     @discardableResult static func findCreate(json: JSON, theme: String?, context: NSManagedObjectContext? = nil) -> Word {
         
-        let identifier: String = (json["id"] as? String) ?? ""
+        let rusID = (json["rusValue"] as? String) ?? "rusValue"
+        let descriptionID = (json["descript"] as? String)?.textEditor ?? ""
+        let engID = (json["engValue"] as? String) ?? "engValue"
+        let themeID = theme ?? "Без темы"
+        
+        let identifier: String = "\(rusID)_\(engID)_\(descriptionID)_\(themeID)"
+        
         let ctx = context ?? defaultContext
         var object: Word? = find(byId: identifier, context: ctx)
         
@@ -88,7 +94,7 @@ class Word: NSManagedObject {
         
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-            fetchRequest.predicate = NSPredicate(format: "id == d", byId)
+            fetchRequest.predicate = NSPredicate(format: "id == %@", byId)
             try objects = ctx.fetch(fetchRequest) as? [Word]
         } catch {
             print(error)

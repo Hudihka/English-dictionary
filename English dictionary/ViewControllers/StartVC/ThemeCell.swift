@@ -16,7 +16,7 @@ class ThemeCell: UITableViewCell {
     
     var valueSelected: Bool = false {
         didSet{
-            self.contentView.backgroundColor = valueSelected ? grayColor : .white
+            self.contentView.backgroundColor = valueSelected ? .black : .white
             self.labelTheme.textColor = valueSelected ? .white : .black
             self.labelCount.textColor = valueSelected ? .white : .black
         }

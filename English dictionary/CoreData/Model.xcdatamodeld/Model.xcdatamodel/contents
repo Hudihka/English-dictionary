@@ -4,7 +4,7 @@
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="Без темы"/>
         <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="themeRelationship" inverseEntity="Word"/>
     </entity>
-    <entity name="Word" representedClassName=".Form" syncable="YES">
+    <entity name="Word" representedClassName=".Word" syncable="YES">
         <attribute name="descript" optional="YES" attributeType="String"/>
         <attribute name="engValue" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>

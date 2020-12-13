@@ -70,7 +70,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-        return dataArray.isEmpty ? 1 : 0
+        return 2
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

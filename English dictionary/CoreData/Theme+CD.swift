@@ -18,7 +18,7 @@ class Theme: NSManagedObject {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var words: NSSet?
+    @NSManaged public var words: Set<Word>?
 
     
     private func parse(json: JSON){
@@ -29,7 +29,7 @@ class Theme: NSManagedObject {
         
         if let allWords = json["allWords"] as? [JSON]{
             let wordsInTheme = Word.findCreate(jsonArray: allWords, theme: self.name)
-            words = NSSet(object: wordsInTheme)
+            words = Set(wordsInTheme)
         }
         
     }
@@ -65,7 +65,7 @@ class Theme: NSManagedObject {
         
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-            fetchRequest.predicate = NSPredicate(format: "id == d", byId)
+            fetchRequest.predicate = NSPredicate(format: "name == %@", byId)
             try objects = ctx.fetch(fetchRequest) as? [Theme]
         } catch {
             print(error)
