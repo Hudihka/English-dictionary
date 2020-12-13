@@ -50,6 +50,8 @@
 		B245747F2585E3C10038053D /* Adjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747E2585E3C10038053D /* Adjectives.swift */; };
 		B24574872585F22B0038053D /* ChekWordInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574852585F22B0038053D /* ChekWordInfoCell.swift */; };
 		B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24574862585F22B0038053D /* ChekWordInfoCell.xib */; };
+		B245748D258604F30038053D /* FavoriteWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245748B258604F30038053D /* FavoriteWords.swift */; };
+		B245748E258604F30038053D /* FavoriteWords.xib in Resources */ = {isa = PBXBuildFile; fileRef = B245748C258604F30038053D /* FavoriteWords.xib */; };
 		B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27429C72573A8EF005551AD /* ManagerSettings.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
@@ -113,6 +115,8 @@
 		B245747E2585E3C10038053D /* Adjectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjectives.swift; sourceTree = "<group>"; };
 		B24574852585F22B0038053D /* ChekWordInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordInfoCell.swift; sourceTree = "<group>"; };
 		B24574862585F22B0038053D /* ChekWordInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordInfoCell.xib; sourceTree = "<group>"; };
+		B245748B258604F30038053D /* FavoriteWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWords.swift; sourceTree = "<group>"; };
+		B245748C258604F30038053D /* FavoriteWords.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteWords.xib; sourceTree = "<group>"; };
 		B27429C72573A8EF005551AD /* ManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSettings.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				52B909B42561238400FC2908 /* StartViewController.swift */,
 				B283EBDC25737F3100284F55 /* AllWordCell.swift */,
 				B283EBDD25737F3100284F55 /* AllWordCell.xib */,
+				B245748B258604F30038053D /* FavoriteWords.swift */,
+				B245748C258604F30038053D /* FavoriteWords.xib */,
 				B283EBE12573829300284F55 /* ThemeCell.swift */,
 				B283EBE22573829300284F55 /* ThemeCell.xib */,
 				B283EBEF2573893300284F55 /* HederCells.swift */,
@@ -365,6 +371,7 @@
 				B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */,
 				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
+				B245748E258604F30038053D /* FavoriteWords.xib in Resources */,
 				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
 				B283EBE42573829300284F55 /* ThemeCell.xib in Resources */,
@@ -408,6 +415,7 @@
 				B245746D2585E30B0038053D /* Time.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
 				B24574762585E3590038053D /* Phrases.swift in Sources */,
+				B245748D258604F30038053D /* FavoriteWords.swift in Sources */,
 				B283EBE32573829300284F55 /* ThemeCell.swift in Sources */,
 				B245747F2585E3C10038053D /* Adjectives.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,

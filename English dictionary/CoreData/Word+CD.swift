@@ -136,6 +136,24 @@ class Word: NSManagedObject {
         return comp
     }
     
+    class func favorite(theme:[Theme]) -> NSPredicate {
+        var predicates: [NSPredicate] = []
+
+        let themes: [String] = theme.compactMap({$0.name})
+        
+        if themes.isEmpty == false {
+            let predicateNot = NSPredicate(format: "theme in %@", themes)
+            predicates.append(predicateNot)
+        }
+        
+        let favorit = NSPredicate(format: "favorit == YES")
+        predicates.append(favorit)
+
+        let comp = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+
+        return comp
+    }
+    
     
     static func findAll(by: NSPredicate? = nil, context: NSManagedObjectContext? = nil) -> [Word] {
         guard let ctx = context ?? defaultContext else {return []}
@@ -183,7 +201,13 @@ class Word: NSManagedObject {
     }
     
 
-    
+    static var allCountFavorite: Int{
+        
+        let request = Word.favorite(theme: [])
+        let count = Word.findAll(by: request, context: nil).count
+        
+        return count
+    }
     
     
     
