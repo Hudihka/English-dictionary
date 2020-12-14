@@ -29,6 +29,17 @@ extension String {
 
         return text == "" ? nil : text
     }
+	
+	var textEditorFirst: String? { //удаляе с начала строки пробелы
+        var text = self
+        while text.first == "\n" || text.first == " " {
+            if !text.isEmpty {
+                text.removeFirst()
+            }
+        }
+
+        return text == "" ? nil : text
+    }
     
     
     func getDatwToString(_ formater: String = "yyyy-MM-dd HH:mm:ssZ") -> Date? { //переобраз строку в дату

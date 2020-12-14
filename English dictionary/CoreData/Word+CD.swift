@@ -28,12 +28,12 @@ class Word: NSManagedObject {
     private func parse(json: JSON, theme: String?){
         
         
-        if let temp = json["rusValue"] as? String {
-            rusValue = temp
+		if let temp = json["rusValue"] as? String, let word = temp.textEditorFirst {
+            rusValue = word
         }
         
-        if let temp = json["engValue"] as? String {
-            engValue = temp
+        if let temp = json["engValue"] as? String, let word = temp.textEditorFirst  {
+            engValue = word
         }
         
         if let temp = json["descript"] as? String, temp.textEditor != nil {
@@ -161,6 +161,57 @@ class Word: NSManagedObject {
 
         return comp
     }
+	
+	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool) -> [Word]{
+		
+		var predicates: [NSPredicate] = []
+
+        
+        if themes.isEmpty, favorite { //только фаворит
+			let favorit = NSPredicate(format: "favorit == YES")
+			predicates.append(favorit)
+        } else if themes.isEmpty == false, favorite { //в опр темах или фаворит
+			let themes: [String] = themes.compactMap({$0.name})
+            let predicateNot = NSPredicate(format: "theme in %@ OR favorit == YES", themes)
+            predicates.append(predicateNot)
+		} else if themes.isEmpty == false, favorite == false {
+			//только в опр темах и не важно фаворит или нет
+			let themes: [String] = themes.compactMap({$0.name})
+            let predicateNot = NSPredicate(format: "theme in %@", themes)
+            predicates.append(predicateNot)
+		}
+		
+		if let text = text{
+			let predicate = rusValue ? NSPredicate(format: "rusValue CONTAINS[c] %@", text) :
+									   NSPredicate(format: "engValue CONTAINS[c] %@", text)
+            predicates.append(predicate)
+		}
+		
+		let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
+		let keySortDescriptor2 = !rusValue ? "rusValue" : "engValue"
+		let keySortDescriptor3 = "descript"
+		
+		let sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: false)
+		let sortDescriptors2 = NSSortDescriptor(key: keySortDescriptor2, ascending: false)
+		let sortDescriptors3 = NSSortDescriptor(key: keySortDescriptor3, ascending: false)
+		
+		let comp = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+		
+		guard let ctx = defaultContext else {return []}
+
+        var objects: [Word]?
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+			fetchRequest.fetchBatchSize = 15
+            fetchRequest.predicate = comp
+            fetchRequest.sortDescriptors = [sortDescriptors1, sortDescriptors2, sortDescriptors3]
+            try objects = ctx.fetch(fetchRequest) as? [Word]
+        } catch {
+            print(error)
+        }
+		
+		return objects ?? []
+	}
     
     
     static func findAll(by: NSPredicate? = nil, context: NSManagedObjectContext? = nil) -> [Word] {
