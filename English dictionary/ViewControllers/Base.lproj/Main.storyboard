@@ -78,6 +78,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="vpS-BX-haS">
+                        <barButtonItem key="leftBarButtonItem" title="Сброс" id="KjS-mR-LZE">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="clearAllTheme:" destination="BYZ-38-t0r" id="Cga-I0-dea"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Просмотр" id="Ibr-PG-pYk">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
@@ -86,6 +92,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearThemes" destination="KjS-mR-LZE" id="Hey-gp-rMl"/>
                         <outlet property="seeButton" destination="Ibr-PG-pYk" id="chi-ph-Nd6"/>
                         <outlet property="startedChek" destination="ZG9-FL-pYf" id="chC-I8-G3E"/>
                         <outlet property="tableView" destination="hJt-B6-Yii" id="0gQ-cU-2VG"/>

@@ -14,7 +14,8 @@ class StartViewController: BaseViewController {
 	
 	@IBOutlet weak var startedChek: UIButton!
     @IBOutlet weak var seeButton: UIBarButtonItem!
-    
+	@IBOutlet weak var clearThemes: UIBarButtonItem!
+	
     
     fileprivate var dataArray: [Theme] = []
     
@@ -30,6 +31,7 @@ class StartViewController: BaseViewController {
         startedChek.alpha = 0.2
         
         seeButton.isEnabled = false
+		clearThemes.isEnabled = false
         
         dataArray = Theme.findAll()
         settingsTV()
@@ -49,6 +51,19 @@ class StartViewController: BaseViewController {
 		SearchViewController.presentSertchWord(activeVC: self,
 											   sectedThemes: [],
 											   favorite: true)
+	}
+	
+	@IBAction func clearAllTheme(_ sender: Any) {
+		selectedTheme = []
+		selectedAllTheme = false
+		selectedFavorite = false
+		
+        seeButton.isEnabled = false
+		clearThemes.isEnabled = false
+		startedChek.alpha = 0.2
+        startedChek.isEnabled = false
+		
+		tableView.reloadData()
 	}
     
     @IBAction func stratedChek(_ sender: Any) {
@@ -172,6 +187,7 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         }
         
         seeButton.isEnabled = !selectedEmpty
+		clearThemes.isEnabled = !selectedEmpty
         startedChek.alpha = selectedEmpty ? 0.2 : 1
         startedChek.isEnabled = !selectedEmpty
         tableView.reloadData()
