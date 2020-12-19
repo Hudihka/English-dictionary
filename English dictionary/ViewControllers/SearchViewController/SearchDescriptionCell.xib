@@ -44,7 +44,6 @@
                         </constraints>
                         <state key="normal" image="not_favorit"/>
                         <connections>
-                            <action selector="actionFavorite:" destination="WrA-Pj-9YJ" eventType="touchUpInside" id="V2U-ay-5JO"/>
                             <action selector="actionReloadData:" destination="WrA-Pj-9YJ" eventType="touchUpInside" id="mgy-OM-Bjh"/>
                         </connections>
                     </button>
@@ -77,10 +76,11 @@
             <viewLayoutGuide key="safeArea" id="zQg-im-J8H"/>
             <connections>
                 <outlet property="buttonFave" destination="5fv-kd-IOw" id="GNx-nu-uhc"/>
-                <outlet property="buttonFavorite" destination="5fv-kd-IOw" id="dxY-D1-hy3"/>
                 <outlet property="labelDescription" destination="Sli-Jp-wLn" id="QFo-ja-NkM"/>
                 <outlet property="labelTarnlate" destination="1ay-YM-3j3" id="l1H-Dk-w4G"/>
                 <outlet property="labelWord" destination="USP-mu-fVy" id="8fI-HF-Yvz"/>
+                <outlet property="topConstreintDescription" destination="Pta-8L-Pb5" id="OUv-IJ-Etd"/>
+                <outlet property="topConstreintTranslate" destination="6ut-I2-F21" id="hRx-YQ-bkK"/>
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="-26.450892857142858"/>
         </tableViewCell>

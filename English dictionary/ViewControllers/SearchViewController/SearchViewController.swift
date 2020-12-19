@@ -34,7 +34,7 @@ class SearchViewController: UIViewController {
         
         settingsSeartchView()
         
-
+        labelClear.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,19 +91,19 @@ class SearchViewController: UIViewController {
     
     @objc private func adjustForKeydoard(notification: Notification) {
         
-        if let info = notification.userInfo, let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
-            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
-			
-			UIView.animate(withDuration: 0.27, animations: {
-				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
-			}) {[weak self] (compl) in
-				if compl {
-                    self?.settingsGesters(addGesters: !removeKeyboard)
-                }
-			}
-            
-        }
+//        if let info = notification.userInfo, let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//
+//            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
+//
+//			UIView.animate(withDuration: 0.27, animations: {
+//				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
+//			}) {[weak self] (compl) in
+//				if compl {
+//                    self?.settingsGesters(addGesters: !removeKeyboard)
+//                }
+//			}
+//
+//        }
     }
 	
 
@@ -134,7 +134,7 @@ class SearchViewController: UIViewController {
                           duration: duration,
                           options: .transitionCrossDissolve,
                           animations: {
-                            
+
             self.table.reloadData()
         })
     }
@@ -152,6 +152,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         table.dataSource = self
 		
 		table.estimatedRowHeight = 106
+        
+        table.backgroundColor = .clear
+        table.separatorStyle = .none
         
         table.register(UINib(nibName: "SearchDescriptionCell", bundle: nil),
 					   forCellReuseIdentifier: "SearchDescriptionCell")
@@ -173,15 +176,23 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let word = dataArray[indexPath.row]
+        let tupl: (word: Word, russValue: Bool, hideTranslate: Bool) = (word: word, russValue: segmentControl.selectedSegmentIndex == 0, hideTranslate: false)
 		
 		if word.descript != nil {
 			let cell = table.dequeueReusableCell(withIdentifier: "SearchDescriptionCell") as! SearchDescriptionCell
-			
+            cell.tupl = tupl
+            cell.blockReloadData = {
+                self.reloadAllData(text: self.seartchView.text?.textEditor, duration: 0)
+            }
 			
 			return cell
 		}
 		
         let cell = table.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
+        cell.tupl = tupl
+        cell.blockReloadData = {
+            self.reloadAllData(text: self.seartchView.text?.textEditor, duration: 0)
+        }
         
         return cell
     }

@@ -18,6 +18,9 @@ class SearchDescriptionCell: UITableViewCell {
     
     @IBOutlet private weak var buttonFave: UIButton!
     
+    @IBOutlet weak var topConstreintTranslate: NSLayoutConstraint!
+    @IBOutlet weak var topConstreintDescription: NSLayoutConstraint!
+    
     var tupl: (word: Word, russValue: Bool, hideTranslate: Bool)?{
         didSet{
             settingsCell()
@@ -27,16 +30,46 @@ class SearchDescriptionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         selectedColor()
     }
 
     
     @IBAction private func actionReloadData(_ sender: Any) {
+        guard let word = tupl?.word else {
+            return
+        }
+        
+        word.favorit = !word.favorit
+        CoreDataManager.shared.saveContext()
+        
         blockReloadData()
     }
     
     private func settingsCell(){
         
+        guard let tupl = tupl else {
+            return
+        }
+        
+        labelWord.text = tupl.russValue ? tupl.word.rusValue : tupl.word.engValue
+        labelTarnlate.text = !tupl.russValue ? tupl.word.rusValue : tupl.word.engValue
+        
+        labelDescription.text = tupl.word.descript
+        
+        labelTarnlate.isHidden = tupl.hideTranslate
+        labelDescription.isHidden = tupl.hideTranslate
+        
+        let image = tupl.word.favorit ? "favorit" : "not_favorit"
+        buttonFave.setImage(UIImage(named: image), for: .normal)
+        
+        if tupl.hideTranslate{
+            topConstreintTranslate.constant = -1 * labelTarnlate.frame.height
+            topConstreintDescription.constant = 0
+        } else {
+            topConstreintTranslate.constant = 7
+            topConstreintDescription.constant = 20
+        }
         
         
     }

@@ -190,12 +190,8 @@ class Word: NSManagedObject {
 		}
 		
 		let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
-		let keySortDescriptor2 = !rusValue ? "rusValue" : "engValue"
-		let keySortDescriptor3 = "descript"
-		
-		let sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: false)
-		let sortDescriptors2 = NSSortDescriptor(key: keySortDescriptor2, ascending: false)
-		let sortDescriptors3 = NSSortDescriptor(key: keySortDescriptor3, ascending: false)
+
+		let sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: true)
 		
 		let comp = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
 		
@@ -205,8 +201,10 @@ class Word: NSManagedObject {
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
 			fetchRequest.fetchBatchSize = 15
-            fetchRequest.predicate = comp
-            fetchRequest.sortDescriptors = [sortDescriptors1, sortDescriptors2, sortDescriptors3]
+            if predicates.isEmpty == false {
+                fetchRequest.predicate = comp
+            }
+            fetchRequest.sortDescriptors = [sortDescriptors1]
             try objects = ctx.fetch(fetchRequest) as? [Word]
         } catch {
             print(error)

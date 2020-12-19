@@ -49,8 +49,8 @@ class StartViewController: BaseViewController {
 
 	@IBAction func goNewTheme(_ sender: Any) {
 		SearchViewController.presentSertchWord(activeVC: self,
-											   sectedThemes: [],
-											   favorite: true)
+                                               sectedThemes: selectedAllTheme ? [] : selectedTheme,
+                                               favorite: selectedAllTheme ? false : selectedFavorite)
 	}
 	
 	@IBAction func clearAllTheme(_ sender: Any) {

@@ -100,7 +100,7 @@ class Adjectives {
         ["engValue" : "another", "rusValue" : "другой", "descript" : ""],
         ["engValue" : "main", "rusValue" : "основной", "descript" : ""],
         ["engValue" : "dangerous", "rusValue" : "опасный", "descript" : ""],
-        ["engValue" : "безопасно", "rusValue" : "safe", "descript" : ""],
+        ["engValue" : "safe", "rusValue" : "безопасно", "descript" : ""],
         ["engValue" : "exelent", "rusValue" : "превосходно", "descript" : ""],
         ["engValue" : "posible", "rusValue" : "возможно", "descript" : ""],
         ["engValue" : "thin", "rusValue" : "худой", "descript" : ""],

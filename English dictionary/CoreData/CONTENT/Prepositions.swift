@@ -19,7 +19,7 @@ class Prepositions {
         ["engValue" : "what", "rusValue" : "что/какой", "descript" : ""],
         ["engValue" : "but", "rusValue" : "но", "descript" : ""],
         ["engValue" : "at", "rusValue" : "находится где то", "descript" : ""],
-        ["engValue" : "with", "rusValue" : "c", "descript" : ""],
+        ["engValue" : "with", "rusValue" : "с", "descript" : ""],
         ["engValue" : "without", "rusValue" : "без", "descript" : ""],
         ["engValue" : "sure", "rusValue" : "конечно", "descript" : ""],
         ["engValue" : "these", "rusValue" : "эти", "descript" : ""],

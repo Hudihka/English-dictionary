@@ -19,7 +19,7 @@ class Food {
         ["engValue" : "juice", "rusValue" : "сок", "descript" : ""],
         ["engValue" : "tomatoes", "rusValue" : "томаты", "descript" : ""],
         ["engValue" : "sausages", "rusValue" : "сосиськи", "descript" : ""],
-        ["engValue" : "картофель", "rusValue" : "patatoes", "descript" : ""],
+        ["engValue" : "patatoes", "rusValue" : "картофель", "descript" : ""],
         ["engValue" : "bread", "rusValue" : "хлеб", "descript" : ""],
         ["engValue" : "sugar", "rusValue" : "сахар", "descript" : ""],
         ["engValue" : "vegetables", "rusValue" : "овощи", "descript" : ""],

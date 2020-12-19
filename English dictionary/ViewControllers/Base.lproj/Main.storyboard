@@ -291,60 +291,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pv8-hC-BtA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-OW-yKn">
-                                        <rect key="frame" x="16" y="15" width="382" height="41"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="hKl-Dq-j6g"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Рус -&gt; Англ"/>
-                                            <segment title="Англ -&gt; Рус"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="actionSegment:" destination="C3g-jq-3YC" eventType="valueChanged" id="CbD-2n-HIV"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск не дал результатов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-8K-PYH">
-                                        <rect key="frame" x="0.0" y="190" width="414" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="t4s-co-53P"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-1G-A7c">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="738"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </tableView>
-                                </subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-1G-A7c">
+                                <rect key="frame" x="0.0" y="64" width="414" height="744"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-OW-yKn">
+                                <rect key="frame" x="16" y="12" width="382" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="APr-8K-PYH" firstAttribute="centerX" secondItem="Pv8-hC-BtA" secondAttribute="centerX" id="4RQ-vR-eH7"/>
-                                    <constraint firstItem="9Cd-OW-yKn" firstAttribute="top" secondItem="Pv8-hC-BtA" secondAttribute="top" constant="15" id="7aB-kK-x5h"/>
-                                    <constraint firstAttribute="trailing" secondItem="APr-8K-PYH" secondAttribute="trailing" id="BSS-Fj-BvB"/>
-                                    <constraint firstItem="Tb2-1G-A7c" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="15" id="KnW-5V-rdA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tb2-1G-A7c" secondAttribute="bottom" id="P3t-Bc-vdo"/>
-                                    <constraint firstItem="9Cd-OW-yKn" firstAttribute="leading" secondItem="Pv8-hC-BtA" secondAttribute="leading" constant="16" id="Qrq-5E-sjM"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Cd-OW-yKn" secondAttribute="trailing" constant="16" id="XgZ-zs-gq6"/>
-                                    <constraint firstItem="9Cd-OW-yKn" firstAttribute="centerX" secondItem="Pv8-hC-BtA" secondAttribute="centerX" id="btr-99-ZVV"/>
-                                    <constraint firstItem="APr-8K-PYH" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="135" id="nzO-GN-ES5"/>
-                                    <constraint firstItem="APr-8K-PYH" firstAttribute="leading" secondItem="Pv8-hC-BtA" secondAttribute="leading" id="wKa-r0-dNn"/>
+                                    <constraint firstAttribute="height" constant="40" id="hKl-Dq-j6g"/>
                                 </constraints>
-                            </view>
+                                <segments>
+                                    <segment title="Рус -&gt; Англ"/>
+                                    <segment title="Англ -&gt; Рус"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="actionSegment:" destination="C3g-jq-3YC" eventType="valueChanged" id="CbD-2n-HIV"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск не дал результатов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-8K-PYH">
+                                <rect key="frame" x="0.0" y="273" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="t4s-co-53P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cgB-Zg-0dX"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Pv8-hC-BtA" secondAttribute="bottom" id="79L-cK-ogf"/>
-                            <constraint firstItem="cgB-Zg-0dX" firstAttribute="trailing" secondItem="Pv8-hC-BtA" secondAttribute="trailing" id="8Dc-ZJ-cpp"/>
-                            <constraint firstItem="Pv8-hC-BtA" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" id="CAc-eE-wKL"/>
-                            <constraint firstItem="Pv8-hC-BtA" firstAttribute="top" secondItem="cgB-Zg-0dX" secondAttribute="top" id="iyE-nO-jen"/>
+                            <constraint firstItem="9Cd-OW-yKn" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" constant="16" id="V88-De-NBO"/>
+                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="12" id="Xe9-Ib-l1n"/>
+                            <constraint firstItem="9Cd-OW-yKn" firstAttribute="top" secondItem="cgB-Zg-0dX" secondAttribute="top" constant="12" id="Y8Z-4m-4yD"/>
+                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="leading" secondItem="APr-8K-PYH" secondAttribute="leading" id="fnt-gg-PuC"/>
+                            <constraint firstItem="cgB-Zg-0dX" firstAttribute="trailing" secondItem="9Cd-OW-yKn" secondAttribute="trailing" constant="16" id="hX9-rP-eSj"/>
+                            <constraint firstItem="APr-8K-PYH" firstAttribute="trailing" secondItem="cgB-Zg-0dX" secondAttribute="trailing" id="lp1-9O-6ut"/>
+                            <constraint firstItem="APr-8K-PYH" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" id="mWx-JD-wv2"/>
+                            <constraint firstAttribute="bottom" secondItem="Tb2-1G-A7c" secondAttribute="bottom" id="pRE-IJ-5hs"/>
+                            <constraint firstItem="APr-8K-PYH" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="221" id="tpE-f3-33j"/>
+                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="trailing" secondItem="APr-8K-PYH" secondAttribute="trailing" id="zmQ-d5-DXy"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -357,8 +345,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="botomConstreint" destination="P3t-Bc-vdo" id="qbE-tE-Mtb"/>
-                        <outlet property="gestersTap" destination="Pv8-hC-BtA" id="8qw-5O-RbG"/>
                         <outlet property="labelClear" destination="APr-8K-PYH" id="nGC-mD-JBL"/>
                         <outlet property="labelCount" destination="APr-8K-PYH" id="a7q-Ea-w1j"/>
                         <outlet property="seartchView" destination="Ndq-0V-bvT" id="0KR-oP-jlb"/>
