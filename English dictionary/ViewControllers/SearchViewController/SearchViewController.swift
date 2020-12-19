@@ -108,6 +108,13 @@ class SearchViewController: UIViewController {
 	
 
 	@IBAction func actionSegment(_ sender: UISegmentedControl) {
+        self.seartchView.text = ""
+        self.seartchView.resignFirstResponder()
+        if !dataArray.isEmpty {
+            table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+        reloadAllData(text: nil, duration: 0.3)
+        
 	}
 	
     
