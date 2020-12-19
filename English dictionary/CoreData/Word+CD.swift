@@ -161,6 +161,8 @@ class Word: NSManagedObject {
 
         return comp
     }
+    
+    
 	
 	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool) -> [Word]{
 		

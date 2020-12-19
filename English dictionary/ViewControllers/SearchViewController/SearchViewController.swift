@@ -16,7 +16,8 @@ class SearchViewController: UIViewController {
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
     @IBOutlet fileprivate var seartchView: UISearchBar!
-	
+    @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
+    
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
 	fileprivate var dataArray: [Word] = []
 	
@@ -39,7 +40,7 @@ class SearchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.reloadAllData()
+        self.reloadAllData(text: nil, duration: 0.3)
     }
     
     
@@ -81,7 +82,7 @@ class SearchViewController: UIViewController {
     
     //
     func onSegmentedControllChange(left: Bool){
-        reloadAllData()
+        reloadAllData(text: nil)
     }
 
 
@@ -123,9 +124,19 @@ class SearchViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    fileprivate func reloadAllData(){
+    fileprivate func reloadAllData(text: String?, duration: TimeInterval = 0){
+        self.dataArray = Word.words(text: text,
+                                    themes: selectedTheme,
+                                    favorite: favorit,
+                                    rusValue: segmentControl.selectedSegmentIndex == 0)
         
-
+        UIView.transition(with: self.table,
+                          duration: duration,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            
+            self.table.reloadData()
+        })
     }
     
     deinit {
@@ -191,8 +202,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
-        
-        
+        reloadAllData(text: searchText.textEditor)
     }
     
     

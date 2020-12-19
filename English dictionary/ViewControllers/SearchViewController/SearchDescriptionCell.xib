@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,6 +45,7 @@
                         <state key="normal" image="not_favorit"/>
                         <connections>
                             <action selector="actionFavorite:" destination="WrA-Pj-9YJ" eventType="touchUpInside" id="V2U-ay-5JO"/>
+                            <action selector="actionReloadData:" destination="WrA-Pj-9YJ" eventType="touchUpInside" id="mgy-OM-Bjh"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ay-YM-3j3">
@@ -74,9 +76,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="zQg-im-J8H"/>
             <connections>
+                <outlet property="buttonFave" destination="5fv-kd-IOw" id="GNx-nu-uhc"/>
                 <outlet property="buttonFavorite" destination="5fv-kd-IOw" id="dxY-D1-hy3"/>
-                <outlet property="labelDescription" destination="Sli-Jp-wLn" id="zK9-dx-MuG"/>
-                <outlet property="labelWord" destination="USP-mu-fVy" id="sa6-8W-rmW"/>
+                <outlet property="labelDescription" destination="Sli-Jp-wLn" id="QFo-ja-NkM"/>
+                <outlet property="labelTarnlate" destination="1ay-YM-3j3" id="l1H-Dk-w4G"/>
+                <outlet property="labelWord" destination="USP-mu-fVy" id="8fI-HF-Yvz"/>
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="-26.450892857142858"/>
         </tableViewCell>
