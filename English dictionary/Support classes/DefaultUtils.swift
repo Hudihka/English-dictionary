@@ -11,13 +11,9 @@ import UIKit
 class DefaultUtils: NSObject {
     
     private enum Keys: String {
-        case accessToken      = "access_token"
-        case refreshToken     = "refresh_token"
-        
-        case uiud             = "key_UDID"
-        
-        case biometrics       = "biometrics"
-        case hasLocalPinCode  = "hasLocalPinCode"
+        case hideTranslate          = "hide_translate"
+        case slectedSertchIndex     = "slected_sertch_index"
+	
     }
 
     
@@ -31,9 +27,18 @@ class DefaultUtils: NSObject {
     private func bool(forKey: Keys) -> Bool {
         return UserDefaults.standard.bool(forKey: forKey.rawValue)
     }
+	
+    private func int(forKey: Keys) -> Int {
+        return UserDefaults.standard.integer(forKey: forKey.rawValue)
+    }
     
     private func set(bool: Bool, forKey: Keys) {
         UserDefaults.standard.set(bool, forKey: forKey.rawValue)
+        UserDefaults.standard.synchronize()
+    }
+	
+    private func set(int: Int, forKey: Keys) {
+		UserDefaults.standard.set(int, forKey: forKey.rawValue)
         UserDefaults.standard.synchronize()
     }
     
@@ -48,53 +53,30 @@ class DefaultUtils: NSObject {
     }
     
     
-    var udid: String {
-        if obj(forKey: .uiud) == nil { //значит еще не показывали
-            let nUdid = NSUUID().uuidString
-            set(string: nUdid, forKey: Keys.uiud)
-            
-            return nUdid
-        }
-        
-        return string(forKey: .uiud)!
+//    var udid: String {
+//        if obj(forKey: .uiud) == nil { //значит еще не показывали
+//            let nUdid = NSUUID().uuidString
+//            set(string: nUdid, forKey: Keys.uiud)
+//
+//            return nUdid
+//        }
+//
+//        return string(forKey: .uiud)!
+//    }
+    
+
+    
+    
+    
+    //MARK: Seartch
+    
+    var hideTranslate: Bool {
+        set { set(bool: newValue, forKey: Keys.hideTranslate) }
+        get { return bool(forKey: Keys.hideTranslate) }
     }
     
-    func removeAllKey() {
-        if let appDomain = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: appDomain)
-        }
-    }
-    
-    
-    //MARK: TOKENS
-    
-    var accessToken: String? {
-        set { set(string: newValue, forKey: Keys.accessToken) }
-        get {
-            if let token = string(forKey: Keys.accessToken){
-                return "Bearer \(String(describing: token))"
-            }
-            
-            return nil
-        }
-    }
-    
-    var refreshToken: String? {
-        set { set(string: newValue, forKey: Keys.refreshToken) }
-        get { return string(forKey: Keys.refreshToken) }
-    }
-    
-    
-    
-    //MARK: Settings
-    
-    var biometrics: Bool {
-        set { set(bool: newValue, forKey: Keys.biometrics) }
-        get { return bool(forKey: Keys.biometrics) }
-    }
-    
-    var localPinCode: Bool {
-        set { set(bool: newValue, forKey: Keys.hasLocalPinCode) }
-        get { return bool(forKey: Keys.hasLocalPinCode) }
+    var translateWay: Int {
+        set { set(int: newValue, forKey: Keys.slectedSertchIndex) }
+        get { return int(forKey: Keys.slectedSertchIndex) }
     }
 }

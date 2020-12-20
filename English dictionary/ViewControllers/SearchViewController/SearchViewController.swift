@@ -25,9 +25,14 @@ class SearchViewController: UIViewController {
 	
 	fileprivate var selectedTheme = [Theme]()
     fileprivate var favorit = false
+	
+	fileprivate var defUt = DefaultUtils.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		switchTanslate.isOn = defUt.hideTranslate
+		segmentControl.selectedSegmentIndex = defUt.translateWay
 		
         settingsTV()
         
@@ -102,6 +107,7 @@ class SearchViewController: UIViewController {
 	
 
 	@IBAction func actionSegment(_ sender: UISegmentedControl) {
+		self.defUt.translateWay = sender.selectedSegmentIndex
         self.seartchView.text = ""
         self.seartchView.resignFirstResponder()
         if !dataArray.isEmpty {
@@ -112,6 +118,7 @@ class SearchViewController: UIViewController {
 	}
 	
 	@IBAction private func switchAction(_ sender: Any) {
+		defUt.hideTranslate = switchTanslate.isOn
 		self.reloadAllData(text: seartchView.text?.textEditor, duration: 0.3)
 	}
 	
