@@ -18,8 +18,6 @@ class SearchDescriptionCell: UITableViewCell {
     
     @IBOutlet private weak var buttonFave: UIButton!
     
-    @IBOutlet weak var topConstreintTranslate: NSLayoutConstraint!
-    @IBOutlet weak var topConstreintDescription: NSLayoutConstraint!
     
     var tupl: (word: Word, russValue: Bool, hideTranslate: Bool)?{
         didSet{
@@ -62,14 +60,6 @@ class SearchDescriptionCell: UITableViewCell {
         
         let image = tupl.word.favorit ? "favorit" : "not_favorit"
         buttonFave.setImage(UIImage(named: image), for: .normal)
-        
-        if tupl.hideTranslate{
-            topConstreintTranslate.constant = -1 * labelTarnlate.frame.height
-            topConstreintDescription.constant = 0
-        } else {
-            topConstreintTranslate.constant = 7
-            topConstreintDescription.constant = 20
-        }
         
         
     }

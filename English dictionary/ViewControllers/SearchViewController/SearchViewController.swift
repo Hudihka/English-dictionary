@@ -15,7 +15,9 @@ class SearchViewController: UIViewController {
 	@IBOutlet fileprivate weak var labelClear: UILabel!
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
-    @IBOutlet fileprivate var seartchView: UISearchBar!
+	
+	@IBOutlet fileprivate weak var switchTanslate: UISwitch!
+	@IBOutlet fileprivate var seartchView: UISearchBar!
     @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
     
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
@@ -76,13 +78,6 @@ class SearchViewController: UIViewController {
         
         seartchView.delegate = self
         
-//        addCancelButton(selector: #selector(cancel), isLeft: false)
-        
-    }
-    
-    //
-    func onSegmentedControllChange(left: Bool){
-        reloadAllData(text: nil)
     }
 
 
@@ -91,19 +86,18 @@ class SearchViewController: UIViewController {
     
     @objc private func adjustForKeydoard(notification: Notification) {
         
-//        if let info = notification.userInfo, let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-//
-//            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
-//
-//			UIView.animate(withDuration: 0.27, animations: {
-//				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
-//			}) {[weak self] (compl) in
-//				if compl {
-//                    self?.settingsGesters(addGesters: !removeKeyboard)
-//                }
-//			}
-//
-//        }
+        if let info = notification.userInfo, let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+
+            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
+
+			UIView.animate(withDuration: 0.27, animations: {
+				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
+			}) {[weak self] (compl) in
+				if compl {
+                    self?.settingsGesters(addGesters: !removeKeyboard)
+                }
+			}
+        }
     }
 	
 
@@ -117,7 +111,10 @@ class SearchViewController: UIViewController {
         
 	}
 	
-    
+	@IBAction private func switchAction(_ sender: Any) {
+		self.reloadAllData(text: seartchView.text?.textEditor, duration: 0.3)
+	}
+	
     @objc private func tapGester() {
         seartchView.resignFirstResponder()
     }
@@ -183,7 +180,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		let word = dataArray[indexPath.row]
-        let tupl: (word: Word, russValue: Bool, hideTranslate: Bool) = (word: word, russValue: segmentControl.selectedSegmentIndex == 0, hideTranslate: false)
+        let tupl: (word: Word, russValue: Bool, hideTranslate: Bool) = (word: word,
+																		russValue: segmentControl.selectedSegmentIndex == 0,
+																		hideTranslate: switchTanslate.isOn)
 		
 		if word.descript != nil {
 			let cell = table.dequeueReusableCell(withIdentifier: "SearchDescriptionCell") as! SearchDescriptionCell

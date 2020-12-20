@@ -17,7 +17,6 @@ class SearchCell: UITableViewCell {
     
     @IBOutlet private weak var buttonFave: UIButton!
     
-    @IBOutlet weak var topConstreintTranslate: NSLayoutConstraint!
     
     var tupl: (word: Word, russValue: Bool, hideTranslate: Bool)?{
         didSet{
@@ -59,11 +58,6 @@ class SearchCell: UITableViewCell {
         let image = tupl.word.favorit ? "favorit" : "not_favorit"
         buttonFave.setImage(UIImage(named: image), for: .normal)
         
-        if tupl.hideTranslate{
-            topConstreintTranslate.constant = -1 * labelWord.frame.height
-        } else {
-            topConstreintTranslate.constant = 7
-        }
         
         
     }
