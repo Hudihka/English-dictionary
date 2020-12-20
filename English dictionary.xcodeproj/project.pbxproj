@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206502725612F2600DBE169 /* SettingsChekViewController.swift */; };
+		5265B593258F4D7200AA474E /* December2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B592258F4D7200AA474E /* December2020.swift */; };
 		528272512561275E00A63410 /* EnumStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272482561275E00A63410 /* EnumStoryboard.swift */; };
 		528272522561275E00A63410 /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272492561275E00A63410 /* Vibro.swift */; };
 		528272532561275E00A63410 /* DefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724A2561275E00A63410 /* DefaultUtils.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		5206502725612F2600DBE169 /* SettingsChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChekViewController.swift; sourceTree = "<group>"; };
+		5265B592258F4D7200AA474E /* December2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = December2020.swift; sourceTree = "<group>"; };
 		528272482561275E00A63410 /* EnumStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumStoryboard.swift; sourceTree = "<group>"; };
 		528272492561275E00A63410 /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		5282724A2561275E00A63410 /* DefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUtils.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				B24574782585E3730038053D /* Subjects.swift */,
 				B245747B2585E3A50038053D /* FamilyAndHobbies .swift */,
 				B245747E2585E3C10038053D /* Adjectives.swift */,
+				5265B592258F4D7200AA474E /* December2020.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
+				5265B593258F4D7200AA474E /* December2020.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
 				52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */,
 				B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */,

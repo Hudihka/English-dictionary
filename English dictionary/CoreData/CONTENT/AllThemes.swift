@@ -24,7 +24,8 @@ class AllThemes{
         Phrases.allContent,
         Subjects.allContent,
         FamilyAndHobbies.allContent,
-        Adjectives.allContent
+        Adjectives.allContent,
+		December2020.allContent
 	]
     
     static var count: Int{
