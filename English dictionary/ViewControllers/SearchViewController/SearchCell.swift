@@ -53,7 +53,7 @@ class SearchCell: UITableViewCell {
         labelTarnlate.text = !tupl.russValue ? tupl.word.rusValue : tupl.word.engValue
         
         
-        labelTarnlate.isHidden = tupl.hideTranslate
+		labelTarnlate.alpha = tupl.hideTranslate ? 0 : 1
         
         let image = tupl.word.favorit ? "favorit" : "not_favorit"
         buttonFave.setImage(UIImage(named: image), for: .normal)
@@ -62,5 +62,22 @@ class SearchCell: UITableViewCell {
         
     }
 
+	
+	func showAnimate(){
+		
+		UIView.animate(withDuration: 0.25, animations: {
+			self.labelTarnlate.alpha = 1
+		}) {[weak self] (compl) in
+			self?.hideAniate()
+		}
+	}
+	
+	private func hideAniate(){
+		UIView.animate(withDuration: 0.25, delay: 0.9, options: [], animations: {
+			self.labelTarnlate.alpha = 0
+		}) { (_) in
+			///
+		}
+	}
     
 }

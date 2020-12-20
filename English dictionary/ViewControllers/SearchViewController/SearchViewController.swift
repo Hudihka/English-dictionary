@@ -206,6 +206,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return UITableView.automaticDimension
     }
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if switchTanslate.isOn {
+			
+			if let cell = table.cellForRow(at: indexPath) as? SearchDescriptionCell{
+				cell.showAnimate()
+				return
+			}
+			
+			if let cell = table.cellForRow(at: indexPath) as? SearchCell{
+				cell.showAnimate()
+			}
+		}
+	}
     
     
 
