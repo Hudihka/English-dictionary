@@ -17,7 +17,7 @@ class December2020 {
 		["engValue" : "sail", "rusValue" : "ездить", "descript" : "под парусом"],
 		["engValue" : "type", "rusValue" : "печатать", "descript" : ""],
 		["engValue" : "chess", "rusValue" : "шахматы", "descript" : ""],
-		["engValue" : "I know how play thus game", "rusValue" : "я не знаю как играть", "descript" : ""],
+		["engValue" : "I know how play thus game", "rusValue" : "я знаю как играть", "descript" : ""],
 		["engValue" : "as", "rusValue" : "как", "descript" : "в качестве"],
 		["engValue" : "how", "rusValue" : "как", "descript" : "вопрос"],
 		["engValue" : "ride", "rusValue" : "ездить", "descript" : "верхом"],
