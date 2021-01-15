@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hqd-4t-cx7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hqd-4t-cx7">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,12 +35,12 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hJt-B6-Yii">
                                 <rect key="frame" x="0.0" y="88" width="414" height="710"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CT-lO-6n4">
                                 <rect key="frame" x="0.0" y="798" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG9-FL-pYf">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZG9-FL-pYf">
                                         <rect key="frame" x="20" y="10" width="374" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -62,7 +64,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Gv-xj-1xo"/>
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Mt-Ts-TFL"/>
@@ -75,17 +78,16 @@
                             <constraint firstItem="hJt-B6-Yii" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yNJ-8z-zJK"/>
                             <constraint firstItem="0CT-lO-6n4" firstAttribute="top" secondItem="hJt-B6-Yii" secondAttribute="bottom" id="yoQ-ZT-7eM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="vpS-BX-haS">
                         <barButtonItem key="leftBarButtonItem" title="Сброс" id="KjS-mR-LZE">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="clearAllTheme:" destination="BYZ-38-t0r" id="Cga-I0-dea"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Просмотр" id="Ibr-PG-pYk">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" systemColor="darkTextColor"/>
                             <connections>
                                 <action selector="goNewTheme:" destination="BYZ-38-t0r" id="UMd-Ji-fy2"/>
                             </connections>
@@ -129,7 +131,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXW-PV-hEf">
                                 <rect key="frame" x="0.0" y="798" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycg-Cb-SrI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycg-Cb-SrI">
                                         <rect key="frame" x="20" y="10" width="374" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -193,7 +195,8 @@
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="co6-06-Ieu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oTC-K0-Bow" firstAttribute="top" secondItem="BnN-Zd-Ljq" secondAttribute="bottom" constant="40" id="7ws-mY-mfR"/>
                             <constraint firstItem="WYo-t5-kEF" firstAttribute="leading" secondItem="AXs-59-wbb" secondAttribute="trailing" constant="14" id="AT5-Ir-8zd"/>
@@ -212,11 +215,10 @@
                             <constraint firstItem="co6-06-Ieu" firstAttribute="trailing" secondItem="BnN-Zd-Ljq" secondAttribute="trailing" constant="20" id="wqK-uS-Gee"/>
                             <constraint firstItem="XXW-PV-hEf" firstAttribute="leading" secondItem="co6-06-Ieu" secondAttribute="leading" id="yxi-6P-VDz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="co6-06-Ieu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" id="S1X-dy-esI">
                         <barButtonItem key="leftBarButtonItem" title="Отмена" id="tfD-cM-67Z">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="dissmis:" destination="mED-GD-LFa" id="Rdq-zh-T9b"/>
                             </connections>
@@ -243,17 +245,17 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HfC-dY-eeQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="m7k-WA-wMk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HfC-dY-eeQ" firstAttribute="leading" secondItem="m7k-WA-wMk" secondAttribute="leading" id="JY9-3w-GSY"/>
                             <constraint firstItem="HfC-dY-eeQ" firstAttribute="trailing" secondItem="m7k-WA-wMk" secondAttribute="trailing" id="YbK-kb-s7h"/>
                             <constraint firstAttribute="bottom" secondItem="HfC-dY-eeQ" secondAttribute="bottom" id="d4v-nE-EXY"/>
                             <constraint firstItem="HfC-dY-eeQ" firstAttribute="top" secondItem="m7k-WA-wMk" secondAttribute="top" id="nnU-3U-2GC"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="m7k-WA-wMk"/>
                     </view>
                     <navigationItem key="navigationItem" id="UtP-t6-fVH"/>
                     <connections>
@@ -291,7 +293,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-1G-A7c">
                                 <rect key="frame" x="0.0" y="115" width="414" height="693"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-OW-yKn">
                                 <rect key="frame" x="16" y="12" width="382" height="41"/>
@@ -319,7 +321,7 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdQ-ws-7yU">
                                 <rect key="frame" x="20" y="68" width="51" height="31"/>
-                                <color key="onTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="onTintColor" systemColor="darkTextColor"/>
                                 <connections>
                                     <action selector="switchAction:" destination="C3g-jq-3YC" eventType="valueChanged" id="Z1Z-JI-K96"/>
                                 </connections>
@@ -338,6 +340,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="cgB-Zg-0dX"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NkQ-6V-2Hn" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" id="58s-vn-tMm"/>
@@ -360,12 +363,11 @@
                             <constraint firstItem="APr-8K-PYH" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="221" id="tpE-f3-33j"/>
                             <constraint firstItem="Tb2-1G-A7c" firstAttribute="trailing" secondItem="APr-8K-PYH" secondAttribute="trailing" id="zmQ-d5-DXy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cgB-Zg-0dX"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="39V-77-rII">
                         <barButtonItem key="rightBarButtonItem" title="Отмена" id="sQM-mn-LBE">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="dismiss:" destination="C3g-jq-3YC" id="0KR-gs-tFk"/>
                             </connections>
@@ -393,5 +395,73 @@
             </objects>
             <point key="canvasLocation" x="2021.7391304347827" y="98.4375"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nGb-df-vWr">
+            <objects>
+                <navigationController storyboardIdentifier="SplitNavigationController" id="RB3-hl-lQi" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k8P-aS-kTc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="w3N-N6-seV" kind="relationship" relationship="rootViewController" id="P6G-YI-9Jv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYs-x6-f45" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804" y="1818"/>
+        </scene>
+        <!--Выбранные слова-->
+        <scene sceneID="ceX-5N-SdI">
+            <objects>
+                <viewController storyboardIdentifier="MasterSplitViewController" id="w3N-N6-seV" customClass="MasterSplitViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Onr-34-2Tj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-BL-87Z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qfj-eG-xkR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eHs-BL-87Z" secondAttribute="trailing" id="CjX-J0-7Jj"/>
+                            <constraint firstItem="eHs-BL-87Z" firstAttribute="bottom" secondItem="qfj-eG-xkR" secondAttribute="bottom" id="f0X-KS-ol7"/>
+                            <constraint firstItem="eHs-BL-87Z" firstAttribute="top" secondItem="qfj-eG-xkR" secondAttribute="top" id="hjP-59-CYs"/>
+                            <constraint firstItem="eHs-BL-87Z" firstAttribute="leading" secondItem="qfj-eG-xkR" secondAttribute="leading" id="i6m-EI-6Kf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Выбранные слова" id="dfb-qH-hqK">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="53O-Wl-0we">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="dissmis:" destination="w3N-N6-seV" id="EAg-u3-oh5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWO-qk-Z4a" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="1817.4107142857142"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

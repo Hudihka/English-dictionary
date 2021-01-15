@@ -164,7 +164,7 @@ class Word: NSManagedObject {
     
     
 	
-	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool) -> [Word]{
+	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool?) -> [Word]{
 		
 		var predicates: [NSPredicate] = []
 
@@ -182,16 +182,19 @@ class Word: NSManagedObject {
             let predicateNot = NSPredicate(format: "theme in %@", themes)
             predicates.append(predicateNot)
 		}
+        
+        var sortDescriptors1: NSSortDescriptor? = nil
 		
-		if let text = text{
+		if let text = text, let rusValue = rusValue{
 			let predicate = rusValue ? NSPredicate(format: "rusValue CONTAINS[c] %@", text) :
 									   NSPredicate(format: "engValue CONTAINS[c] %@", text)
             predicates.append(predicate)
+            
+            let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
+
+            sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: true)
 		}
 		
-		let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
-
-		let sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: true)
 		
 		let comp = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
 		
@@ -204,7 +207,11 @@ class Word: NSManagedObject {
             if predicates.isEmpty == false {
                 fetchRequest.predicate = comp
             }
-            fetchRequest.sortDescriptors = [sortDescriptors1]
+            
+            if sortDescriptors1 != nil {
+                fetchRequest.sortDescriptors = [sortDescriptors1!]
+            }
+            
             try objects = ctx.fetch(fetchRequest) as? [Word]
         } catch {
             print(error)

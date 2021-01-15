@@ -47,11 +47,37 @@ class StartViewController: BaseViewController {
     }
     
 
-	@IBAction func goNewTheme(_ sender: Any) {
-		SearchViewController.presentSertchWord(activeVC: self,
-                                               sectedThemes: selectedAllTheme ? [] : selectedTheme,
-                                               favorite: selectedAllTheme ? false : selectedFavorite)
-	}
+    @IBAction func goNewTheme(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Выберите способ",
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+
+        
+        alert.addAction(UIAlertAction(title: "Тест Рус -> Англ", style: .default, handler: { (_) in
+            print("User click Edit button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Тест Англ -> Рус", style: .default, handler: { (_) in
+            print("User click Edit button")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Зубрешка", style: .default, handler: {[weak self] (_) in
+            
+            guard let selF = self else {return}
+            
+            SearchViewController.presentSertchWord(activeVC: selF,
+                                                   sectedThemes: selF.selectedAllTheme ? [] : selF.selectedTheme,
+                                                   favorite: selF.selectedAllTheme ? false : selF.selectedFavorite)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
 	
 	@IBAction func clearAllTheme(_ sender: Any) {
 		selectedTheme = []
