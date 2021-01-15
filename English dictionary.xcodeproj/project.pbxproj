@@ -42,6 +42,7 @@
 		52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DD1BF525769F1F008F7EE9 /* NotTheme.swift */; };
 		52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D65925867078003C9DE6 /* SearchViewController.swift */; };
 		52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E4D65B258670E0003C9DE6 /* EnumNotification.swift */; };
+		B21BBA3125B164CB002C2DD3 /* Januri2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BBA3025B164CB002C2DD3 /* Januri2021.swift */; };
 		B24574572585E1EB0038053D /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574562585E1EB0038053D /* BodyParts.swift */; };
 		B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745A2585E2380038053D /* ProfessionAndWork.swift */; };
 		B245745F2585E28B0038053D /* Verbs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245745E2585E28B0038053D /* Verbs.swift */; };
@@ -114,6 +115,7 @@
 		52DD1BF525769F1F008F7EE9 /* NotTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTheme.swift; sourceTree = "<group>"; };
 		52E4D65925867078003C9DE6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		52E4D65B258670E0003C9DE6 /* EnumNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNotification.swift; sourceTree = "<group>"; };
+		B21BBA3025B164CB002C2DD3 /* Januri2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Januri2021.swift; sourceTree = "<group>"; };
 		B24574562585E1EB0038053D /* BodyParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyParts.swift; sourceTree = "<group>"; };
 		B245745A2585E2380038053D /* ProfessionAndWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionAndWork.swift; sourceTree = "<group>"; };
 		B245745E2585E28B0038053D /* Verbs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verbs.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				B245747B2585E3A50038053D /* FamilyAndHobbies .swift */,
 				B245747E2585E3C10038053D /* Adjectives.swift */,
 				5265B592258F4D7200AA474E /* December2020.swift */,
+				B21BBA3025B164CB002C2DD3 /* Januri2021.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				B283EBD825737D3D00284F55 /* Constant.swift in Sources */,
 				52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */,
 				5282726F2561277600A63410 /* String.swift in Sources */,
+				B21BBA3125B164CB002C2DD3 /* Januri2021.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
