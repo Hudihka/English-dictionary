@@ -39,7 +39,13 @@ class Januri2021 {
         ["engValue" : "bellow", "rusValue" : "ниже/под", "descript" : ""],
         ["engValue" : "above", "rusValue" : "выше/над", "descript" : ""],
         ["engValue" : "blow", "rusValue" : "дуть", "descript" : ""],
-        ["engValue" : "shine", "rusValue" : "светить", "descript" : ""]
+        ["engValue" : "shine", "rusValue" : "светить", "descript" : ""],
+        ["engValue" : "metter", "rusValue" : "дело", "descript" : ""],
+        ["engValue" : "hand", "rusValue" : "кисть", "descript" : ""],
+        ["engValue" : "relaible", "rusValue" : "надежный", "descript" : ""],
+        ["engValue" : "What is he/she/it like?", "rusValue" : "Каков он/она/она по характеру?", "descript" : ""],
+        ["engValue" : "What does he/she look like?", "rusValue" : "Как он/она выглядит?", "descript" : ""],
+        ["engValue" : "What does he/she like doing?", "rusValue" : "Что он/она любят делать?", "descript" : ""]
     
     ]
     
