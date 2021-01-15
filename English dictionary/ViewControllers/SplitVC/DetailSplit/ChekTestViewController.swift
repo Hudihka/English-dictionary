@@ -27,7 +27,8 @@ class ChekTestViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        desingUI()
+        settingsTV()
     }
     
     @discardableResult static func presentSplit(activeVC: UIViewController,
@@ -51,11 +52,18 @@ class ChekTestViewController: BaseViewController {
     
     private func desingUI(){
         
-        if isAnswer {
-            
-        } else {
-            
+        guard let word = word else {
+            return
         }
+        
+        let wordValue      = rusEng ? word.rusValue : word.engValue
+        let translateValue = !rusEng ? word.rusValue : word.engValue
+        
+        self.table.isHidden = isAnswer
+        self.title = isAnswer ? nil : wordValue
+        
+        self.labelWord.text      = wordValue
+        self.labelTranslate.text = translateValue
         
         
         
