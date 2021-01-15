@@ -11,11 +11,13 @@ import UIKit
 class CellMaster: UITableViewCell {
     
     @IBOutlet private weak var labelText: UILabel!
+    @IBOutlet private weak var labelTranslate: UILabel!
     
     var wordAndTranslate: (word: Word, rusEngl: Bool)?{
         didSet{
             if let tulp = wordAndTranslate {
-                labelText.text = tulp.rusEngl ? tulp.word.rusValue : tulp.word.engValue
+                labelText.text      =  tulp.rusEngl ? tulp.word.rusValue : tulp.word.engValue
+                labelTranslate.text = !tulp.rusEngl ? tulp.word.rusValue : tulp.word.engValue
             }
         }
     }
@@ -24,8 +26,12 @@ class CellMaster: UITableViewCell {
         didSet{
             if let trueAnswer = trueAnswer {
                 self.contentView.backgroundColor = trueAnswer ? .green : .red
+                
                 if trueAnswer == false {
-                    self.labelText.textColor = .white
+                    self.labelText.textColor      = .white
+                    
+                    self.labelTranslate.isHidden  = false
+                    self.labelTranslate.textColor = .white
                 }
             }
         }
@@ -36,6 +42,8 @@ class CellMaster: UITableViewCell {
         
         self.contentView.backgroundColor = .white
         self.labelText.textColor         = .black
+        self.labelTranslate.textColor    = .black
+        self.labelTranslate.isHidden     = true
     }
     
     

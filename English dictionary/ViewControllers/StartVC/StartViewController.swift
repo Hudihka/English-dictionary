@@ -54,12 +54,14 @@ class StartViewController: BaseViewController {
                                       preferredStyle: .actionSheet)
 
         
-        alert.addAction(UIAlertAction(title: "Тест Рус -> Англ", style: .default, handler: { (_) in
-            print("User click Edit button")
+        alert.addAction(UIAlertAction(title: "Тест Рус -> Англ", style: .default, handler: {[weak self] (_) in
+            guard let selF = self else {return}
+            selF.openSplit(rusEngTranslate: true)
         }))
         
-        alert.addAction(UIAlertAction(title: "Тест Англ -> Рус", style: .default, handler: { (_) in
-            print("User click Edit button")
+        alert.addAction(UIAlertAction(title: "Тест Англ -> Рус", style: .default, handler: {[weak self] (_) in
+            guard let selF = self else {return}
+            selF.openSplit(rusEngTranslate: false)
         }))
         
         alert.addAction(UIAlertAction(title: "Зубрешка", style: .default, handler: {[weak self] (_) in
@@ -77,6 +79,14 @@ class StartViewController: BaseViewController {
         self.present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    
+    private func openSplit(rusEngTranslate: Bool){
+        MasterSplitViewController.presentSplit(activeVC: self,
+                                               sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
+                                               favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
+                                               rusEngTranslate: rusEngTranslate)
     }
 	
 	@IBAction func clearAllTheme(_ sender: Any) {

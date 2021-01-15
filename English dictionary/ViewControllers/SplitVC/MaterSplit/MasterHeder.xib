@@ -64,11 +64,6 @@
                 <constraint firstItem="MiK-r8-yog" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="n4x-S3-dXv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="labelAll" destination="MiK-r8-yog" id="e5u-8B-0mz"/>
-                <outlet property="labelFolse" destination="woq-1Z-wAP" id="AQY-zY-K6O"/>
-                <outlet property="labelTrue" destination="fUa-X1-oYc" id="8Y2-DA-R6Z"/>
-            </connections>
             <point key="canvasLocation" x="105.07246376811595" y="-151.33928571428569"/>
         </view>
     </objects>

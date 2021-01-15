@@ -36,10 +36,10 @@ class MasterSplitViewController: BaseViewController {
     }
     
     
-    @discardableResult static func presentSertchWord(activeVC: UIViewController,
-                                                     sectedThem: [Theme],
-                                                     favoriteSelect: Bool,
-                                                     rusEngTranslate: Bool) -> MasterSplitViewController {
+    @discardableResult static func presentSplit(activeVC: UIViewController,
+                                                sectedThem: [Theme],
+                                                favoriteSelect: Bool,
+                                                rusEngTranslate: Bool) -> MasterSplitViewController {
         
         let NVC = EnumStoryboard.main.vc("SplitNavigationController") as! UINavigationController
         NVC.modalPresentationStyle = .fullScreen
@@ -108,7 +108,7 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
         table.delegate = self
         table.dataSource = self
         
-        table.estimatedRowHeight = 50
+        table.estimatedRowHeight = 70
         
         table.backgroundColor = .clear
         table.separatorStyle = .none
