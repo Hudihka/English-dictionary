@@ -80,6 +80,22 @@ class MasterSplitViewController: BaseViewController {
         })
     }
     
+    fileprivate func answerTrue(word: Word) -> Bool?{
+        
+        if let id = word.id {
+            if answerIdWordTrue.contains(id){
+                return true
+            }
+            
+            if answerIdWordFalse.contains(id){
+                return false
+            }
+        }
+        
+        return nil
+        
+    }
+    
     deinit {
         //
     }
@@ -118,16 +134,7 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = table.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
         
         cell.wordAndTranslate = tupl
-        
-        if let id = word.id {
-            
-            if answerIdWordTrue.contains(id){
-                cell.trueAnswer = true
-            } else if answerIdWordFalse.contains(id){
-                cell.trueAnswer = false
-            }
-            
-        }
+        cell.trueAnswer       = answerTrue(word: word)
         
         return cell
     }
