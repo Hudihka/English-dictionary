@@ -24,13 +24,15 @@ class CellMaster: UITableViewCell {
     
     var trueAnswer: Bool? = nil {
         didSet{
+            
+            colorContent()
+            
             if let trueAnswer = trueAnswer {
                 self.contentView.backgroundColor = trueAnswer ? .green : .red
+                self.labelTranslate.isHidden  = false
                 
                 if trueAnswer == false {
                     self.labelText.textColor      = .white
-                    
-                    self.labelTranslate.isHidden  = false
                     self.labelTranslate.textColor = .white
                 }
             }
@@ -40,6 +42,10 @@ class CellMaster: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        colorContent()
+    }
+    
+    private func colorContent(){
         self.contentView.backgroundColor = .white
         self.labelText.textColor         = .black
         self.labelTranslate.textColor    = .black

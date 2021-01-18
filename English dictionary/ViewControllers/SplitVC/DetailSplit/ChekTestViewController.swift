@@ -85,7 +85,7 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
         table.delegate = self
         table.dataSource = self
         
-        table.estimatedRowHeight = 50
+        table.estimatedRowHeight = 51
         
         table.backgroundColor = .clear
         table.separatorStyle = .none
@@ -93,6 +93,10 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
         table.register(UINib(nibName: "ChekWordCell", bundle: nil),
                        forCellReuseIdentifier: "ChekWordCell")
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     
@@ -105,13 +109,9 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
         let word = dataArray[indexPath.row]
         let cell = table.dequeueReusableCell(withIdentifier: "ChekWordCell") as! ChekWordCell
         
-        cell.textTranslate = rusEng ? word.rusValue : word.engValue
+        cell.textTranslate = !rusEng ? word.rusValue : word.engValue
         
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

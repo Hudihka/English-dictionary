@@ -16,13 +16,15 @@ class MasterHeder: UITableViewHeaderFooterView {
     
     var countTrue: Int = 0 {
         didSet{
-            labelTrue.text = "\(String(describing: labelTrue)) +"
+            labelTrue.isHidden = countTrue == 0
+            labelTrue.text = "\(countTrue) +"
         }
     }
     
     var countFalse: Int = 0 {
         didSet{
-            labelTrue.text = "\(String(describing: countFalse)) -"
+            labelFolse.isHidden = countFalse == 0
+            labelFolse.text = "\(countFalse) -"
         }
     }
     
