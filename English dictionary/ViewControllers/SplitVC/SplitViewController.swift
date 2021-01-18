@@ -32,7 +32,9 @@ class SplitViewController: UISplitViewController {
         let MVC = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
         let DVC = ChekTestViewController.route(word: word, dataArray: words, isAnswer: false, rusEngTranslate: rusEngTranslate)
         
-        SVC.viewControllers = [MVC, DVC]
+//        SVC
+        
+//        SVC.viewControllers = [MVC, DVC]
         SVC.preferredDisplayMode = .allVisible
         
         return SVC

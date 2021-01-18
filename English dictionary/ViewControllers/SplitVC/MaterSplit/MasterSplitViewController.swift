@@ -19,6 +19,7 @@ class MasterSplitViewController: UITableViewController {
     
     fileprivate var favorit = false
     fileprivate var rusEng = true
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +88,6 @@ class MasterSplitViewController: UITableViewController {
     
     
     fileprivate func settingsTV(){
-        
         tableView.estimatedRowHeight = 70
         
         tableView.backgroundColor = .clear
