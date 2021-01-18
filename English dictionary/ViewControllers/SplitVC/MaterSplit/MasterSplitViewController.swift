@@ -8,9 +8,7 @@
 
 import UIKit
 
-class MasterSplitViewController: BaseViewController {
-
-    @IBOutlet fileprivate weak var table: UITableView!
+class MasterSplitViewController: UITableViewController {
     
     fileprivate var dataArray: [Word] = []
     
@@ -25,6 +23,8 @@ class MasterSplitViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .white
         
         settingsTV()
     }
@@ -71,12 +71,12 @@ class MasterSplitViewController: BaseViewController {
     
     fileprivate func reloadAllData(duration: TimeInterval = 0){
         
-        UIView.transition(with: self.table,
+        UIView.transition(with: self.tableView,
                           duration: duration,
                           options: .transitionCrossDissolve,
                           animations: {
 
-            self.table.reloadData()
+            self.tableView.reloadData()
         })
     }
     
@@ -96,42 +96,33 @@ class MasterSplitViewController: BaseViewController {
         
     }
     
-    deinit {
-        //
-    }
-}
-
-extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource {
     
     fileprivate func settingsTV(){
         
-        table.delegate = self
-        table.dataSource = self
+        tableView.estimatedRowHeight = 70
         
-        table.estimatedRowHeight = 70
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         
-        table.backgroundColor = .clear
-        table.separatorStyle = .none
-        
-        table.register(UINib(nibName: "CellMaster", bundle: nil),
+        tableView.register(UINib(nibName: "CellMaster", bundle: nil),
                        forCellReuseIdentifier: "CellMaster")
         
-        table.register(UINib(nibName: "MasterHeder", bundle: nil),
+        tableView.register(UINib(nibName: "MasterHeder", bundle: nil),
                        forHeaderFooterViewReuseIdentifier: "MasterHeder")
         
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let word = dataArray[indexPath.row]
         let tupl: (word: Word, rusEngl: Bool) = (word: word, rusEngl: rusEng)
         
-        let cell = table.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
         
         cell.wordAndTranslate = tupl
         cell.trueAnswer       = answerTrue(word: word)
@@ -139,12 +130,12 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        table.deselectRow(at: indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let word = dataArray[indexPath.row]
         var words = dataArray.filter({$0.id != word.id})[randomPick: 10]
@@ -167,14 +158,14 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
                 selF.answerIdWordFalse.append(id)
             }
             
-            selF.table.reloadData()
+            selF.tableView.reloadData()
         }
         
     }
     
     //heder
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MasterHeder") as! MasterHeder
         
         cell.countTrue  = answerIdWordTrue.count
@@ -184,7 +175,7 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 84
     }
 
