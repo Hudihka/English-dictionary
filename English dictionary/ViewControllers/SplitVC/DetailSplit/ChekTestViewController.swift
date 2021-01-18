@@ -31,11 +31,11 @@ class ChekTestViewController: BaseViewController {
         settingsTV()
     }
     
-    @discardableResult static func presentSplit(activeVC: UIViewController,
-                                                word: Word,
-                                                dataArray: [Word],
-                                                isAnswer: Bool,
-                                                rusEngTranslate: Bool) -> ChekTestViewController {
+    @discardableResult static func pushSplit(activeVC: UIViewController,
+                                            word: Word,
+                                            dataArray: [Word],
+                                            isAnswer: Bool,
+                                            rusEngTranslate: Bool) -> ChekTestViewController {
         
         let VC = EnumStoryboard.main.vc("ChekTestViewController") as! ChekTestViewController
         
@@ -103,12 +103,9 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let word = dataArray[indexPath.row]
-        let tupl: (word: Word, rusEngl: Bool) = (word: word, rusEngl: rusEng)
+        let cell = table.dequeueReusableCell(withIdentifier: "ChekWordCell") as! ChekWordCell
         
-        let cell = table.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
-        
-        cell.wordAndTranslate = tupl
-        cell.trueAnswer       = answerTrue(word: word)
+        cell.textTranslate = rusEng ? word.rusValue : word.engValue
         
         return cell
     }
@@ -119,6 +116,24 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? ChekWordCell, let word = word{
+            
+            table.isUserInteractionEnabled = false
+            
+            let answer = dataArray[indexPath.row].id == word.id
+            
+            self.ansverBlock(word, answer)
+            cell.colorSelected(answerTrue: answer)
+            
+            UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: []) {
+                self.table.alpha = 0
+            } completion: {[weak self] (com) in
+                if com {
+                    self?.table.isHidden = true
+                }
+            }
+        }
     }
     
     

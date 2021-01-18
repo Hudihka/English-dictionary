@@ -419,7 +419,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-BL-87Z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-BL-87Z">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -437,7 +437,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Назад" id="53O-Wl-0we">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="dissmis:" destination="w3N-N6-seV" id="EAg-u3-oh5"/>
+                                <action selector="dismiss:" destination="w3N-N6-seV" id="10c-U2-Usn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -452,11 +452,20 @@
         <!--Chek Test View Controller-->
         <scene sceneID="c4S-R0-0T9">
             <objects>
-                <viewController storyboardIdentifier="ChekTestViewController" id="0CJ-Mg-tug" customClass="ChekTestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChekTestViewController" id="0CJ-Mg-tug" customClass="ChekTestViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t7Z-Tb-4br">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-BG-aVx">
+                                <rect key="frame" x="20" y="253.66666666666666" width="374" height="31.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="3qL-3Z-sXc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpR-Xc-xub">
                                 <rect key="frame" x="20" y="194" width="374" height="34.666666666666657"/>
                                 <constraints>
@@ -470,15 +479,6 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-BG-aVx">
-                                <rect key="frame" x="20" y="253.66666666666666" width="374" height="31.333333333333343"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="3qL-3Z-sXc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cow-2y-FCK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -499,8 +499,7 @@
                     <connections>
                         <outlet property="labelTranslate" destination="fdy-BG-aVx" id="cPg-n6-RjG"/>
                         <outlet property="labelWord" destination="OpR-Xc-xub" id="RHa-Qc-vt7"/>
-                        <outlet property="table" destination="XIS-gm-PfP" id="A4F-8g-Uwb"/>
-                        <outlet property="tableView" destination="XIS-gm-PfP" id="93V-gN-stp"/>
+                        <outlet property="table" destination="XIS-gm-PfP" id="Geu-Qc-aaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3v-oS-40i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

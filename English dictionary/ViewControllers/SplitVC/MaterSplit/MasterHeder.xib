@@ -9,13 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="labelAll" destination="MiK-r8-yog" id="rf2-Fw-ljz"/>
-                <outlet property="labelFolse" destination="woq-1Z-wAP" id="uPX-zI-5Yr"/>
-                <outlet property="labelTrue" destination="fUa-X1-oYc" id="fDK-zi-6PF"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MasterHeder" customModule="English_dictionary" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="365" height="84"/>
@@ -33,7 +27,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUa-X1-oYc">
                     <rect key="frame" x="16" y="49" width="159" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Cts-2a-3QT"/>
+                        <constraint firstAttribute="height" constant="20" id="RNV-h0-fjQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.37138551469999997" green="0.79517030720000004" blue="0.3999502063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,29 +44,33 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
+                <constraint firstItem="woq-1Z-wAP" firstAttribute="top" secondItem="fUa-X1-oYc" secondAttribute="top" id="60S-t0-TW9"/>
                 <constraint firstAttribute="trailing" secondItem="MiK-r8-yog" secondAttribute="trailing" constant="16" id="CnB-fG-OmL"/>
                 <constraint firstItem="MiK-r8-yog" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="DvM-Lj-Qdo"/>
                 <constraint firstItem="woq-1Z-wAP" firstAttribute="leading" secondItem="fUa-X1-oYc" secondAttribute="trailing" constant="15" id="FfH-Lg-WbM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="woq-1Z-wAP" secondAttribute="trailing" constant="16" id="Ny5-iy-avO"/>
                 <constraint firstItem="fUa-X1-oYc" firstAttribute="width" secondItem="woq-1Z-wAP" secondAttribute="width" id="OJq-YO-e74"/>
                 <constraint firstItem="fUa-X1-oYc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Rqg-ol-j61"/>
-                <constraint firstItem="fUa-X1-oYc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="UPj-7E-Asz"/>
-                <constraint firstItem="woq-1Z-wAP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="WnP-l4-68Q"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fUa-X1-oYc" secondAttribute="bottom" constant="15" id="gMh-iH-jZj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fUa-X1-oYc" secondAttribute="bottom" constant="15" id="egZ-G7-bqu"/>
                 <constraint firstItem="MiK-r8-yog" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="n4x-S3-dXv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="105.07246376811595" y="-151.33928571428569"/>
+            <connections>
+                <outlet property="labelAll" destination="MiK-r8-yog" id="LbZ-W1-fQW"/>
+                <outlet property="labelFolse" destination="woq-1Z-wAP" id="Zsg-SJ-0dj"/>
+                <outlet property="labelTrue" destination="fUa-X1-oYc" id="HnG-3w-lXB"/>
+            </connections>
+            <point key="canvasLocation" x="11" y="-151"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

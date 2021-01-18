@@ -81,6 +81,8 @@
 		B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABAF2573AFD900F4118E /* ChekViewController.swift */; };
 		B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABB32573B2D000F4118E /* ChekCell.swift */; };
 		B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B295ABB42573B2D000F4118E /* ChekCell.xib */; };
+		B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */; };
+		B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +162,8 @@
 		B295ABAF2573AFD900F4118E /* ChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekViewController.swift; sourceTree = "<group>"; };
 		B295ABB32573B2D000F4118E /* ChekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekCell.swift; sourceTree = "<group>"; };
 		B295ABB42573B2D000F4118E /* ChekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekCell.xib; sourceTree = "<group>"; };
+		B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordCell.swift; sourceTree = "<group>"; };
+		B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				B270152C25B1C45100156559 /* ChekTestViewController.swift */,
+				B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */,
+				B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */,
 			);
 			path = DetailSplit;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 				B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */,
 				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
+				B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */,
 				B270152325B1AC9700156559 /* MasterHeder.xib in Resources */,
 				B245748E258604F30038053D /* FavoriteWords.xib in Resources */,
 				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
@@ -516,6 +523,7 @@
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
+				B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */,
 				5265B593258F4D7200AA474E /* December2020.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
 				52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */,

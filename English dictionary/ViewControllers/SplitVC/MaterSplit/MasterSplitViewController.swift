@@ -145,6 +145,31 @@ extension MasterSplitViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
+        
+        let word = dataArray[indexPath.row]
+        var words = dataArray.filter({$0.id != word.id})[randomPick: 10]
+        let randomIndex = arc4random() % 10
+        words[Int(randomIndex)] = word
+        
+        let VC = ChekTestViewController.pushSplit(activeVC: self,
+                                                  word: word,
+                                                  dataArray: words,
+                                                  isAnswer: answerTrue(word: word) != nil,
+                                                  rusEngTranslate: rusEng)
+        
+        VC.ansverBlock = {[weak self] word, answer in
+            guard let selF = self, let id = word.id else {return}
+            
+            
+            if answer {
+                selF.answerIdWordTrue.append(id)
+            } else {
+                selF.answerIdWordFalse.append(id)
+            }
+            
+            selF.table.reloadData()
+        }
+        
     }
     
     //heder
