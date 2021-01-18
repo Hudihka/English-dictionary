@@ -31,8 +31,7 @@ class ChekTestViewController: BaseViewController {
         settingsTV()
     }
     
-    @discardableResult static func pushSplit(activeVC: UIViewController,
-                                            word: Word,
+    @discardableResult static func pushSplit(word: Word,
                                             dataArray: [Word],
                                             isAnswer: Bool,
                                             rusEngTranslate: Bool) -> ChekTestViewController {
@@ -44,7 +43,7 @@ class ChekTestViewController: BaseViewController {
         VC.isAnswer  = isAnswer
         VC.rusEng    = rusEngTranslate
         
-        activeVC.navigationController?.pushViewController(VC, animated: true)
+//        activeVC.navigationController?.pushViewController(VC, animated: true)
         
         return VC
         

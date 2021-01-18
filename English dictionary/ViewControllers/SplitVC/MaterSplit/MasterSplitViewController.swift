@@ -15,11 +15,8 @@ class MasterSplitViewController: UITableViewController {
     fileprivate var answerIdWordTrue  = [String]()
     fileprivate var answerIdWordFalse = [String]()
     
-    fileprivate var selectedTheme = [Theme]()
     fileprivate var favorit = false
     fileprivate var rusEng = true
-    
-    fileprivate var defUt = DefaultUtils.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +33,8 @@ class MasterSplitViewController: UITableViewController {
     }
     
     
-    @discardableResult static func presentSplit(activeVC: UIViewController,
-                                                sectedThem: [Theme],
-                                                favoriteSelect: Bool,
-                                                rusEngTranslate: Bool) -> MasterSplitViewController {
+    @discardableResult static func route(dataArray: [Word],
+                                         rusEngTranslate: Bool) -> MasterSplitViewController {
         
         let NVC = EnumStoryboard.main.vc("SplitNavigationController") as! UINavigationController
         NVC.modalPresentationStyle = .fullScreen
@@ -47,16 +42,8 @@ class MasterSplitViewController: UITableViewController {
         
         let MVC = NVC.viewControllers.first as! MasterSplitViewController
         
-        MVC.selectedTheme = sectedThem
-        MVC.favorit = favoriteSelect
         MVC.rusEng = rusEngTranslate
-        
-        MVC.dataArray = Word.words(text: nil,
-                                   themes: sectedThem,
-                                   favorite: favoriteSelect,
-                                   rusValue: nil)//будет постоянно рандом
-        
-        activeVC.present(NVC, animated: true, completion: nil)
+        MVC.dataArray = dataArray
         
         return MVC
         

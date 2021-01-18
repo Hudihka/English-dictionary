@@ -60,6 +60,7 @@
 		B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24574862585F22B0038053D /* ChekWordInfoCell.xib */; };
 		B245748D258604F30038053D /* FavoriteWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245748B258604F30038053D /* FavoriteWords.swift */; };
 		B245748E258604F30038053D /* FavoriteWords.xib in Resources */ = {isa = PBXBuildFile; fileRef = B245748C258604F30038053D /* FavoriteWords.xib */; };
+		B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */; };
 		B270151C25B1A7E600156559 /* MasterSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151B25B1A7E600156559 /* MasterSplitViewController.swift */; };
 		B270152025B1AC5600156559 /* MasterHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151F25B1AC5600156559 /* MasterHeder.swift */; };
 		B270152325B1AC9700156559 /* MasterHeder.xib in Resources */ = {isa = PBXBuildFile; fileRef = B270152225B1AC9700156559 /* MasterHeder.xib */; };
@@ -141,6 +142,7 @@
 		B24574862585F22B0038053D /* ChekWordInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordInfoCell.xib; sourceTree = "<group>"; };
 		B245748B258604F30038053D /* FavoriteWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWords.swift; sourceTree = "<group>"; };
 		B245748C258604F30038053D /* FavoriteWords.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteWords.xib; sourceTree = "<group>"; };
+		B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		B270151B25B1A7E600156559 /* MasterSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitViewController.swift; sourceTree = "<group>"; };
 		B270151F25B1AC5600156559 /* MasterHeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeder.swift; sourceTree = "<group>"; };
 		B270152225B1AC9700156559 /* MasterHeder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterHeder.xib; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				B270152B25B1C3C000156559 /* DetailSplit */,
 				B270152A25B1C3AD00156559 /* MaterSplit */,
+				B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */,
 			);
 			path = SplitVC;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				B21BBA3125B164CB002C2DD3 /* Januri2021.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
 				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
+				B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
 				B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */,
