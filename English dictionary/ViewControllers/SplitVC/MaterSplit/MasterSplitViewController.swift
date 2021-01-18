@@ -10,6 +10,8 @@ import UIKit
 
 class MasterSplitViewController: UITableViewController {
     
+    var blockTapedCell: (Word, [Word]) -> Void = {_,_ in}
+    
     fileprivate var dataArray: [Word] = []
     
     fileprivate var answerIdWordTrue  = [String]()
@@ -129,24 +131,26 @@ class MasterSplitViewController: UITableViewController {
         let randomIndex = arc4random() % 10
         words[Int(randomIndex)] = word
         
-        let VC = ChekTestViewController.pushSplit(activeVC: self,
-                                                  word: word,
-                                                  dataArray: words,
-                                                  isAnswer: answerTrue(word: word) != nil,
-                                                  rusEngTranslate: rusEng)
+        self.blockTapedCell(word, words)
         
-        VC.ansverBlock = {[weak self] word, answer in
-            guard let selF = self, let id = word.id else {return}
-            
-            
-            if answer {
-                selF.answerIdWordTrue.append(id)
-            } else {
-                selF.answerIdWordFalse.append(id)
-            }
-            
-            selF.tableView.reloadData()
-        }
+//        let VC = ChekTestViewController.pushSplit(activeVC: self,
+//                                                  word: word,
+//                                                  dataArray: words,
+//                                                  isAnswer: answerTrue(word: word) != nil,
+//                                                  rusEngTranslate: rusEng)
+//
+//        VC.ansverBlock = {[weak self] word, answer in
+//            guard let selF = self, let id = word.id else {return}
+//
+//
+//            if answer {
+//                selF.answerIdWordTrue.append(id)
+//            } else {
+//                selF.answerIdWordFalse.append(id)
+//            }
+//
+//            selF.tableView.reloadData()
+//        }
         
     }
     

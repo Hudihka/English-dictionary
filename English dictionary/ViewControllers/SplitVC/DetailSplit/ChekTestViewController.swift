@@ -20,21 +20,24 @@ class ChekTestViewController: BaseViewController {
     fileprivate var rusEng = true
     fileprivate var isAnswer = false
     
-    fileprivate var word: Word?
+    fileprivate var word: Word? {
+        didSet{
+            desingUI()
+        }
+    }
     fileprivate var dataArray = [Word]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        desingUI()
         settingsTV()
     }
     
-    @discardableResult static func pushSplit(word: Word,
-                                            dataArray: [Word],
-                                            isAnswer: Bool,
-                                            rusEngTranslate: Bool) -> ChekTestViewController {
+    @discardableResult static func route(word: Word,
+                                        dataArray: [Word],
+                                        isAnswer: Bool,
+                                        rusEngTranslate: Bool) -> ChekTestViewController {
         
         let VC = EnumStoryboard.main.vc("ChekTestViewController") as! ChekTestViewController
         
@@ -50,6 +53,7 @@ class ChekTestViewController: BaseViewController {
     }
     
     private func desingUI(){
+        loadViewIfNeeded()
         
         guard let word = word else {
             return
@@ -63,11 +67,6 @@ class ChekTestViewController: BaseViewController {
         
         self.labelWord.text      = wordValue
         self.labelTranslate.text = translateValue
-        
-        
-        
-        
-        
         
     }
     

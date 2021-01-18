@@ -398,7 +398,6 @@
         <!--Выбранные слова-->
         <scene sceneID="c1t-et-R8K">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Th-Xx-F8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="MasterSplitViewController" id="c3b-pA-ct8" customClass="MasterSplitViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4TL-WU-3av">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -415,6 +414,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Th-Xx-F8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="1817"/>
         </scene>
@@ -474,6 +474,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3v-oS-40i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.7101449275362" y="1816.7410714285713"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="lPf-Y9-Np7">
+            <objects>
+                <splitViewController storyboardIdentifier="SplitViewController" id="D24-Lp-pCV" customClass="SplitViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWT-eO-Dvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1799" y="1817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N1M-uI-IGC">

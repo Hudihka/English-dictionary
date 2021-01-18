@@ -31,7 +31,6 @@
 		528272752561277600A63410 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272662561277600A63410 /* UITextView.swift */; };
 		52B909B12561238400FC2908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B02561238400FC2908 /* AppDelegate.swift */; };
 		52B909B52561238400FC2908 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B42561238400FC2908 /* StartViewController.swift */; };
-		52B909B82561238400FC2908 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B62561238400FC2908 /* Main.storyboard */; };
 		52B909BA2561238800FC2908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B92561238800FC2908 /* Assets.xcassets */; };
 		52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B909BB2561238800FC2908 /* LaunchScreen.storyboard */; };
 		52C5A91E25867BA8007DE46E /* SearchDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5A91C25867BA8007DE46E /* SearchDescriptionCell.swift */; };
@@ -61,6 +60,7 @@
 		B245748D258604F30038053D /* FavoriteWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245748B258604F30038053D /* FavoriteWords.swift */; };
 		B245748E258604F30038053D /* FavoriteWords.xib in Resources */ = {isa = PBXBuildFile; fileRef = B245748C258604F30038053D /* FavoriteWords.xib */; };
 		B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */; };
+		B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B268F03825B5C46900C6B1E5 /* Main.storyboard */; };
 		B270151C25B1A7E600156559 /* MasterSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151B25B1A7E600156559 /* MasterSplitViewController.swift */; };
 		B270152025B1AC5600156559 /* MasterHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151F25B1AC5600156559 /* MasterHeder.swift */; };
 		B270152325B1AC9700156559 /* MasterHeder.xib in Resources */ = {isa = PBXBuildFile; fileRef = B270152225B1AC9700156559 /* MasterHeder.xib */; };
@@ -112,7 +112,6 @@
 		52B909AD2561238400FC2908 /* English dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B909B02561238400FC2908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B909B42561238400FC2908 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		52B909B72561238400FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52B909B92561238800FC2908 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B909BC2561238800FC2908 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B909BE2561238800FC2908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		B245748B258604F30038053D /* FavoriteWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWords.swift; sourceTree = "<group>"; };
 		B245748C258604F30038053D /* FavoriteWords.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteWords.xib; sourceTree = "<group>"; };
 		B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		B268F03825B5C46900C6B1E5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B270151B25B1A7E600156559 /* MasterSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitViewController.swift; sourceTree = "<group>"; };
 		B270151F25B1AC5600156559 /* MasterHeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeder.swift; sourceTree = "<group>"; };
 		B270152225B1AC9700156559 /* MasterHeder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterHeder.xib; sourceTree = "<group>"; };
@@ -253,6 +253,7 @@
 		52B909AF2561238400FC2908 /* English dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				B268F03825B5C46900C6B1E5 /* Main.storyboard */,
 				528272432561260200A63410 /* Resourses */,
 				B283EBDA25737EAB00284F55 /* ViewControllers */,
 				B283EBC925737A6F00284F55 /* CoreData */,
@@ -357,7 +358,6 @@
 				B283EBDB25737F0700284F55 /* StartVC */,
 				B27429C62573A8AF005551AD /* SettingsChek */,
 				B270151925B1A62B00156559 /* SplitVC */,
-				52B909B62561238400FC2908 /* Main.storyboard */,
 				52E4D6582586702F003C9DE6 /* SearchViewController */,
 				B295ABB22573B2AB00F4118E /* ChekViewController */,
 			);
@@ -457,11 +457,11 @@
 				B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */,
 				B270152325B1AC9700156559 /* MasterHeder.xib in Resources */,
 				B245748E258604F30038053D /* FavoriteWords.xib in Resources */,
+				B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */,
 				B283EBDF25737F3100284F55 /* AllWordCell.xib in Resources */,
 				52C5A91F25867BA8007DE46E /* SearchDescriptionCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
 				B283EBE42573829300284F55 /* ThemeCell.xib in Resources */,
-				52B909B82561238400FC2908 /* Main.storyboard in Resources */,
 				52C5A92325867D09007DE46E /* SearchCell.xib in Resources */,
 				B270152825B1B05700156559 /* CellMaster.xib in Resources */,
 			);
@@ -543,14 +543,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		52B909B62561238400FC2908 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52B909B72561238400FC2908 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52B909BB2561238800FC2908 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

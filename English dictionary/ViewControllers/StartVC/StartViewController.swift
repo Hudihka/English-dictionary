@@ -83,10 +83,11 @@ class StartViewController: BaseViewController {
     
     
     private func openSplit(rusEngTranslate: Bool){
-        MasterSplitViewController.presentSplit(activeVC: self,
-                                               sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
-                                               favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
-                                               rusEngTranslate: rusEngTranslate)
+        let SVC = SplitViewController.route(sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
+                                            favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
+                                            rusEngTranslate: rusEngTranslate)
+        SVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(SVC, animated: true, completion: nil)
     }
 	
 	@IBAction func clearAllTheme(_ sender: Any) {
