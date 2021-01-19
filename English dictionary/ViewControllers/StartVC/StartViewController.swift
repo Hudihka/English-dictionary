@@ -87,6 +87,7 @@ class StartViewController: BaseViewController {
                                             favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
                                             rusEngTranslate: rusEngTranslate)
         SVC.modalPresentationStyle = .fullScreen
+        SVC.delegate = self
         self.navigationController?.present(SVC, animated: true, completion: nil)
     }
 	
@@ -253,4 +254,16 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+}
+
+
+extension StartViewController: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ splitViewController: UISplitViewController,
+                    collapseSecondary secondaryViewController: UIViewController,
+                    onto primaryViewController: UIViewController) -> Bool{
+        
+        return true
+    }
+    
 }

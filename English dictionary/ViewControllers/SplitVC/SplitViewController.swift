@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplitViewController: UISplitViewController {
+class SplitViewController: UISplitViewController{
     
     fileprivate var dataArray: [Word] = []
     fileprivate var rusEng = true
@@ -32,23 +32,25 @@ class SplitViewController: UISplitViewController {
         words[Int(randomIndex)] = word
         
         let tuplMaster = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
+        let masterVC = tuplMaster.master
         
         let DVC = ChekTestViewController.route(word: word, dataArray: words, isAnswer: false, rusEngTranslate: rusEngTranslate)
         let detailNVC = UINavigationController(rootViewController: DVC)
         
         //тап по ячейке нового выбранного слова
-        tuplMaster.master.blockTapedCell = { word, words, answer in
+        masterVC.blockTapedCell = { word, words, answer in
             DVC.dataArray = words
             DVC.isAnswer  = answer
             DVC.word      = word
+            
+            //показать детальный вк
+            SVC.showDetailViewController(detailNVC, sender: nil)
         }
         
-        
+        //когда выбрали слово на детальной инф
         DVC.ansverBlock = {word, answer in
-            tuplMaster.master.getAnswer(word: word, answer: answer)
+            masterVC.getAnswer(word: word, answer: answer)
         }
-        
-        
         
         SVC.viewControllers = [tuplMaster.navig, detailNVC]
         SVC.preferredDisplayMode = .allVisible

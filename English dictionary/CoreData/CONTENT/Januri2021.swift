@@ -45,7 +45,16 @@ class Januri2021 {
         ["engValue" : "relaible", "rusValue" : "надежный", "descript" : ""],
         ["engValue" : "What is he/she/it like?", "rusValue" : "Каков он/она/она по характеру?", "descript" : ""],
         ["engValue" : "What does he/she look like?", "rusValue" : "Как он/она выглядит?", "descript" : ""],
-        ["engValue" : "What does he/she like doing?", "rusValue" : "Что он/она любят делать?", "descript" : ""]
+        ["engValue" : "What does he/she like doing?", "rusValue" : "Что он/она любят делать?", "descript" : ""],
+        ["engValue" : "sail", "rusValue" : "трудный/тяжелый", "descript" : ""],
+        ["engValue" : "sail", "rusValue" : "парусный спорт", "descript" : ""],
+        ["engValue" : "sale", "rusValue" : "распродажа", "descript" : ""],
+        ["engValue" : "hard", "rusValue" : "трудный/тяжелый", "descript" : ""],
+        ["engValue" : "hard", "rusValue" : "тяжело/усердно", "descript" : ""],
+        ["engValue" : "celebrate", "rusValue" : "праздновать", "descript" : ""],
+        ["engValue" : "resolution", "rusValue" : "обещания", "descript" : ""],
+        ["engValue" : "hander", "rusValue" : "еще больше/усердно", "descript" : ""],
+        ["engValue" : "gain", "rusValue" : "набрать/получить", "descript" : ""],
     
     ]
     
