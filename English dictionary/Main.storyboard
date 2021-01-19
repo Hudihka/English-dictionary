@@ -411,6 +411,9 @@
                     <navigationItem key="navigationItem" title="Выбранные слова" id="bfD-3f-in8">
                         <barButtonItem key="leftBarButtonItem" title="Назад" id="53O-Wl-0we">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="dismiss:" destination="c3b-pA-ct8" id="Pd3-HL-xFK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

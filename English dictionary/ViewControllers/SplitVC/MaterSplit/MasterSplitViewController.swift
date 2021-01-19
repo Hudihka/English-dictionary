@@ -54,7 +54,8 @@ class MasterSplitViewController: UITableViewController {
     
 
     @IBAction fileprivate func dismiss(_ sender: Any) {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        SplitViewController.activeSplitVC = true
+        self.navigationController?.splitViewController?.dismiss(animated: true, completion: nil)
     }
     
 

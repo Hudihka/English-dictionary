@@ -13,6 +13,8 @@ class SplitViewController: UISplitViewController {
     fileprivate var dataArray: [Word] = []
     fileprivate var rusEng = true
     
+    static var activeSplitVC = false
+    
     static func route(sectedThem: [Theme],
                       favoriteSelect: Bool,
                       rusEngTranslate: Bool) -> SplitViewController{
@@ -57,8 +59,11 @@ class SplitViewController: UISplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SplitViewController.activeSplitVC = true
         self.view.backgroundColor = .white
     }
     
+    
+    @objc func canRotate () -> Void {}
 
 }
