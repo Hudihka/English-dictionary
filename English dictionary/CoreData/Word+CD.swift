@@ -164,7 +164,7 @@ class Word: NSManagedObject {
     
     
 	
-	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool?) -> [Word]{
+	class func words(text: String?, themes: [Theme], favorite: Bool, rusValue: Bool?, sorted: Bool) -> [Word]{
 		
 		var predicates: [NSPredicate] = []
 
@@ -182,17 +182,22 @@ class Word: NSManagedObject {
             let predicateNot = NSPredicate(format: "theme in %@", themes)
             predicates.append(predicateNot)
 		}
-        
-        var sortDescriptors1: NSSortDescriptor? = nil
 		
-		if let text = text, let rusValue = rusValue{
-			let predicate = rusValue ? NSPredicate(format: "rusValue CONTAINS[c] %@", text) :
-									   NSPredicate(format: "engValue CONTAINS[c] %@", text)
-            predicates.append(predicate)
-            
-            let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
-
-            sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: true)
+		var sortDescriptors1: NSSortDescriptor? = nil
+		
+		if let rusValue = rusValue {
+			
+			if let text = text {
+				let predicate = rusValue ? NSPredicate(format: "rusValue CONTAINS[c] %@", text) :
+									       NSPredicate(format: "engValue CONTAINS[c] %@", text)
+				predicates.append(predicate)
+			}
+			
+			
+			if sorted {
+				let keySortDescriptor1 = rusValue ? "rusValue" : "engValue"
+				sortDescriptors1 = NSSortDescriptor(key: keySortDescriptor1, ascending: true)
+			}
 		}
 		
 		

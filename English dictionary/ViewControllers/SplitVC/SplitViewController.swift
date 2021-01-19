@@ -24,7 +24,10 @@ class SplitViewController: UISplitViewController{
         let dataArray = Word.words(text: nil,
                                    themes: sectedThem,
                                    favorite: favoriteSelect,
-                                   rusValue: nil)//будет постоянно рандом
+								   rusValue: nil,
+								   sorted: false)//будет постоянно рандом
+		
+//		https://developer.apple.com/documentation/uikit/uisplitviewcontrollerdelegate/1623176-splitviewcontroller
         
         let word = dataArray[0]
         var words = dataArray.filter({$0.id != word.id})[randomPick: 10]

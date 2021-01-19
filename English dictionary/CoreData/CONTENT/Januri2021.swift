@@ -46,7 +46,6 @@ class Januri2021 {
         ["engValue" : "What is he/she/it like?", "rusValue" : "Каков он/она/она по характеру?", "descript" : ""],
         ["engValue" : "What does he/she look like?", "rusValue" : "Как он/она выглядит?", "descript" : ""],
         ["engValue" : "What does he/she like doing?", "rusValue" : "Что он/она любят делать?", "descript" : ""],
-        ["engValue" : "sail", "rusValue" : "трудный/тяжелый", "descript" : ""],
         ["engValue" : "sail", "rusValue" : "парусный спорт", "descript" : ""],
         ["engValue" : "sale", "rusValue" : "распродажа", "descript" : ""],
         ["engValue" : "hard", "rusValue" : "трудный/тяжелый", "descript" : ""],

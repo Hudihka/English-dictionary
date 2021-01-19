@@ -88,7 +88,7 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
         
         table.estimatedRowHeight = 51
         
-        table.backgroundColor = .clear
+        table.backgroundColor = .white
         table.separatorStyle = .none
         
         table.register(UINib(nibName: "ChekWordCell", bundle: nil),
@@ -126,6 +126,8 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
             
             self.ansverBlock(word, answer)
             cell.colorSelected(answerTrue: answer)
+			
+			self.table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             
             UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: []) {
                 self.table.alpha = 0
