@@ -42,10 +42,10 @@ class ChekTestViewController: BaseViewController {
         
         let VC = EnumStoryboard.main.vc("ChekTestViewController") as! ChekTestViewController
         
-        VC.word      = word
-        VC.dataArray = dataArray
         VC.isAnswer  = isAnswer
         VC.rusEng    = rusEngTranslate
+        VC.word      = word
+        VC.dataArray = dataArray
         
         return VC
         
