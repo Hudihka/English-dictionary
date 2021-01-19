@@ -37,7 +37,7 @@ class MasterHeder: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        self.contentView.backgroundColor = UIColor(rgb: 0xE9E9E9)
     }
 
 }

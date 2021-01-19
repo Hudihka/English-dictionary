@@ -46,7 +46,7 @@ class CellMaster: UITableViewCell {
     }
     
     private func colorContent(){
-        self.contentView.backgroundColor = .white
+        self.contentView.backgroundColor = UIColor(rgb: 0xE9E9E9)
         self.labelText.textColor         = .black
         self.labelTranslate.textColor    = .black
         self.labelTranslate.isHidden     = true

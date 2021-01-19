@@ -90,7 +90,7 @@ class MasterSplitViewController: UITableViewController {
     fileprivate func settingsTV(){
         tableView.estimatedRowHeight = 70
         
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = UIColor(rgb: 0xE9E9E9)
         tableView.separatorStyle = .none
         
         tableView.register(UINib(nibName: "CellMaster", bundle: nil),

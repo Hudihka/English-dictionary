@@ -30,7 +30,9 @@ class SplitViewController: UISplitViewController {
         words[Int(randomIndex)] = word
         
         let tuplMaster = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
+        
         let DVC = ChekTestViewController.route(word: word, dataArray: words, isAnswer: false, rusEngTranslate: rusEngTranslate)
+        let detailNVC = UINavigationController(rootViewController: DVC)
         
         //тап по ячейке нового выбранного слова
         tuplMaster.master.blockTapedCell = { word, words, answer in
@@ -46,7 +48,7 @@ class SplitViewController: UISplitViewController {
         
         
         
-        SVC.viewControllers = [tuplMaster.navig, DVC]
+        SVC.viewControllers = [tuplMaster.navig, detailNVC]
         SVC.preferredDisplayMode = .allVisible
         
         return SVC
