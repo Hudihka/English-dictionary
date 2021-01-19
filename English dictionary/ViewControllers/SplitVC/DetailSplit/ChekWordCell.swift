@@ -14,6 +14,7 @@ class ChekWordCell: UITableViewCell {
     
     var textTranslate: String? {
         didSet{
+            dumpColor()
             textCell.text = textTranslate
         }
     }
@@ -30,6 +31,11 @@ class ChekWordCell: UITableViewCell {
         
         self.textCell.textColor = .white
         
+    }
+    
+    func dumpColor(){
+        self.contentView.backgroundColor = .white
+        self.textCell.textColor          = .black
     }
     
 }

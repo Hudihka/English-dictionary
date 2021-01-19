@@ -486,7 +486,7 @@
         <!--Navigation Controller-->
         <scene sceneID="N1M-uI-IGC">
             <objects>
-                <navigationController storyboardIdentifier="SplitNavigationController" id="NPC-Ff-uke" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SplitNavigationController" id="NPC-Ff-uke" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1vg-zx-TAz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

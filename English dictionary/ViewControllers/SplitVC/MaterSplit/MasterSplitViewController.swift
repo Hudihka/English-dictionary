@@ -10,7 +10,7 @@ import UIKit
 
 class MasterSplitViewController: UITableViewController {
     
-    var blockTapedCell: (Word, [Word]) -> Void = {_,_ in}
+    var blockTapedCell: (Word, [Word], Bool) -> Void = {_,_,_ in}
     
     fileprivate var dataArray: [Word] = []
     
@@ -37,7 +37,7 @@ class MasterSplitViewController: UITableViewController {
     
     
     @discardableResult static func route(dataArray: [Word],
-                                         rusEngTranslate: Bool) -> MasterSplitViewController {
+                                         rusEngTranslate: Bool) -> (navig: UINavigationController, master: MasterSplitViewController) {
         
         let NVC = EnumStoryboard.main.vc("SplitNavigationController") as! UINavigationController
         NVC.modalPresentationStyle = .fullScreen
@@ -48,7 +48,7 @@ class MasterSplitViewController: UITableViewController {
         MVC.rusEng = rusEngTranslate
         MVC.dataArray = dataArray
         
-        return MVC
+        return (navig: NVC, master: MVC)
         
     }
     
@@ -131,26 +131,22 @@ class MasterSplitViewController: UITableViewController {
         let randomIndex = arc4random() % 10
         words[Int(randomIndex)] = word
         
-        self.blockTapedCell(word, words)
+        let answer = answerTrue(word: word) != nil
         
-//        let VC = ChekTestViewController.pushSplit(activeVC: self,
-//                                                  word: word,
-//                                                  dataArray: words,
-//                                                  isAnswer: answerTrue(word: word) != nil,
-//                                                  rusEngTranslate: rusEng)
-//
-//        VC.ansverBlock = {[weak self] word, answer in
-//            guard let selF = self, let id = word.id else {return}
-//
-//
-//            if answer {
-//                selF.answerIdWordTrue.append(id)
-//            } else {
-//                selF.answerIdWordFalse.append(id)
-//            }
-//
-//            selF.tableView.reloadData()
-//        }
+        self.blockTapedCell(word, words, answer)
+        
+    }
+    
+    func getAnswer(word: Word, answer: Bool){
+        guard let id = word.id else {return}
+        
+        if answer {
+            self.answerIdWordTrue.append(id)
+        } else {
+            self.answerIdWordFalse.append(id)
+        }
+        
+        self.tableView.reloadData()
         
     }
     

@@ -18,14 +18,15 @@ class ChekTestViewController: BaseViewController {
     @IBOutlet fileprivate weak var table: UITableView!
     
     fileprivate var rusEng = true
-    fileprivate var isAnswer = false
+    var isAnswer = false
     
-    fileprivate var word: Word? {
+    var word: Word? {
         didSet{
             desingUI()
         }
     }
-    fileprivate var dataArray = [Word]()
+    
+    var dataArray = [Word]()
     
     
     override func viewDidLoad() {
@@ -46,8 +47,6 @@ class ChekTestViewController: BaseViewController {
         VC.isAnswer  = isAnswer
         VC.rusEng    = rusEngTranslate
         
-//        activeVC.navigationController?.pushViewController(VC, animated: true)
-        
         return VC
         
     }
@@ -62,12 +61,16 @@ class ChekTestViewController: BaseViewController {
         let wordValue      = rusEng ? word.rusValue : word.engValue
         let translateValue = !rusEng ? word.rusValue : word.engValue
         
+        self.table.alpha = 1
+        self.table.isUserInteractionEnabled = true
+        
         self.table.isHidden = isAnswer
         self.title = isAnswer ? nil : wordValue
         
         self.labelWord.text      = wordValue
         self.labelTranslate.text = translateValue
         
+        table.reloadData()
     }
     
     
