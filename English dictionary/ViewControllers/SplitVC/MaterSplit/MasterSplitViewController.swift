@@ -80,6 +80,8 @@ class MasterSplitViewController: UITableViewController {
 			tableView.reloadData()
 		}
 	}
+	
+	
     
 
     @IBAction fileprivate func dismiss(_ sender: Any) {
@@ -149,18 +151,21 @@ class MasterSplitViewController: UITableViewController {
 		guard let id = word.id else {return}
 		
 		if let struc = answers[id]{
-			//уже отвечали что то делали
-			
-			if let answer = struc.answer {
-				//уже отвечали
-			} else {
-				//еще не отвечали
-			}
-			
+			collDetailSplit(answer: struc)
+			return
 		}
 		
+		let answer = AnswerWord(word: word, wordsArray: dataArray)
+		self.answers[id] = answer
+		collDetailSplit(answer: answer)
         
     }
+	
+	private func collDetailSplit(answer: AnswerWord){
+		if let split = self.navigationController?.splitViewController as? SplitViewController{
+			split.reloadDetailVC(answerWord: answer)
+		}
+	}
     
     //heder
     

@@ -55,7 +55,7 @@ class SplitViewController: UISplitViewController{
     @objc func canRotate () -> Void {}
 	
 	func reloadMasterVC(idWord: String, answer: Bool){
-		if let NVC = self.viewControllers.last as? UINavigationController,
+		if let NVC = self.viewControllers.first as? UINavigationController,
 			let MVC = NVC.viewControllers.first as? MasterSplitViewController{
 			MVC.messageAnswer(idWord: idWord, answer: answer)
 		}

@@ -58,7 +58,7 @@ class ChekTestViewController: BaseViewController {
         self.table.alpha = 1
         self.table.isUserInteractionEnabled = true
         
-		self.table.isHidden = answerWord.answer == nil
+		self.table.isHidden = answerWord.answer != nil
         self.title = wordValue
         
         self.labelWord.text      = wordValue
@@ -124,7 +124,7 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
 			let answer = id == word.id
             
 //            сообщаем ответ
-			reloadSplitMasterVC(idWord: id ?? "", answer: answer)
+			reloadSplitMasterVC(idWord: word.id ?? "", answer: answer)
             cell.colorSelected(answerTrue: answer)
 			
 			self.table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
