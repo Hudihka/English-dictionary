@@ -29,33 +29,16 @@ class SplitViewController: UISplitViewController{
 		
 //		https://developer.apple.com/documentation/uikit/uisplitviewcontrollerdelegate/1623176-splitviewcontroller
         
-        let word = dataArray[0]
-        var words = dataArray.filter({$0.id != word.id})[randomPick: 10]
-        let randomIndex = arc4random() % 10
-        words[Int(randomIndex)] = word
+//        let word = dataArray[0]
+//        let answerStruc = AnswerWord(word: word, wordsArray: dataArray)
         
-        let tuplMaster = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
-        let masterVC = tuplMaster.master
+        let tupl = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
         
-        let DVC = ChekTestViewController.route(word: word, dataArray: words, isAnswer: false, rusEngTranslate: rusEngTranslate)
-        let detailNVC = UINavigationController(rootViewController: DVC)
+		let answer = tupl.master.answers.first?.value
+		
+        let NDVC = ChekTestViewController.route(answerWord: answer, rusEngTranslate: rusEngTranslate)
         
-        //тап по ячейке нового выбранного слова
-        masterVC.blockTapedCell = { word, words, answer in
-            DVC.dataArray = words
-            DVC.isAnswer  = answer
-            DVC.word      = word
-            
-            //показать детальный вк
-            SVC.showDetailViewController(detailNVC, sender: nil)
-        }
-        
-        //когда выбрали слово на детальной инф
-        DVC.ansverBlock = {word, answer in
-            masterVC.getAnswer(word: word, answer: answer)
-        }
-        
-        SVC.viewControllers = [tuplMaster.navig, detailNVC]
+		SVC.viewControllers = [tupl.nav, NDVC]
         SVC.preferredDisplayMode = .allVisible
         
         return SVC
@@ -70,5 +53,19 @@ class SplitViewController: UISplitViewController{
     
     
     @objc func canRotate () -> Void {}
+	
+	func reloadMasterVC(idWord: String, answer: Bool){
+		if let NVC = self.viewControllers.last as? UINavigationController,
+			let MVC = NVC.viewControllers.first as? MasterSplitViewController{
+			MVC.messageAnswer(idWord: idWord, answer: answer)
+		}
+	}
+	
+	func reloadDetailVC(answerWord: AnswerWord){
+		if let NVC = self.viewControllers.last as? UINavigationController,
+			let DVC = NVC.viewControllers.first as? ChekTestViewController{
+			DVC.answerWord = answerWord
+		}
+	}
 
 }

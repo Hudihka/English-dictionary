@@ -9,8 +9,6 @@
 import UIKit
 
 class ChekTestViewController: BaseViewController {
-    
-    var ansverBlock: (Word, Bool) -> Void = { _,_ in }
 
     @IBOutlet fileprivate weak var labelWord: UILabel!
     @IBOutlet fileprivate weak var labelTranslate: UILabel!
@@ -18,15 +16,12 @@ class ChekTestViewController: BaseViewController {
     @IBOutlet fileprivate weak var table: UITableView!
     
     fileprivate var rusEng = true
-    var isAnswer = false
     
-    var word: Word? {
+	var answerWord: AnswerWord? {
         didSet{
             desingUI()
         }
     }
-    
-    var dataArray = [Word]()
     
     
     override func viewDidLoad() {
@@ -35,28 +30,27 @@ class ChekTestViewController: BaseViewController {
         settingsTV()
     }
     
-    @discardableResult static func route(word: Word,
-                                        dataArray: [Word],
-                                        isAnswer: Bool,
-                                        rusEngTranslate: Bool) -> ChekTestViewController {
+    @discardableResult static func route(answerWord: AnswerWord?,
+                                        rusEngTranslate: Bool) -> UINavigationController {
         
         let VC = EnumStoryboard.main.vc("ChekTestViewController") as! ChekTestViewController
         
-        VC.isAnswer  = isAnswer
+        VC.answerWord  = answerWord
         VC.rusEng    = rusEngTranslate
-        VC.word      = word
-        VC.dataArray = dataArray
+
+		let NVC = UINavigationController(rootViewController: VC)
         
-        return VC
+        return NVC
         
     }
     
     private func desingUI(){
         loadViewIfNeeded()
         
-        guard let word = word else {
+        guard let answerWord = answerWord, let word = answerWord.word else {
             return
         }
+		
         
         let wordValue      = rusEng ? word.rusValue : word.engValue
         let translateValue = !rusEng ? word.rusValue : word.engValue
@@ -64,7 +58,7 @@ class ChekTestViewController: BaseViewController {
         self.table.alpha = 1
         self.table.isUserInteractionEnabled = true
         
-        self.table.isHidden = isAnswer
+		self.table.isHidden = answerWord.answer == nil
         self.title = wordValue
         
         self.labelWord.text      = wordValue
@@ -102,43 +96,52 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataArray.count
+		return answerWord?.words.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let word = dataArray[indexPath.row]
         let cell = table.dequeueReusableCell(withIdentifier: "ChekWordCell") as! ChekWordCell
         
-        cell.textTranslate = !rusEng ? word.rusValue : word.engValue
+		if let word = answerWord?.words[indexPath.row] {
+			cell.textTranslate = !rusEng ? word.rusValue : word.engValue
+		}
+	
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
+		
+		guard let answerWord = answerWord, let word = answerWord.word else {
+			return
+		}
         
-        if let cell = tableView.cellForRow(at: indexPath) as? ChekWordCell, let word = word{
+		if let cell = tableView.cellForRow(at: indexPath) as? ChekWordCell {
             
             table.isUserInteractionEnabled = false
+			let id = answerWord.words[indexPath.row].id
+			let answer = id == word.id
             
-            let answer = dataArray[indexPath.row].id == word.id
-            
-            self.ansverBlock(word, answer)
+//            сообщаем ответ
+			reloadSplitMasterVC(idWord: id ?? "", answer: answer)
             cell.colorSelected(answerTrue: answer)
 			
 			self.table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-            
-            UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: []) {
-                self.table.alpha = 0
-            } completion: {[weak self] (com) in
-                if com {
-                    self?.table.isHidden = true
-                }
-            }
+			
+			UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: [], animations: {
+				self.table.alpha = 0
+			}) {[weak self] (com) in
+				if com {
+					self?.table.isHidden = true
+				}
+			}
         }
     }
-    
-    
-    
+	
+	private func reloadSplitMasterVC(idWord: String, answer: Bool){
+		if let split = self.navigationController?.splitViewController as? SplitViewController{
+			split.reloadMasterVC(idWord: idWord, answer: answer)
+		}
+	}
 }

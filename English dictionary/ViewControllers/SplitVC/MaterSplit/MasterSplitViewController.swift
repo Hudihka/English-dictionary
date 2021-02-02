@@ -8,16 +8,32 @@
 
 import UIKit
 
+struct AnswerWord {
+	var word: Word?
+	var words = [Word]()
+	var answer: Bool?
+	
+	init(word: Word, wordsArray: [Word]) {
+		self.word = word
+		
+		var words = wordsArray.filter({$0.id != word.id})[randomPick: 10]
+        let randomIndex = arc4random() % 10
+        words[Int(randomIndex)] = word
+		self.words = words
+	}
+	
+	mutating func answer(answer: Bool) {
+		self.answer = answer
+		self.words = []
+	}
+	
+}
+
 class MasterSplitViewController: UITableViewController {
     
-    var blockTapedCell: (Word, [Word], Bool) -> Void = {_,_,_ in}
-    
     fileprivate var dataArray: [Word] = []
+	var answers = [String : AnswerWord]()
     
-    fileprivate var answerIdWordTrue  = [String]()
-    fileprivate var answerIdWordFalse = [String]()
-    
-    fileprivate var favorit = false
     fileprivate var rusEng = true
     
 
@@ -37,7 +53,8 @@ class MasterSplitViewController: UITableViewController {
     
     
     @discardableResult static func route(dataArray: [Word],
-                                         rusEngTranslate: Bool) -> (navig: UINavigationController, master: MasterSplitViewController) {
+										 rusEngTranslate: Bool) -> (nav: UINavigationController,
+																	master: MasterSplitViewController) {
         
         let NVC = EnumStoryboard.main.vc("SplitNavigationController") as! UINavigationController
         NVC.modalPresentationStyle = .fullScreen
@@ -47,10 +64,22 @@ class MasterSplitViewController: UITableViewController {
         
         MVC.rusEng = rusEngTranslate
         MVC.dataArray = dataArray
+		
+		if let word = dataArray.first, let id = word.id {
+			MVC.answers = [id : AnswerWord(word: word, wordsArray: dataArray)]
+		}
         
-        return (navig: NVC, master: MVC)
+        return (nav: NVC, master: MVC)
         
     }
+	
+	func messageAnswer(idWord: String, answer: Bool){
+		if var struc = answers[idWord]{
+			struc.answer(answer: answer)
+			answers[idWord] = struc
+			tableView.reloadData()
+		}
+	}
     
 
     @IBAction fileprivate func dismiss(_ sender: Any) {
@@ -69,22 +98,6 @@ class MasterSplitViewController: UITableViewController {
 
             self.tableView.reloadData()
         })
-    }
-    
-    fileprivate func answerTrue(word: Word) -> Bool?{
-        
-        if let id = word.id {
-            if answerIdWordTrue.contains(id){
-                return true
-            }
-            
-            if answerIdWordFalse.contains(id){
-                return false
-            }
-        }
-        
-        return nil
-        
     }
     
     
@@ -115,7 +128,11 @@ class MasterSplitViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
         
         cell.wordAndTranslate = tupl
-        cell.trueAnswer       = answerTrue(word: word)
+		cell.trueAnswer = nil
+		
+		if let id = word.id, let answer = answers[id]?.answer{
+			cell.trueAnswer = answer
+		}
         
         return cell
     }
@@ -128,26 +145,20 @@ class MasterSplitViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let word = dataArray[indexPath.row]
-        var words = dataArray.filter({$0.id != word.id})[randomPick: 10]
-        let randomIndex = arc4random() % 10
-        words[Int(randomIndex)] = word
-        
-        let answer = answerTrue(word: word) != nil
-        
-        self.blockTapedCell(word, words, answer)
-        
-    }
-    
-    func getAnswer(word: Word, answer: Bool){
-        guard let id = word.id else {return}
-        
-        if answer {
-            self.answerIdWordTrue.append(id)
-        } else {
-            self.answerIdWordFalse.append(id)
-        }
-        
-        self.tableView.reloadData()
+		
+		guard let id = word.id else {return}
+		
+		if let struc = answers[id]{
+			//уже отвечали что то делали
+			
+			if let answer = struc.answer {
+				//уже отвечали
+			} else {
+				//еще не отвечали
+			}
+			
+		}
+		
         
     }
     
@@ -156,8 +167,10 @@ class MasterSplitViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MasterHeder") as! MasterHeder
         
-        cell.countTrue  = answerIdWordTrue.count
-        cell.countFalse = answerIdWordFalse.count
+		let answersArray = answers.values.compactMap({$0.answer})
+		
+		cell.countTrue  = answersArray.filter({$0 == true}).count
+        cell.countFalse = answersArray.filter({$0 == false}).count
         cell.count      = dataArray.count
         
         return cell
