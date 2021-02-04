@@ -29,8 +29,7 @@ class SplitViewController: UISplitViewController{
 		
 //		https://developer.apple.com/documentation/uikit/uisplitviewcontrollerdelegate/1623176-splitviewcontroller
         
-//        let word = dataArray[0]
-//        let answerStruc = AnswerWord(word: word, wordsArray: dataArray)
+		SVC.rusEng = rusEngTranslate
         
         let tupl = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
         
@@ -62,10 +61,15 @@ class SplitViewController: UISplitViewController{
 	}
 	
 	func reloadDetailVC(answerWord: AnswerWord){
-		if let NVC = self.viewControllers.last as? UINavigationController,
-			let DVC = NVC.viewControllers.first as? ChekTestViewController{
-			DVC.answerWord = answerWord
+		if let NVC = self.viewControllers.last as? UINavigationController{
+			if let DVC = NVC.viewControllers.first as? ChekTestViewController{
+				DVC.answerWord = answerWord
+			} else {
+				let NDVC = ChekTestViewController.route(answerWord: answerWord, rusEngTranslate: rusEng)
+				self.showDetailViewController(NDVC, sender: nil)
+			}
 		}
 	}
+	
 
 }
