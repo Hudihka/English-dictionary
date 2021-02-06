@@ -10,7 +10,7 @@ import Foundation
 
 class Februaru2021 {
     
-    public static let allContent: JSON = ["theme" : "2021 январь", "allWords" : Februaru2021.words]
+    public static let allContent: JSON = ["theme" : "2021 феврал", "allWords" : Februaru2021.words]
     
     private static let words: [JSON] = [
 		["engValue" : "depend on", "rusValue" : "зависит от", "descript" : ""],
