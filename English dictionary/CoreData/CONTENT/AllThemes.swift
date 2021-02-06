@@ -26,7 +26,8 @@ class AllThemes{
         FamilyAndHobbies.allContent,
         Adjectives.allContent,
 		December2020.allContent,
-        Januri2021.allContent
+        Januri2021.allContent,
+		Februaru2021.allContent
 	]
     
     static var count: Int{

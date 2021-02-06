@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
 		5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206502725612F2600DBE169 /* SettingsChekViewController.swift */; };
 		5265B593258F4D7200AA474E /* December2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B592258F4D7200AA474E /* December2020.swift */; };
 		528272512561275E00A63410 /* EnumStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272482561275E00A63410 /* EnumStoryboard.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
 		5206502725612F2600DBE169 /* SettingsChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChekViewController.swift; sourceTree = "<group>"; };
 		5265B592258F4D7200AA474E /* December2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = December2020.swift; sourceTree = "<group>"; };
 		528272482561275E00A63410 /* EnumStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumStoryboard.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				B245747E2585E3C10038053D /* Adjectives.swift */,
 				5265B592258F4D7200AA474E /* December2020.swift */,
 				B21BBA3025B164CB002C2DD3 /* Januri2021.swift */,
+				52023D4A25CE990600052EC1 /* Februaru2021.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				B283EBD825737D3D00284F55 /* Constant.swift in Sources */,
 				52DD1BF625769F1F008F7EE9 /* NotTheme.swift in Sources */,
 				B270152D25B1C45100156559 /* ChekTestViewController.swift in Sources */,
+				52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */,
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				B21BBA3125B164CB002C2DD3 /* Januri2021.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
