@@ -36,7 +36,16 @@ class March2021 {
 		["engValue" : "admission", "rusValue" : "вход", "descript" : ""],
 		["engValue" : "century", "rusValue" : "век", "descript" : ""],
 		["engValue" : "delayed", "rusValue" : "задерживается", "descript" : ""],
-		["engValue" : "boarding", "rusValue" : "идет посадка", "descript" : ""]
+		["engValue" : "boarding", "rusValue" : "идет посадка", "descript" : ""],
+		
+		["engValue" : "", "rusValue" : "вход", "descript" : ""],
+			["engValue" : "century", "rusValue" : "век", "descript" : ""],
+			["engValue" : "delayed", "rusValue" : "задерживается", "descript" : ""],
+			["engValue" : "boarding", "rusValue" : "идет посадка", "descript" : ""],
+			["engValue" : "wera", "rusValue" : "носить", "descript" : ""],
+			["engValue" : "send", "rusValue" : "отправить", "descript" : ""],
+			["engValue" : "spend", "rusValue" : "проводить", "descript" : ""],
+			["engValue" : "spent", "rusValue" : "потрачено", "descript" : ""]
     ]
     
 }
