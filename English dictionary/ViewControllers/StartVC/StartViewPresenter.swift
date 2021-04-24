@@ -24,6 +24,7 @@ protocol StartViewPresenterProtocol: class {
     init(view: StartViewProtocol)
     func selected(themes: Theme)
     func getAllThemes()
+    func selectedAll()
 }
 
 
@@ -31,9 +32,10 @@ protocol StartViewPresenterProtocol: class {
 
 class StartPresenter: StartViewPresenterProtocol {
     
+    
     let view: StartViewProtocol
     
-    var allThemes: [Theme] = []
+    private var allThemes: [Theme] = []
     var selectedThemes: [Theme] = []
     
     required init(view: StartViewProtocol) {
@@ -51,8 +53,13 @@ class StartPresenter: StartViewPresenterProtocol {
     }
     
     func getAllThemes() {
-        let themes = Theme.findAll()
-        view.allThemes(themes: themes)
+        allThemes = Theme.findAll()
+        view.allThemes(themes: allThemes)
+    }
+    
+    func selectedAll() {
+        selectedThemes = allThemes
+        view.reloadSelectedThemes(themes: selectedThemes)
     }
     
     
