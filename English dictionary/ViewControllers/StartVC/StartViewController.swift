@@ -14,59 +14,46 @@ class StartViewController: BaseViewController {
 	
 	@IBOutlet weak var startedChek: UIButton!
 	@IBOutlet weak var clearThemes: UIBarButtonItem!
-	
+    
+    var presenter: StartViewPresenterProtocol!
     
     fileprivate var dataArray: [Theme] = []
+    var selectedFavor = false
+    fileprivate var selectedTheme: [Theme] = [] {
+        didSet{
+            settingsButtonGO()
+        }
+    }
     
-    fileprivate var selectedTheme: [Theme] = []
-    fileprivate var selectedAllTheme = false
-    fileprivate var selectedFavorite = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        presenter.getAllThemes()
         startedChek.addRadius(number: 8)
-        startedChek.isEnabled = false
-        startedChek.alpha = 0.2
-        
-		clearThemes.isEnabled = false
-        
-        dataArray = Theme.findAll()
         settingsTV()
 	}
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        dataArray = Theme.findAll()
-        tableView.reloadData()
+        presenter.getAllThemes()
     }
-    
-
 
     
     
     private func openSplit(rusEngTranslate: Bool){
-        let SVC = SplitViewController.route(sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
-                                            favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
+        let SVC = SplitViewController.route(sectedThem: selectedTheme,
+                                            favoriteSelect: selectedFavor,
                                             rusEngTranslate: rusEngTranslate)
+        
         SVC.modalPresentationStyle = .fullScreen
         SVC.delegate = self
         self.navigationController?.present(SVC, animated: true, completion: nil)
     }
 	
 	@IBAction func clearAllTheme(_ sender: Any) {
-		selectedTheme = []
-		selectedAllTheme = false
-		selectedFavorite = false
-		
-		clearThemes.isEnabled = false
-		startedChek.alpha = 0.2
-        startedChek.isEnabled = false
-		
-		tableView.reloadData()
+        presenter.clearAll()
 	}
     
     @IBAction func stratedChek(_ sender: Any) {
@@ -91,8 +78,8 @@ class StartViewController: BaseViewController {
             guard let selF = self else {return}
             
             SearchViewController.presentSertchWord(activeVC: selF,
-                                                   sectedThemes: selF.selectedAllTheme ? [] : selF.selectedTheme,
-                                                   favorite: selF.selectedAllTheme ? false : selF.selectedFavorite)
+                                                   sectedThemes: selF.selectedTheme,
+                                                   favorite: selF.selectedFavor)
         }))
         
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
@@ -100,6 +87,14 @@ class StartViewController: BaseViewController {
         
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    private func settingsButtonGO(){
+        let enabled = !selectedTheme.isEmpty
+        startedChek.isEnabled = enabled
+        startedChek.alpha = enabled ? 0.2 : 1
+        
+        clearThemes.isEnabled = enabled
     }
     
 	
@@ -145,13 +140,13 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
             
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AllWordCell") as! AllWordCell
-                cell.valueSelected = selectedAllTheme
+                cell.valueSelected = dataArray.count == selectedTheme.count
                 
                 return cell
             }
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteWords") as! FavoriteWords
-            cell.valueSelected = selectedFavorite
+            cell.valueSelected = selectedFavor
             cell.count = Word.allCountFavorite
             
             return cell
@@ -175,49 +170,19 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.section == 0 {
             
             if indexPath.row == 0 {
-                
-                if selectedAllTheme == false {
-                    selectedAllTheme = true
-                    selectedFavorite = true
-                    selectedTheme = dataArray
-                } else {
-                    selectedAllTheme = false
-                    selectedFavorite = false
-                    selectedTheme = []
-                }
-                
-            } else {//фаворит ячейка
-                
-                selectedFavorite = !selectedFavorite
-                
-            }
-            
-
-        
-        } else {
-            let theme = dataArray[indexPath.row]
-            
-            if selectedTheme.contains(theme) {
-                selectedTheme = selectedTheme.filter({$0 != theme})
-                if selectedTheme.isEmpty, selectedAllTheme{
-                    selectedAllTheme = false
-                }
+                presenter.selectedAll()
             } else {
-                selectedTheme.append(theme)
+                presenter.tapedFavorit()
             }
+                
+                
+        } else {
+            
+            let theme = dataArray[indexPath.row]
+            presenter.selected(themes: theme)
             
         }
         
-        var selectedEmpty = true
-        
-        if !selectedTheme.isEmpty || selectedFavorite {
-            selectedEmpty = false
-        }
-        
-		clearThemes.isEnabled = !selectedEmpty
-        startedChek.alpha = selectedEmpty ? 0.2 : 1
-        startedChek.isEnabled = !selectedEmpty
-        tableView.reloadData()
     }
 
 	
@@ -253,6 +218,25 @@ extension StartViewController: UISplitViewControllerDelegate {
                     onto primaryViewController: UIViewController) -> Bool{
         
         return true
+    }
+    
+}
+
+
+extension StartViewController: StartViewProtocol {
+    func selectedFavorite(selectedFavorite: Bool) {
+        self.selectedFavor = selectedFavorite
+        tableView.reloadData()
+    }
+    
+    func reloadSelectedThemes(themes: [Theme]) {
+        dataArray = themes
+        tableView.reloadData()
+    }
+    
+    func allThemes(themes: [Theme]) {
+        selectedTheme = themes
+        tableView.reloadData()
     }
     
 }

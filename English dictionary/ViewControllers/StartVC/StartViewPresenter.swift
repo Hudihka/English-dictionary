@@ -13,6 +13,7 @@ import UIKit
 protocol StartViewProtocol: class {
     func reloadSelectedThemes(themes: [Theme])
     func allThemes(themes: [Theme])
+    func selectedFavorite(selectedFavorite: Bool)
 }
 
 
@@ -23,6 +24,8 @@ protocol StartViewProtocol: class {
 protocol StartViewPresenterProtocol: class {
     init(view: StartViewProtocol)
     func selected(themes: Theme)
+    func tapedFavorit()
+    func clearAll()
     func getAllThemes()
     func selectedAll()
 }
@@ -32,10 +35,11 @@ protocol StartViewPresenterProtocol: class {
 
 class StartPresenter: StartViewPresenterProtocol {
     
-    
     let view: StartViewProtocol
     
     private var allThemes: [Theme] = []
+    private var selectedFavorite = false
+    
     var selectedThemes: [Theme] = []
     
     required init(view: StartViewProtocol) {
@@ -60,6 +64,16 @@ class StartPresenter: StartViewPresenterProtocol {
     func selectedAll() {
         selectedThemes = allThemes
         view.reloadSelectedThemes(themes: selectedThemes)
+    }
+    
+    func clearAll() {
+        selectedThemes = []
+        view.reloadSelectedThemes(themes: selectedThemes)
+    }
+    
+    func tapedFavorit(){
+        selectedFavorite = !selectedFavorite
+        view.selectedFavorite(selectedFavorite: selectedFavorite)
     }
     
     
