@@ -62,7 +62,12 @@ class StartPresenter: StartViewPresenterProtocol {
     }
     
     func selectedAll() {
-        selectedThemes = allThemes
+        if selectedThemes.count == allThemes.count{
+            selectedThemes = []
+        } else {
+            selectedThemes = allThemes
+        }
+        
         view.reloadSelectedThemes(themes: selectedThemes)
     }
     

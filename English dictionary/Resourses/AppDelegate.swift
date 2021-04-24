@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Theme.findCreate(jsonArray: AllThemes.jsonAllContent)
         }
         
+        window = UIWindow(frame: CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size))
+        window?.rootViewController = Builder.route()
+        
         return true
     }
     
