@@ -79,6 +79,7 @@
 		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
 		B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */; };
 		B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */; };
+		B2ACD53626340DD800BC2A36 /* StartViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ACD53526340DD800BC2A36 /* StartViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +157,7 @@
 		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
 		B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordCell.swift; sourceTree = "<group>"; };
 		B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordCell.xib; sourceTree = "<group>"; };
+		B2ACD53526340DD800BC2A36 /* StartViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +351,15 @@
 			isa = PBXGroup;
 			children = (
 				52B909B42561238400FC2908 /* StartViewController.swift */,
+				B2ACD53526340DD800BC2A36 /* StartViewPresenter.swift */,
+				B2ACD534263405C900BC2A36 /* Cells */,
+			);
+			path = StartVC;
+			sourceTree = "<group>";
+		};
+		B2ACD534263405C900BC2A36 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				B283EBDC25737F3100284F55 /* AllWordCell.swift */,
 				B283EBDD25737F3100284F55 /* AllWordCell.xib */,
 				B245748B258604F30038053D /* FavoriteWords.swift */,
@@ -358,7 +369,7 @@
 				B283EBEF2573893300284F55 /* HederCells.swift */,
 				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
-			path = StartVC;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +489,7 @@
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
 				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,
+				B2ACD53626340DD800BC2A36 /* StartViewPresenter.swift in Sources */,
 				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
