@@ -47,11 +47,49 @@ class StartViewController: BaseViewController {
     }
     
 
-	@IBAction func goNewTheme(_ sender: Any) {
-		SearchViewController.presentSertchWord(activeVC: self,
-                                               sectedThemes: selectedAllTheme ? [] : selectedTheme,
-                                               favorite: selectedAllTheme ? false : selectedFavorite)
-	}
+    @IBAction func goNewTheme(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Выберите способ",
+                                      message: nil,
+                                      preferredStyle: .actionSheet)
+
+        
+        alert.addAction(UIAlertAction(title: "Тест Рус -> Англ", style: .default, handler: {[weak self] (_) in
+            guard let selF = self else {return}
+            selF.openSplit(rusEngTranslate: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Тест Англ -> Рус", style: .default, handler: {[weak self] (_) in
+            guard let selF = self else {return}
+            selF.openSplit(rusEngTranslate: false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Зубрешка", style: .default, handler: {[weak self] (_) in
+            
+            guard let selF = self else {return}
+            
+            SearchViewController.presentSertchWord(activeVC: selF,
+                                                   sectedThemes: selF.selectedAllTheme ? [] : selF.selectedTheme,
+                                                   favorite: selF.selectedAllTheme ? false : selF.selectedFavorite)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    private func openSplit(rusEngTranslate: Bool){
+        let SVC = SplitViewController.route(sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
+                                            favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
+                                            rusEngTranslate: rusEngTranslate)
+        SVC.modalPresentationStyle = .fullScreen
+        SVC.delegate = self
+        self.navigationController?.present(SVC, animated: true, completion: nil)
+    }
 	
 	@IBAction func clearAllTheme(_ sender: Any) {
 		selectedTheme = []
@@ -216,4 +254,16 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+}
+
+
+extension StartViewController: UISplitViewControllerDelegate {
+    
+    func splitViewController(_ splitViewController: UISplitViewController,
+                    collapseSecondary secondaryViewController: UIViewController,
+                    onto primaryViewController: UIViewController) -> Bool{
+        
+        return true
+    }
+    
 }

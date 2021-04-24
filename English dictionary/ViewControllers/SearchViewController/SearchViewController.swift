@@ -139,7 +139,8 @@ class SearchViewController: UIViewController {
         self.dataArray = Word.words(text: text,
                                     themes: selectedTheme,
                                     favorite: favorit,
-                                    rusValue: segmentControl.selectedSegmentIndex == 0)
+                                    rusValue: segmentControl.selectedSegmentIndex == 0,
+                                    sorted: true)
         
         UIView.transition(with: self.table,
                           duration: duration,
