@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
-		5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206502725612F2600DBE169 /* SettingsChekViewController.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
 		5265B593258F4D7200AA474E /* December2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B592258F4D7200AA474E /* December2020.swift */; };
 		528272512561275E00A63410 /* EnumStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272482561275E00A63410 /* EnumStoryboard.swift */; };
@@ -57,8 +56,6 @@
 		B24574792585E3730038053D /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574782585E3730038053D /* Subjects.swift */; };
 		B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747B2585E3A50038053D /* FamilyAndHobbies .swift */; };
 		B245747F2585E3C10038053D /* Adjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747E2585E3C10038053D /* Adjectives.swift */; };
-		B24574872585F22B0038053D /* ChekWordInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24574852585F22B0038053D /* ChekWordInfoCell.swift */; };
-		B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24574862585F22B0038053D /* ChekWordInfoCell.xib */; };
 		B245748D258604F30038053D /* FavoriteWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245748B258604F30038053D /* FavoriteWords.swift */; };
 		B245748E258604F30038053D /* FavoriteWords.xib in Resources */ = {isa = PBXBuildFile; fileRef = B245748C258604F30038053D /* FavoriteWords.xib */; };
 		B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */; };
@@ -69,7 +66,6 @@
 		B270152725B1B05700156559 /* CellMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270152525B1B05700156559 /* CellMaster.swift */; };
 		B270152825B1B05700156559 /* CellMaster.xib in Resources */ = {isa = PBXBuildFile; fileRef = B270152625B1B05700156559 /* CellMaster.xib */; };
 		B270152D25B1C45100156559 /* ChekTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270152C25B1C45100156559 /* ChekTestViewController.swift */; };
-		B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27429C72573A8EF005551AD /* ManagerSettings.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
 		B283EBD225737B9000284F55 /* Word+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD025737B9000284F55 /* Word+CD.swift */; };
@@ -81,16 +77,12 @@
 		B283EBE82573852500284F55 /* Theme+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE62573852500284F55 /* Theme+CD.swift */; };
 		B283EBF02573893300284F55 /* HederCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBEF2573893300284F55 /* HederCells.swift */; };
 		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
-		B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABAF2573AFD900F4118E /* ChekViewController.swift */; };
-		B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B295ABB32573B2D000F4118E /* ChekCell.swift */; };
-		B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B295ABB42573B2D000F4118E /* ChekCell.xib */; };
 		B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */; };
 		B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
-		5206502725612F2600DBE169 /* SettingsChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChekViewController.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
 		5265B592258F4D7200AA474E /* December2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = December2020.swift; sourceTree = "<group>"; };
 		528272482561275E00A63410 /* EnumStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumStoryboard.swift; sourceTree = "<group>"; };
@@ -141,8 +133,6 @@
 		B24574782585E3730038053D /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		B245747B2585E3A50038053D /* FamilyAndHobbies .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyAndHobbies .swift"; sourceTree = "<group>"; };
 		B245747E2585E3C10038053D /* Adjectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjectives.swift; sourceTree = "<group>"; };
-		B24574852585F22B0038053D /* ChekWordInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordInfoCell.swift; sourceTree = "<group>"; };
-		B24574862585F22B0038053D /* ChekWordInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordInfoCell.xib; sourceTree = "<group>"; };
 		B245748B258604F30038053D /* FavoriteWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWords.swift; sourceTree = "<group>"; };
 		B245748C258604F30038053D /* FavoriteWords.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteWords.xib; sourceTree = "<group>"; };
 		B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +143,6 @@
 		B270152525B1B05700156559 /* CellMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMaster.swift; sourceTree = "<group>"; };
 		B270152625B1B05700156559 /* CellMaster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellMaster.xib; sourceTree = "<group>"; };
 		B270152C25B1C45100156559 /* ChekTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTestViewController.swift; sourceTree = "<group>"; };
-		B27429C72573A8EF005551AD /* ManagerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSettings.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B283EBD025737B9000284F55 /* Word+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CD.swift"; sourceTree = "<group>"; };
@@ -165,9 +154,6 @@
 		B283EBE62573852500284F55 /* Theme+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CD.swift"; sourceTree = "<group>"; };
 		B283EBEF2573893300284F55 /* HederCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HederCells.swift; sourceTree = "<group>"; };
 		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
-		B295ABAF2573AFD900F4118E /* ChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekViewController.swift; sourceTree = "<group>"; };
-		B295ABB32573B2D000F4118E /* ChekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekCell.swift; sourceTree = "<group>"; };
-		B295ABB42573B2D000F4118E /* ChekCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekCell.xib; sourceTree = "<group>"; };
 		B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordCell.swift; sourceTree = "<group>"; };
 		B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,15 +323,6 @@
 			path = DetailSplit;
 			sourceTree = "<group>";
 		};
-		B27429C62573A8AF005551AD /* SettingsChek */ = {
-			isa = PBXGroup;
-			children = (
-				5206502725612F2600DBE169 /* SettingsChekViewController.swift */,
-				B27429C72573A8EF005551AD /* ManagerSettings.swift */,
-			);
-			path = SettingsChek;
-			sourceTree = "<group>";
-		};
 		B283EBC925737A6F00284F55 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,10 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				B283EBDB25737F0700284F55 /* StartVC */,
-				B27429C62573A8AF005551AD /* SettingsChek */,
 				B270151925B1A62B00156559 /* SplitVC */,
 				52E4D6582586702F003C9DE6 /* SearchViewController */,
-				B295ABB22573B2AB00F4118E /* ChekViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -384,18 +359,6 @@
 				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
 			path = StartVC;
-			sourceTree = "<group>";
-		};
-		B295ABB22573B2AB00F4118E /* ChekViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B295ABAF2573AFD900F4118E /* ChekViewController.swift */,
-				B295ABB32573B2D000F4118E /* ChekCell.swift */,
-				B295ABB42573B2D000F4118E /* ChekCell.xib */,
-				B24574852585F22B0038053D /* ChekWordInfoCell.swift */,
-				B24574862585F22B0038053D /* ChekWordInfoCell.xib */,
-			);
-			path = ChekViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,8 +419,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24574882585F22B0038053D /* ChekWordInfoCell.xib in Resources */,
-				B295ABB62573B2D000F4118E /* ChekCell.xib in Resources */,
 				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */,
@@ -482,7 +443,6 @@
 			files = (
 				B24574652585E2D40038053D /* Food.swift in Sources */,
 				52C5A92225867D09007DE46E /* SearchCell.swift in Sources */,
-				B295ABB52573B2D000F4118E /* ChekCell.swift in Sources */,
 				528272682561277600A63410 /* UIView.swift in Sources */,
 				B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */,
 				B24574732585E33E0038053D /* Prepositions.swift in Sources */,
@@ -496,7 +456,6 @@
 				B283EBD225737B9000284F55 /* Word+CD.swift in Sources */,
 				528272712561277600A63410 /* UIViewController.swift in Sources */,
 				52B909B52561238400FC2908 /* StartViewController.swift in Sources */,
-				B24574872585F22B0038053D /* ChekWordInfoCell.swift in Sources */,
 				528272512561275E00A63410 /* EnumStoryboard.swift in Sources */,
 				B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */,
 				528272552561275E00A63410 /* CustomBBItem.swift in Sources */,
@@ -519,7 +478,6 @@
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
 				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,
-				5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */,
 				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
 				528272742561277600A63410 /* UIApplication.swift in Sources */,
 				5282726D2561277600A63410 /* UITextField.swift in Sources */,
@@ -531,7 +489,6 @@
 				5282726F2561277600A63410 /* String.swift in Sources */,
 				B21BBA3125B164CB002C2DD3 /* Januri2021.swift in Sources */,
 				528272532561275E00A63410 /* DefaultUtils.swift in Sources */,
-				B295ABB02573AFD900F4118E /* ChekViewController.swift in Sources */,
 				B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
@@ -539,7 +496,6 @@
 				5265B593258F4D7200AA474E /* December2020.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
 				52E4D65C258670E0003C9DE6 /* EnumNotification.swift in Sources */,
-				B27429C82573A8EF005551AD /* ManagerSettings.swift in Sources */,
 				52C5A91E25867BA8007DE46E /* SearchDescriptionCell.swift in Sources */,
 				B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */,
 				528272702561277600A63410 /* UIButton.swift in Sources */,

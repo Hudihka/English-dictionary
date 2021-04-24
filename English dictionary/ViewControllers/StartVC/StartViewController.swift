@@ -13,7 +13,6 @@ class StartViewController: BaseViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	@IBOutlet weak var startedChek: UIButton!
-    @IBOutlet weak var seeButton: UIBarButtonItem!
 	@IBOutlet weak var clearThemes: UIBarButtonItem!
 	
     
@@ -30,7 +29,6 @@ class StartViewController: BaseViewController {
         startedChek.isEnabled = false
         startedChek.alpha = 0.2
         
-        seeButton.isEnabled = false
 		clearThemes.isEnabled = false
         
         dataArray = Theme.findAll()
@@ -47,7 +45,31 @@ class StartViewController: BaseViewController {
     }
     
 
-    @IBAction func goNewTheme(_ sender: Any) {
+
+    
+    
+    private func openSplit(rusEngTranslate: Bool){
+        let SVC = SplitViewController.route(sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
+                                            favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
+                                            rusEngTranslate: rusEngTranslate)
+        SVC.modalPresentationStyle = .fullScreen
+        SVC.delegate = self
+        self.navigationController?.present(SVC, animated: true, completion: nil)
+    }
+	
+	@IBAction func clearAllTheme(_ sender: Any) {
+		selectedTheme = []
+		selectedAllTheme = false
+		selectedFavorite = false
+		
+		clearThemes.isEnabled = false
+		startedChek.alpha = 0.2
+        startedChek.isEnabled = false
+		
+		tableView.reloadData()
+	}
+    
+    @IBAction func stratedChek(_ sender: Any) {
         
         let alert = UIAlertController(title: "Выберите способ",
                                       message: nil,
@@ -78,38 +100,6 @@ class StartViewController: BaseViewController {
         
         self.present(alert, animated: true, completion: nil)
         
-        
-    }
-    
-    
-    private func openSplit(rusEngTranslate: Bool){
-        let SVC = SplitViewController.route(sectedThem: self.selectedAllTheme ? [] : self.selectedTheme,
-                                            favoriteSelect: self.selectedAllTheme ? false : self.selectedFavorite,
-                                            rusEngTranslate: rusEngTranslate)
-        SVC.modalPresentationStyle = .fullScreen
-        SVC.delegate = self
-        self.navigationController?.present(SVC, animated: true, completion: nil)
-    }
-	
-	@IBAction func clearAllTheme(_ sender: Any) {
-		selectedTheme = []
-		selectedAllTheme = false
-		selectedFavorite = false
-		
-        seeButton.isEnabled = false
-		clearThemes.isEnabled = false
-		startedChek.alpha = 0.2
-        startedChek.isEnabled = false
-		
-		tableView.reloadData()
-	}
-    
-    @IBAction func stratedChek(_ sender: Any) {
-        ManagerSettings.shared.createTheme(selectedTheme: self.selectedTheme, sertchFavorite: selectedFavorite)
-        
-        let NVC = EnumStoryboard.main.vc("ChekNavigationController")
-        NVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(NVC, animated: true, completion: nil)
     }
     
 	
@@ -224,7 +214,6 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
             selectedEmpty = false
         }
         
-        seeButton.isEnabled = !selectedEmpty
 		clearThemes.isEnabled = !selectedEmpty
         startedChek.alpha = selectedEmpty ? 0.2 : 1
         startedChek.isEnabled = !selectedEmpty
