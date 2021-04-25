@@ -29,6 +29,7 @@
 		528272722561277600A63410 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272632561277600A63410 /* UIWindow.swift */; };
 		528272742561277600A63410 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272652561277600A63410 /* UIApplication.swift */; };
 		528272752561277600A63410 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272662561277600A63410 /* UITextView.swift */; };
+		52B025EA2635A0000001BDFE /* SerchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B025E92635A0000001BDFE /* SerchViewPresenter.swift */; };
 		52B909B12561238400FC2908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B02561238400FC2908 /* AppDelegate.swift */; };
 		52B909B52561238400FC2908 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B909B42561238400FC2908 /* StartViewController.swift */; };
 		52B909BA2561238800FC2908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B909B92561238800FC2908 /* Assets.xcassets */; };
@@ -105,6 +106,7 @@
 		528272632561277600A63410 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		528272652561277600A63410 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		528272662561277600A63410 /* UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		52B025E92635A0000001BDFE /* SerchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchViewPresenter.swift; sourceTree = "<group>"; };
 		52B909AD2561238400FC2908 /* English dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B909B02561238400FC2908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B909B42561238400FC2908 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,17 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		52B025E826359FC50001BDFE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52C5A91C25867BA8007DE46E /* SearchDescriptionCell.swift */,
+				52C5A91D25867BA8007DE46E /* SearchDescriptionCell.xib */,
+				52C5A92025867D09007DE46E /* SearchCell.swift */,
+				52C5A92125867D09007DE46E /* SearchCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		52B909A42561238400FC2908 = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				52E4D65925867078003C9DE6 /* SearchViewController.swift */,
-				52C5A91C25867BA8007DE46E /* SearchDescriptionCell.swift */,
-				52C5A91D25867BA8007DE46E /* SearchDescriptionCell.xib */,
-				52C5A92025867D09007DE46E /* SearchCell.swift */,
-				52C5A92125867D09007DE46E /* SearchCell.xib */,
+				52B025E92635A0000001BDFE /* SerchViewPresenter.swift */,
+				52B025E826359FC50001BDFE /* Cells */,
 			);
 			path = SearchViewController;
 			sourceTree = "<group>";
@@ -485,6 +496,7 @@
 				B283EBE32573829300284F55 /* ThemeCell.swift in Sources */,
 				B245747F2585E3C10038053D /* Adjectives.swift in Sources */,
 				52370709260A41BB00643B60 /* March2021.swift in Sources */,
+				52B025EA2635A0000001BDFE /* SerchViewPresenter.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
 				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  StartViewPresenter.swift
+//  SerchViewPresenter.swift
 //  English dictionary
 //
-//  Created by Админ on 24.04.2021.
+//  Created by Hudihka on 25/04/2021.
 //  Copyright © 2021 OOO MegaStar. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 //выходные значения
-protocol StartViewProtocol: class {
+protocol SertchViewProtocol: class {
     func reloadSelectedThemes(themes: [Theme])
     func allThemes(themes: [Theme])
     func selectedFavorite(selectedFavorite: Bool)
@@ -21,7 +21,7 @@ protocol StartViewProtocol: class {
 //по нажатию на кнопки начинаем обрабатывать
 //события этого протокола
 //этот протокол обьект которого мы создаем в классе
-protocol StartViewPresenterProtocol: class {
+protocol SertchViewPresenterProtocol: class {
     init(view: StartViewProtocol)
     func selected(themes: Theme)
     func tapedFavorit()
@@ -33,16 +33,16 @@ protocol StartViewPresenterProtocol: class {
 
 //это то что инжектим
 
-class StartPresenter: StartViewPresenterProtocol {
+class SertchPresenter: SertchViewPresenterProtocol {
     
-    weak var view: StartViewProtocol?
+    let view: SertchViewProtocol
     
     private var allThemes: [Theme] = []
     private var selectedFavorite = false
     
     var selectedThemes: [Theme] = []
     
-    required init(view: StartViewProtocol) {
+    required init(view: SertchViewProtocol) {
         self.view = view
     }
     
@@ -53,12 +53,12 @@ class StartPresenter: StartViewPresenterProtocol {
             selectedThemes.append(themes)
         }
         
-		view?.reloadSelectedThemes(themes: selectedThemes)
+        view.reloadSelectedThemes(themes: selectedThemes)
     }
     
     func getAllThemes() {
         allThemes = Theme.findAll()
-		view?.allThemes(themes: allThemes)
+        view.allThemes(themes: allThemes)
     }
     
     func selectedAll() {
@@ -68,17 +68,17 @@ class StartPresenter: StartViewPresenterProtocol {
             selectedThemes = allThemes
         }
         
-		view?.reloadSelectedThemes(themes: selectedThemes)
+        view.reloadSelectedThemes(themes: selectedThemes)
     }
     
     func clearAll() {
         selectedThemes = []
-		view?.reloadSelectedThemes(themes: selectedThemes)
+        view.reloadSelectedThemes(themes: selectedThemes)
     }
     
     func tapedFavorit(){
         selectedFavorite = !selectedFavorite
-		view?.selectedFavorite(selectedFavorite: selectedFavorite)
+        view.selectedFavorite(selectedFavorite: selectedFavorite)
     }
     
     
