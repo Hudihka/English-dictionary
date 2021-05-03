@@ -15,6 +15,8 @@ class SearchViewController: UIViewController {
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
 	
+	@IBOutlet weak var switchTranslate: UISwitch!
+	@IBOutlet weak var segentTranslate: UISegmentedControl!
 	@IBOutlet fileprivate var seartchView: UISearchBar!
     
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
@@ -27,6 +29,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 		
         settingsTV()
+		switchTranslate.isOn = presenter.hideTranslate
+		segentTranslate.selectedSegmentIndex = presenter.rusTranslate
         
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         EnumNotification.UIKeyboardWillHide.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
@@ -38,8 +42,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        self.animateReloadData(duration: 0.3)
+        presenter.sertchText(nil)
     }
     
     
@@ -94,6 +97,7 @@ class SearchViewController: UIViewController {
 	
 	@IBAction private func switchAction(_ sender: UISwitch) {
 		presenter.hideSwitch(hide: sender.isOn)
+		animateReloadData(duration: 0.25)
 	}
 	
     @objc private func tapGester() {
@@ -112,6 +116,7 @@ class SearchViewController: UIViewController {
 
 	
 	fileprivate func animateReloadData(duration: TimeInterval = 0){
+		
         UIView.transition(with: self.table,
                           duration: duration,
                           options: .transitionCrossDissolve,

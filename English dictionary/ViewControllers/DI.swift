@@ -43,6 +43,7 @@ class Builder{
 								favorite: Bool) -> UINavigationController{
         
         let NVC = EnumStoryboard.main.vc("SeartchWordNavigationController") as! UINavigationController
+		NVC.modalPresentationStyle = .fullScreen
 		let VC = NVC.viewControllers.first as! SearchViewController
 		let presenter = SertchPresenter(view: VC, selectedTheme: sectedThemes, favorit: favorite)
 		VC.presenter = presenter

@@ -98,7 +98,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Zc1-oj-NaD">
             <objects>
-                <navigationController storyboardIdentifier="SeartchWordNavigationController" wantsFullScreenLayout="YES" id="Rku-fa-Df3" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SeartchWordNavigationController" id="Rku-fa-Df3" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tG6-5V-n8W">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -115,7 +115,7 @@
         <!--Search View Controller-->
         <scene sceneID="Dsf-XX-pRd">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="C3g-jq-3YC" customClass="SearchViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" wantsFullScreenLayout="YES" id="C3g-jq-3YC" customClass="SearchViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbK-na-9rd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,8 @@
                         <outlet property="gestersTap" destination="NkQ-6V-2Hn" id="qcO-UT-Jei"/>
                         <outlet property="labelClear" destination="APr-8K-PYH" id="nGC-mD-JBL"/>
                         <outlet property="seartchView" destination="Ndq-0V-bvT" id="0KR-oP-jlb"/>
+                        <outlet property="segentTranslate" destination="9Cd-OW-yKn" id="pAO-BD-fTy"/>
+                        <outlet property="switchTranslate" destination="qdQ-ws-7yU" id="8Zv-gp-TQw"/>
                         <outlet property="table" destination="Tb2-1G-A7c" id="aKt-US-FgG"/>
                     </connections>
                 </viewController>

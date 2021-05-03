@@ -84,7 +84,7 @@ class SertchPresenter: SertchViewPresenterProtocol {
 	                                    sorted: true)
 	
 		view.allWords(words: self.words)
-		view.hideLabel = self.words.isEmpty
+		view.hideLabel = !self.words.isEmpty
 	}
     
     
