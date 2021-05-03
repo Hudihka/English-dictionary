@@ -132,6 +132,11 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: SertchViewProtocol {
+	func allWordsFavorit(words: [Word]) {
+		dataArray = words
+		animateReloadData()
+	}
+	
 	func reloadTranslate(words: [Word]) {
 		dataArray = words
 		animateReloadData(duration: 0.25)
@@ -194,18 +199,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 		if word.descript != nil {
 			let cell = table.dequeueReusableCell(withIdentifier: "SearchDescriptionCell") as! SearchDescriptionCell
             cell.tupl = tupl
-            cell.blockReloadData = {[weak self] in
-				self?.animateReloadData(duration: 0)
-            }
+			cell.presenter = presenter
+
 			
 			return cell
 		}
 		
         let cell = table.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
         cell.tupl = tupl
-        cell.blockReloadData = {[weak self] in
-			self?.animateReloadData(duration: 0)
-        }
+        cell.presenter = presenter
         
         return cell
     }

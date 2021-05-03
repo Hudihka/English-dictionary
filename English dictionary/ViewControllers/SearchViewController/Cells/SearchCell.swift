@@ -9,8 +9,7 @@
 import UIKit
 
 class SearchCell: UITableViewCell {
-
-    var blockReloadData: () -> () = {  }
+	var presenter: SertchPresenter?
     
     @IBOutlet private weak var labelWord: UILabel!
     @IBOutlet private weak var labelTarnlate: UILabel!
@@ -33,14 +32,7 @@ class SearchCell: UITableViewCell {
 
     
     @IBAction private func actionReloadData(_ sender: Any) {
-        guard let word = tupl?.word else {
-            return
-        }
-        
-        word.favorit = !word.favorit
-        CoreDataManager.shared.saveContext()
-        
-        blockReloadData()
+		presenter?.tapedLike(word: self.tupl?.word)
     }
     
     private func settingsCell(){

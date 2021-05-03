@@ -12,6 +12,7 @@ import UIKit
 //выходные значения
 protocol SertchViewProtocol: class {
     func allWords(words: [Word])
+	func allWordsFavorit(words: [Word])
 	func reloadTranslate(words: [Word])
 	var hideLabel: Bool {get set}
 }
@@ -23,7 +24,7 @@ protocol SertchViewProtocol: class {
 //этот протокол обьект которого мы создаем в классе
 protocol SertchViewPresenterProtocol: class {
     init(view: SertchViewProtocol, selectedTheme: [Theme], favorit: Bool)
-    func tapedLike(word: Word)
+    func tapedLike(word: Word?)
 	func sertchText(_ text: String?)
 	func selectedRussia(rusValue: Int)
 	func hideSwitch(hide: Bool)
@@ -44,7 +45,7 @@ class SertchPresenter: SertchViewPresenterProtocol {
 	var hideTranslate = true
 	var rusTranslate = 0
 	
-	let view: SertchViewProtocol
+	weak var view: SertchViewProtocol?
 	
 	required init(view: SertchViewProtocol, selectedTheme: [Theme], favorit: Bool) {
 		self.view = view
@@ -55,8 +56,14 @@ class SertchPresenter: SertchViewPresenterProtocol {
 		rusTranslate = defUt.translateWay
 	}
 	
-	func tapedLike(word: Word) {
+	func tapedLike(word: Word?) {
+		guard let newWord = word,
+			let index = self.words.firstIndex(of: newWord) else {return}
 		
+        newWord.favorit = !newWord.favorit
+        CoreDataManager.shared.saveContext()
+		words[index] = newWord
+		view?.allWordsFavorit(words: words)
 	}
 	
 	func sertchText(_ text: String?) {
@@ -83,8 +90,8 @@ class SertchPresenter: SertchViewPresenterProtocol {
 	                                    rusValue: rusTranslate == 0,
 	                                    sorted: true)
 	
-		view.allWords(words: self.words)
-		view.hideLabel = !self.words.isEmpty
+		view?.allWords(words: self.words)
+		view?.hideLabel = !self.words.isEmpty
 	}
     
     
