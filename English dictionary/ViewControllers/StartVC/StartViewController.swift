@@ -78,10 +78,9 @@ class StartViewController: BaseViewController {
         alert.addAction(UIAlertAction(title: "Зубрешка", style: .default, handler: {[weak self] (_) in
             
             guard let selF = self else {return}
-            
-            SearchViewController.presentSertchWord(activeVC: selF,
-                                                   sectedThemes: selF.selectedTheme,
-                                                   favorite: selF.selectedFavor)
+			let VC = Builder.routeSertchWord(sectedThemes: selF.selectedTheme,
+											 favorite: selF.selectedFavor)
+			selF.present(VC, animated: true, completion: nil)
         }))
         
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         window = UIWindow(frame: CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size))
-        window?.rootViewController = Builder.route()
+        window?.rootViewController = Builder.routeStart()
         
         return true
     }

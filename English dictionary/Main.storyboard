@@ -206,10 +206,7 @@
                         <outlet property="botomConstreint" destination="pRE-IJ-5hs" id="Apf-vA-DdW"/>
                         <outlet property="gestersTap" destination="NkQ-6V-2Hn" id="qcO-UT-Jei"/>
                         <outlet property="labelClear" destination="APr-8K-PYH" id="nGC-mD-JBL"/>
-                        <outlet property="labelCount" destination="APr-8K-PYH" id="a7q-Ea-w1j"/>
                         <outlet property="seartchView" destination="Ndq-0V-bvT" id="0KR-oP-jlb"/>
-                        <outlet property="segmentControl" destination="9Cd-OW-yKn" id="NQ2-TN-y3R"/>
-                        <outlet property="switchTanslate" destination="qdQ-ws-7yU" id="y7e-fI-vyD"/>
                         <outlet property="table" destination="Tb2-1G-A7c" id="aKt-US-FgG"/>
                     </connections>
                 </viewController>

@@ -15,9 +15,7 @@ class SearchViewController: UIViewController {
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
 	
-	@IBOutlet fileprivate weak var switchTanslate: UISwitch!
 	@IBOutlet fileprivate var seartchView: UISearchBar!
-    @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
     
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
 	
@@ -41,7 +39,7 @@ class SearchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.reloadAllData(text: nil, duration: 0.3)
+        self.animateReloadData(duration: 0.3)
     }
     
     
@@ -86,18 +84,16 @@ class SearchViewController: UIViewController {
 	
 
 	@IBAction func actionSegment(_ sender: UISegmentedControl) {
+		presenter.selectedRussia(rusValue: sender.selectedSegmentIndex)
         self.seartchView.text = ""
         self.seartchView.resignFirstResponder()
-        if !dataArray.isEmpty {
-            table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        }
-        
-        
+//        if !dataArray.isEmpty {
+//            table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+//        }
 	}
 	
-	@IBAction private func switchAction(_ sender: Any) {
-		defUt.hideTranslate = switchTanslate.isOn
-		self.reloadAllData(text: seartchView.text?.textEditor, duration: 0.3)
+	@IBAction private func switchAction(_ sender: UISwitch) {
+		presenter.hideSwitch(hide: sender.isOn)
 	}
 	
     @objc private func tapGester() {
@@ -147,7 +143,7 @@ extension SearchViewController: SertchViewProtocol {
 			labelClear.isHidden = newValue
 		}
 		get{
-			return self.hideLabel
+			return true
 		}
 	}
 	
@@ -187,14 +183,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		let word = dataArray[indexPath.row]
         let tupl: (word: Word, russValue: Bool, hideTranslate: Bool) = (word: word,
-																		russValue: segmentControl.selectedSegmentIndex == 0,
-																		hideTranslate: switchTanslate.isOn)
+																		russValue: presenter.rusTranslate == 0,
+																		hideTranslate: presenter.hideTranslate)
 		
 		if word.descript != nil {
 			let cell = table.dequeueReusableCell(withIdentifier: "SearchDescriptionCell") as! SearchDescriptionCell
             cell.tupl = tupl
-            cell.blockReloadData = {
-                self.reloadAllData(text: self.seartchView.text?.textEditor, duration: 0)
+            cell.blockReloadData = {[weak self] in
+				self?.animateReloadData(duration: 0)
             }
 			
 			return cell
@@ -202,8 +198,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 		
         let cell = table.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
         cell.tupl = tupl
-        cell.blockReloadData = {
-            self.reloadAllData(text: self.seartchView.text?.textEditor, duration: 0)
+        cell.blockReloadData = {[weak self] in
+			self?.animateReloadData(duration: 0)
         }
         
         return cell
@@ -214,7 +210,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if switchTanslate.isOn {
+		if presenter.hideTranslate {
 			
 			if let cell = table.cellForRow(at: indexPath) as? SearchDescriptionCell{
 				cell.showAnimate()
@@ -237,8 +233,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        reloadAllData(text: searchText.textEditor)
+		presenter.sertchText(searchText.textEditor)
     }
     
     
