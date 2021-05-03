@@ -115,7 +115,7 @@
         <!--Search View Controller-->
         <scene sceneID="Dsf-XX-pRd">
             <objects>
-                <viewController storyboardIdentifier="SearchViewController" hidesBottomBarWhenPushed="YES" id="C3g-jq-3YC" customClass="SearchViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="C3g-jq-3YC" customClass="SearchViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mbK-na-9rd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
