@@ -10,7 +10,6 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet fileprivate weak var labelCount: UILabel!
     @IBOutlet fileprivate weak var table: UITableView!
 	@IBOutlet fileprivate weak var labelClear: UILabel!
 	@IBOutlet fileprivate weak var gestersTap: UIView!
@@ -21,18 +20,13 @@ class SearchViewController: UIViewController {
     @IBOutlet fileprivate weak var segmentControl: UISegmentedControl!
     
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
+	
+	var presenter: SertchPresenter!
+	
 	fileprivate var dataArray: [Word] = []
-	
-	fileprivate var selectedTheme = [Theme]()
-    fileprivate var favorit = false
-	
-	fileprivate var defUt = DefaultUtils.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		switchTanslate.isOn = defUt.hideTranslate
-		segmentControl.selectedSegmentIndex = defUt.translateWay
 		
         settingsTV()
         
@@ -48,21 +42,6 @@ class SearchViewController: UIViewController {
         super.viewDidAppear(animated)
         
         self.reloadAllData(text: nil, duration: 0.3)
-    }
-    
-    
-	static func presentSertchWord(activeVC: UIViewController, sectedThemes: [Theme], favorite: Bool){
-        
-        let NVC = EnumStoryboard.main.vc("SeartchWordNavigationController")
-        NVC.modalPresentationStyle = .fullScreen
-		NVC.view.backgroundColor = .white
-		
-		if let nvc = NVC as? UINavigationController, let SVC = nvc.viewControllers.first as? SearchViewController {
-			SVC.selectedTheme = sectedThemes
-			SVC.favorit = favorite
-		}
-        
-        activeVC.present(NVC, animated: true, completion: nil)
     }
     
     
@@ -107,13 +86,12 @@ class SearchViewController: UIViewController {
 	
 
 	@IBAction func actionSegment(_ sender: UISegmentedControl) {
-		self.defUt.translateWay = sender.selectedSegmentIndex
         self.seartchView.text = ""
         self.seartchView.resignFirstResponder()
         if !dataArray.isEmpty {
             table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         }
-        reloadAllData(text: nil, duration: 0.3)
+        
         
 	}
 	
@@ -135,13 +113,9 @@ class SearchViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    fileprivate func reloadAllData(text: String?, duration: TimeInterval = 0){
-        self.dataArray = Word.words(text: text,
-                                    themes: selectedTheme,
-                                    favorite: favorit,
-                                    rusValue: segmentControl.selectedSegmentIndex == 0,
-                                    sorted: true)
-        
+
+	
+	fileprivate func animateReloadData(duration: TimeInterval = 0){
         UIView.transition(with: self.table,
                           duration: duration,
                           options: .transitionCrossDissolve,
@@ -149,12 +123,37 @@ class SearchViewController: UIViewController {
 
             self.table.reloadData()
         })
-    }
+	}
     
     deinit {
-        //
+        print("деинитнули")
     }
 }
+
+extension SearchViewController: SertchViewProtocol {
+	func reloadTranslate(words: [Word]) {
+		dataArray = words
+		animateReloadData(duration: 0.25)
+	}
+	
+	
+	func allWords(words: [Word]) {
+		dataArray = words
+		animateReloadData()
+	}
+	
+	var hideLabel: Bool {
+		set{
+			labelClear.isHidden = newValue
+		}
+		get{
+			return self.hideLabel
+		}
+	}
+	
+}
+
+
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -181,7 +180,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		
-		labelClear.isHidden = !dataArray.isEmpty
         return dataArray.count
     }
 
@@ -239,7 +237,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         
         reloadAllData(text: searchText.textEditor)
     }

@@ -29,7 +29,7 @@ enum EnumStoryboard: String {
 
 class Builder{
     
-    static func route() -> StartViewController {
+    static func routeStart() -> StartViewController {
         let NVC = EnumStoryboard.main.vc("StartedNavigationController") as! UINavigationController
         let VC = NVC.viewControllers.first as! StartViewController
         
@@ -39,6 +39,15 @@ class Builder{
         return VC
     }
     
-    
+	static func routeSertchWord(sectedThemes: [Theme],
+								favorite: Bool) -> SearchViewController{
+        
+        let NVC = EnumStoryboard.main.vc("SeartchWordNavigationController") as! UINavigationController
+		let VC = NVC.viewControllers.first as! SearchViewController
+		let presenter = SertchPresenter(view: VC, selectedTheme: sectedThemes, favorit: favorite)
+		VC.presenter = presenter
+		
+        return VC
+    }
     
 }

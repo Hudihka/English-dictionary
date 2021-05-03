@@ -296,8 +296,8 @@
 		52E4D6582586702F003C9DE6 /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				52E4D65925867078003C9DE6 /* SearchViewController.swift */,
 				52B025E92635A0000001BDFE /* SerchViewPresenter.swift */,
+				52E4D65925867078003C9DE6 /* SearchViewController.swift */,
 				52B025E826359FC50001BDFE /* Cells */,
 			);
 			path = SearchViewController;
