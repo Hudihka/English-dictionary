@@ -13,7 +13,9 @@ class StartViewController: BaseViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	@IBOutlet weak var startedChek: UIButton!
-	@IBOutlet weak var clearThemes: UIBarButtonItem!
+	
+	
+	private var clearThemes: UIBarButtonItem?
     
     var presenter: StartViewPresenterProtocol!
     
@@ -31,6 +33,8 @@ class StartViewController: BaseViewController {
 		super.viewDidLoad()
 		
         presenter.getAllThemes()
+		
+		settingsNavigationBar()
         settingsButtons()
         startedChek.addRadius(number: 8)
         settingsTV()
@@ -54,7 +58,9 @@ class StartViewController: BaseViewController {
         self.navigationController?.present(SVC, animated: true, completion: nil)
     }
 	
-	@IBAction func clearAllTheme(_ sender: Any) {
+	//MARK - Action
+	
+	@objc private func clearAllTheme() {
         presenter.clearAll()
 	}
     
@@ -95,10 +101,20 @@ class StartViewController: BaseViewController {
         startedChek.isEnabled = enabled
         startedChek.alpha = enabled ? 1 : 0.2
         
-        clearThemes.isEnabled = enabled
+        clearThemes?.isEnabled = enabled
     }
     
+	//UI Settings
 	
+	private func settingsNavigationBar(){
+		self.clearThemes = UIBarButtonItem(title: "Сброс",
+										   style: .plain,
+										   target: self,
+										   action: #selector(clearAllTheme))
+		
+		self.clearThemes?.tintColor = UIColor.black
+		self.navigationItem.leftBarButtonItem = self.clearThemes
+	}
 }
 
 extension StartViewController: UITableViewDelegate, UITableViewDataSource{
