@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class StartViewController: BaseViewController {
 
-	@IBOutlet weak var tableView: UITableView!
-	
-	@IBOutlet weak var startedChek: UIButton!
-	
-	
-	private var clearThemes: UIBarButtonItem?
+	private var tableView: UITableView!
+	private var startedChek: UIButton!
+	private var clearThemes: UIBarButtonItem!
     
     var presenter: StartViewPresenterProtocol!
     
@@ -31,13 +29,12 @@ class StartViewController: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		settingsTV()
+		settingsNavigationBar()
+		addDownButton()
 		
         presenter.getAllThemes()
-		
-		settingsNavigationBar()
         settingsButtons()
-        startedChek.addRadius(number: 8)
-        settingsTV()
 	}
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,44 +61,44 @@ class StartViewController: BaseViewController {
         presenter.clearAll()
 	}
     
-    @IBAction func stratedChek(_ sender: Any) {
-        
+    @objc private func stratedChek() {
+
         let alert = UIAlertController(title: "Выберите способ",
                                       message: nil,
                                       preferredStyle: .actionSheet)
 
-        
+
         alert.addAction(UIAlertAction(title: "Тест Рус -> Англ", style: .default, handler: {[weak self] (_) in
             guard let selF = self else {return}
             selF.openSplit(rusEngTranslate: true)
         }))
-        
+
         alert.addAction(UIAlertAction(title: "Тест Англ -> Рус", style: .default, handler: {[weak self] (_) in
             guard let selF = self else {return}
             selF.openSplit(rusEngTranslate: false)
         }))
-        
+
         alert.addAction(UIAlertAction(title: "Зубрешка", style: .default, handler: {[weak self] (_) in
-            
+
             guard let selF = self else {return}
 			let VC = Builder.routeSertchWord(sectedThemes: selF.selectedTheme,
 											 favorite: selF.selectedFavor)
 			selF.present(VC, animated: true, completion: nil)
         }))
-        
+
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-        
-        
+
+
         self.present(alert, animated: true, completion: nil)
-        
+
     }
     
     private func settingsButtons(){
         let enabled = !selectedTheme.isEmpty || selectedFavor
-        startedChek.isEnabled = enabled
-        startedChek.alpha = enabled ? 1 : 0.2
+		startedChek.isEnabled = enabled
+		startedChek.alpha = enabled ? 1 : 0.2
         
-        clearThemes?.isEnabled = enabled
+        clearThemes.isEnabled = enabled
     }
     
 	//UI Settings
@@ -112,14 +109,54 @@ class StartViewController: BaseViewController {
 										   target: self,
 										   action: #selector(clearAllTheme))
 		
-		self.clearThemes?.tintColor = UIColor.black
+		self.clearThemes.tintColor = UIColor.black
 		self.navigationItem.leftBarButtonItem = self.clearThemes
+	}
+	
+	private func addDownButton(){
+		
+		let whiteView = UIView()
+		whiteView.backgroundColor = UIColor.white
+		self.view.addSubview(whiteView)
+		
+		whiteView.snp.makeConstraints { (make) in
+			make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+			make.height.equalTo(64)
+			make.left.equalTo(0)
+			make.right.equalToSuperview()
+		}
+		
+		startedChek = UIButton()
+		startedChek.backgroundColor = UIColor.black
+		startedChek.addTarget(self, action: #selector(stratedChek), for: .touchUpInside)
+		startedChek.addRadius(number: 8)
+		startedChek.setTitle("НАЧАТЬ", for: .normal)
+		startedChek.setTitleColor(UIColor.white, for: .normal)
+		startedChek.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+		whiteView.addSubview(startedChek)
+		
+		startedChek.snp.makeConstraints({ (make) in
+			make.bottom.equalTo(-10)
+			make.top.equalTo(10)
+			make.left.equalTo(20)
+			make.right.equalTo(-20)
+		})
 	}
 }
 
 extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 	
 	fileprivate func settingsTV(){
+		tableView = UITableView(frame: CGRect(), style: .grouped)
+		self.view.addSubview(tableView)
+		tableView.snp.makeConstraints { (make) in
+			make.top.equalToSuperview()
+			make.left.equalToSuperview()
+			make.right.equalToSuperview()
+			make.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-64)
+		}
+		
+		
 		tableView.delegate = self
 		tableView.dataSource = self
 		
