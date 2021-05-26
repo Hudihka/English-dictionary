@@ -30,8 +30,9 @@ enum EnumStoryboard: String {
 class Builder{
     
     static func routeStart() -> UINavigationController {
-        let NVC = EnumStoryboard.main.vc("StartedNavigationController") as! UINavigationController
-        let VC = NVC.viewControllers.first as! StartViewController
+		let VC = StartViewController()
+        let NVC = UINavigationController(rootViewController: VC)
+		NVC.clearBar()
         
         let presenter = StartPresenter(view: VC)
         VC.presenter = presenter

@@ -8,38 +8,6 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="sLs-bq-Wnu">
-            <objects>
-                <navigationController storyboardIdentifier="StartedNavigationController" id="hqd-4t-cx7" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Tj-3K-nSX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yvf-XM-8aI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5JB-j6-c4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-820" y="100"/>
-        </scene>
-        <!--Start View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vpS-BX-haS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="99.107142857142847"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="Zc1-oj-NaD">
             <objects>
                 <navigationController storyboardIdentifier="SeartchWordNavigationController" id="Rku-fa-Df3" customClass="NavigationController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
