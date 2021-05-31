@@ -58,7 +58,6 @@
 		B245747C2585E3A50038053D /* FamilyAndHobbies .swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747B2585E3A50038053D /* FamilyAndHobbies .swift */; };
 		B245747F2585E3C10038053D /* Adjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245747E2585E3C10038053D /* Adjectives.swift */; };
 		B245748D258604F30038053D /* FavoriteWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245748B258604F30038053D /* FavoriteWords.swift */; };
-		B245748E258604F30038053D /* FavoriteWords.xib in Resources */ = {isa = PBXBuildFile; fileRef = B245748C258604F30038053D /* FavoriteWords.xib */; };
 		B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */; };
 		B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B268F03825B5C46900C6B1E5 /* Main.storyboard */; };
 		B270151C25B1A7E600156559 /* MasterSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151B25B1A7E600156559 /* MasterSplitViewController.swift */; };
@@ -138,7 +137,6 @@
 		B245747B2585E3A50038053D /* FamilyAndHobbies .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FamilyAndHobbies .swift"; sourceTree = "<group>"; };
 		B245747E2585E3C10038053D /* Adjectives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adjectives.swift; sourceTree = "<group>"; };
 		B245748B258604F30038053D /* FavoriteWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWords.swift; sourceTree = "<group>"; };
-		B245748C258604F30038053D /* FavoriteWords.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteWords.xib; sourceTree = "<group>"; };
 		B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		B268F03825B5C46900C6B1E5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B270151B25B1A7E600156559 /* MasterSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitViewController.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 			children = (
 				B283EBDC25737F3100284F55 /* AllWordCell.swift */,
 				B245748B258604F30038053D /* FavoriteWords.swift */,
-				B245748C258604F30038053D /* FavoriteWords.xib */,
 				B283EBE12573829300284F55 /* ThemeCell.swift */,
 				B283EBE22573829300284F55 /* ThemeCell.xib */,
 				B283EBEF2573893300284F55 /* HederCells.swift */,
@@ -453,7 +450,6 @@
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */,
 				B270152325B1AC9700156559 /* MasterHeder.xib in Resources */,
-				B245748E258604F30038053D /* FavoriteWords.xib in Resources */,
 				B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */,
 				52C5A91F25867BA8007DE46E /* SearchDescriptionCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,

@@ -163,13 +163,10 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 		tableView.separatorStyle = .none
 		
 		tableView.register(AllWordCell.self, forCellReuseIdentifier: "AllWordCell")
+		tableView.register(FavoriteWords.self, forCellReuseIdentifier: "FavoriteWords")
         
         tableView.register( UINib(nibName: "ThemeCell", bundle: nil),
                         forCellReuseIdentifier: "ThemeCell")
-        
-        tableView.register( UINib(nibName: "FavoriteWords", bundle: nil),
-                        forCellReuseIdentifier: "FavoriteWords")
-        
         
         tableView.register(UINib(nibName: "HederCells", bundle: nil),
                        forHeaderFooterViewReuseIdentifier: "HederCells")
