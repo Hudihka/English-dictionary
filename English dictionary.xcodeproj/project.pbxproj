@@ -10,6 +10,7 @@
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
 		5265B593258F4D7200AA474E /* December2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B592258F4D7200AA474E /* December2020.swift */; };
+		52662F7D2664B298001E5609 /* May2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662F7C2664B298001E5609 /* May2021.swift */; };
 		528272522561275E00A63410 /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528272492561275E00A63410 /* Vibro.swift */; };
 		528272532561275E00A63410 /* DefaultUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724A2561275E00A63410 /* DefaultUtils.swift */; };
 		528272542561275E00A63410 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5282724C2561275E00A63410 /* BaseViewController.swift */; };
@@ -88,6 +89,7 @@
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
 		5265B592258F4D7200AA474E /* December2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = December2020.swift; sourceTree = "<group>"; };
+		52662F7C2664B298001E5609 /* May2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = May2021.swift; sourceTree = "<group>"; };
 		528272492561275E00A63410 /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		5282724A2561275E00A63410 /* DefaultUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultUtils.swift; sourceTree = "<group>"; };
 		5282724C2561275E00A63410 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				B21BBA3025B164CB002C2DD3 /* Januri2021.swift */,
 				52370708260A41BB00643B60 /* March2021.swift */,
 				52023D4A25CE990600052EC1 /* Februaru2021.swift */,
+				52662F7C2664B298001E5609 /* May2021.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
 				B24574762585E3590038053D /* Phrases.swift in Sources */,
 				B270152725B1B05700156559 /* CellMaster.swift in Sources */,
+				52662F7D2664B298001E5609 /* May2021.swift in Sources */,
 				B245748D258604F30038053D /* FavoriteWords.swift in Sources */,
 				B283EBE32573829300284F55 /* ThemeCell.swift in Sources */,
 				B245747F2585E3C10038053D /* Adjectives.swift in Sources */,
