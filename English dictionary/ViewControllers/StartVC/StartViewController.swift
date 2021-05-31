@@ -161,9 +161,8 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 		tableView.dataSource = self
 		
 		tableView.separatorStyle = .none
-        
-        tableView.register(UINib(nibName: "AllWordCell", bundle: nil),
-                       forCellReuseIdentifier: "AllWordCell")
+		
+		tableView.register(AllWordCell.self, forCellReuseIdentifier: "AllWordCell")
         
         tableView.register( UINib(nibName: "ThemeCell", bundle: nil),
                         forCellReuseIdentifier: "ThemeCell")
