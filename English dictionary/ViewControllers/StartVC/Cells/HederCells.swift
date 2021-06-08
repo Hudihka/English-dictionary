@@ -49,6 +49,16 @@ class HederCells: UITableViewHeaderFooterView {
 			make.top.equalTo(10)
 			make.bottom.equalTo(-10)
 		})
+		
+		let viewSeparator = UIView()
+		viewSeparator.backgroundColor = UIColor.black
+		self.contentView.addSubview(viewSeparator)
+		viewSeparator.snp.makeConstraints({ (make) in
+			make.bottom.equalTo(0)
+			make.left.equalTo(0)
+			make.right.equalTo(0)
+			make.height.equalTo(1)
+		})
 	}
 
 }
