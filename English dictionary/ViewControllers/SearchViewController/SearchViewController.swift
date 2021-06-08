@@ -30,7 +30,6 @@ class SearchViewController: UIViewController {
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         EnumNotification.UIKeyboardWillHide.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         
-        labelClear.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,7 +98,7 @@ class SearchViewController: UIViewController {
 		let segentTranslate = UISegmentedControl()
 		segentTranslate.selectedSegmentTintColor = UIColor.white
 		segentTranslate.insertSegment(withTitle: "Рус -> Англ", at: 0, animated: true)
-		segentTranslate.insertSegment(withTitle: "Рус -> Англ", at: 1, animated: true)
+		segentTranslate.insertSegment(withTitle: "Англ -> Рус", at: 1, animated: true)
 		segentTranslate.selectedSegmentIndex = presenter.rusTranslate
 		segentTranslate.addTarget(self, action: #selector(actionSegment(_ :)), for: .valueChanged)
 		
@@ -119,25 +118,28 @@ class SearchViewController: UIViewController {
 		self.view.addSubview(switchTranslate)
 		
 		switchTranslate.snp.makeConstraints { (make) in
-			make.top.equalTo(segentTranslate.snp.bottom).offset(-16)
+			make.top.equalTo(segentTranslate.snp.bottom).offset(16)
 			make.left.equalTo(segentTranslate.snp.left)
 		}
 		
 		let hideTranslate = UILabel()
 		hideTranslate.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-
+		hideTranslate.textColor = UIColor.black
+		hideTranslate.text = "Скрыть перевод"
 		self.view.addSubview(hideTranslate)
 		hideTranslate.snp.makeConstraints({ (make) in
 			make.height.equalTo(31)
-			make.left.equalTo(15)
+			make.left.equalTo(switchTranslate.snp.right).offset(15)
 			make.right.equalTo(-15)
-			make.top.equalTo(16)
+			make.top.equalTo(segentTranslate.snp.bottom).offset(16)
 		})
 		
 		labelClear = UILabel()
 		labelClear.textColor = UIColor.black
 		labelClear.font = UIFont.systemFont(ofSize: 25, weight: .bold)
 		labelClear.textAlignment = .center
+		labelClear.text = "Поиск не дал результатов"
+		labelClear.isHidden = true
 		self.view.addSubview(labelClear)
 		
 		labelClear.snp.makeConstraints({ (make) in
@@ -151,18 +153,20 @@ class SearchViewController: UIViewController {
 		self.view.addSubview(table)
 		
 		table.snp.makeConstraints({ (make) in
-			make.top.equalTo(switchTranslate.snp.bottom).offset(-16)
+			make.top.equalTo(switchTranslate.snp.bottom).offset(16)
 			make.left.equalTo(0)
 			make.right.equalTo(0)
 			make.bottom.equalTo(0)
 		})
 		
 		seartchView = UISearchBar()
+		seartchView.placeholder = "Найти"
         navigationItem.titleView = seartchView
         seartchView.delegate = self
 		
 		gestersTap = UIView()
 		gestersTap.backgroundColor = UIColor.clear
+		gestersTap.isUserInteractionEnabled = false
 		self.view.addSubview(gestersTap)
 		
 		gestersTap.snp.makeConstraints({ (make) in
