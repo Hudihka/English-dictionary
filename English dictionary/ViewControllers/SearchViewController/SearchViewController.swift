@@ -173,11 +173,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         table.backgroundColor = .clear
         table.separatorStyle = .none
         
-        table.register(UINib(nibName: "SearchDescriptionCell", bundle: nil),
-					   forCellReuseIdentifier: "SearchDescriptionCell")
-		
-		table.register(UINib(nibName: "SearchCell", bundle: nil),
-					   forCellReuseIdentifier: "SearchCell")
+		table.register(SearchDescriptionCell.self, forCellReuseIdentifier: "SearchDescriptionCell")
+		table.register(SearchCell.self, forCellReuseIdentifier: "SearchCell")
         
     }
     
@@ -240,7 +237,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		presenter.sertchText(searchText.textEditor)
+//		presenter.sertchText(searchText.textEditor)
     }
     
     
