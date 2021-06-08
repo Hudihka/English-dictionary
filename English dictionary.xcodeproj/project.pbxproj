@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
+		522F7189266F736C00DD7A4D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F7188266F736C00DD7A4D /* BaseCell.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
 		5265B593258F4D7200AA474E /* December2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5265B592258F4D7200AA474E /* December2020.swift */; };
 		52662F7D2664B298001E5609 /* May2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52662F7C2664B298001E5609 /* May2021.swift */; };
@@ -74,7 +75,6 @@
 		B283EBE32573829300284F55 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE12573829300284F55 /* ThemeCell.swift */; };
 		B283EBE82573852500284F55 /* Theme+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE62573852500284F55 /* Theme+CD.swift */; };
 		B283EBF02573893300284F55 /* HederCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBEF2573893300284F55 /* HederCells.swift */; };
-		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
 		B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */; };
 		B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */; };
 		B2ACD53626340DD800BC2A36 /* StartViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ACD53526340DD800BC2A36 /* StartViewPresenter.swift */; };
@@ -84,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
+		522F7188266F736C00DD7A4D /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
 		5265B592258F4D7200AA474E /* December2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = December2020.swift; sourceTree = "<group>"; };
 		52662F7C2664B298001E5609 /* May2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = May2021.swift; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 		B283EBE12573829300284F55 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
 		B283EBE62573852500284F55 /* Theme+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CD.swift"; sourceTree = "<group>"; };
 		B283EBEF2573893300284F55 /* HederCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HederCells.swift; sourceTree = "<group>"; };
-		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
 		B2A1C88A25B54563005B8E3B /* ChekWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekWordCell.swift; sourceTree = "<group>"; };
 		B2A1C88B25B54563005B8E3B /* ChekWordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChekWordCell.xib; sourceTree = "<group>"; };
 		B2ACD53526340DD800BC2A36 /* StartViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewPresenter.swift; sourceTree = "<group>"; };
@@ -190,6 +190,7 @@
 				5282724A2561275E00A63410 /* DefaultUtils.swift */,
 				528272492561275E00A63410 /* Vibro.swift */,
 				52E4D65B258670E0003C9DE6 /* EnumNotification.swift */,
+				522F7188266F736C00DD7A4D /* BaseCell.swift */,
 			);
 			path = "Support classes";
 			sourceTree = "<group>";
@@ -374,7 +375,6 @@
 				B245748B258604F30038053D /* FavoriteWords.swift */,
 				B283EBE12573829300284F55 /* ThemeCell.swift */,
 				B283EBEF2573893300284F55 /* HederCells.swift */,
-				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -443,7 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B283EBF42573895200284F55 /* HederCells.xib in Resources */,
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B2A1C88D25B54563005B8E3B /* ChekWordCell.xib in Resources */,
 				B270152325B1AC9700156559 /* MasterHeder.xib in Resources */,
@@ -498,6 +497,7 @@
 				52370709260A41BB00643B60 /* March2021.swift in Sources */,
 				52B025EA2635A0000001BDFE /* SerchViewPresenter.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
+				522F7189266F736C00DD7A4D /* BaseCell.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
 				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,
 				B2ACD53626340DD800BC2A36 /* StartViewPresenter.swift in Sources */,

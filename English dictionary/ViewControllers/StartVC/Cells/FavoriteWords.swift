@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteWords: UITableViewCell {
+class FavoriteWords: BaseCell {
     
     private var labelFavorite: UILabel!
     private var labelCount: UILabel!
@@ -29,14 +29,14 @@ class FavoriteWords: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		desingUI()
+
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	private func desingUI(){
+	override func desingUI(){
 		
 		labelFavorite = UILabel()
 		labelFavorite.text = "Выбранные слова"

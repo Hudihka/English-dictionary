@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThemeCell: UITableViewCell {
+class ThemeCell: BaseCell {
     
     var labelTheme: UILabel!
     var labelCount: UILabel!
@@ -56,14 +56,13 @@ class ThemeCell: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		desingUI()
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	private func desingUI(){
+	override func desingUI(){
 		
 		labelTheme = UILabel()
 		labelTheme.font = UIFont.systemFont(ofSize: 18, weight: .medium)

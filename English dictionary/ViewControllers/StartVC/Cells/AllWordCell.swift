@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class AllWordCell: UITableViewCell {
+class AllWordCell: BaseCell {
     
 	private var labelAll: UILabel?
     
@@ -22,7 +22,6 @@ class AllWordCell: UITableViewCell {
     
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		desingUI()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -30,7 +29,7 @@ class AllWordCell: UITableViewCell {
 	}
 	
 	
-	private func desingUI(){
+	override func desingUI(){
 		
 		labelAll = UILabel()
 		labelAll?.text = "ВЫБРАТЬ ВСЕ"

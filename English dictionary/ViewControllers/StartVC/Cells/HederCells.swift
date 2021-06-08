@@ -10,10 +10,7 @@ import UIKit
 
 class HederCells: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var titleLable: UILabel!
-    @IBOutlet weak var labelChecVC: UILabel!
-    @IBOutlet weak var separator: UIView!
-    
+    private var titleLable: UILabel!
     
     var text: String? {
         didSet{
@@ -24,8 +21,34 @@ class HederCells: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        labelChecVC.isHidden = true
     }
-    
+	
+	override init(reuseIdentifier: String?) {
+		super.init(reuseIdentifier: reuseIdentifier)
+		desingUI()
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	
+	private func desingUI(){
+		
+		titleLable = UILabel()
+		titleLable.font = UIFont.systemFont(ofSize: 15)
+		titleLable.textColor = UIColor.black
+		titleLable.textAlignment = .right
+
+		self.contentView.addSubview(titleLable)
+		titleLable.snp.makeConstraints({ (make) in
+			make.height.equalTo(20)
+			make.width.greaterThanOrEqualTo(42)
+			
+			make.right.equalTo(-20)
+			make.top.equalTo(10)
+			make.bottom.equalTo(-10)
+		})
+	}
 
 }

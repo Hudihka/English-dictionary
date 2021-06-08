@@ -165,9 +165,8 @@ extension StartViewController: UITableViewDelegate, UITableViewDataSource{
 		tableView.register(AllWordCell.self, forCellReuseIdentifier: "AllWordCell")
 		tableView.register(FavoriteWords.self, forCellReuseIdentifier: "FavoriteWords")
 		tableView.register(ThemeCell.self, forCellReuseIdentifier: "ThemeCell")
-        
-        tableView.register(UINib(nibName: "HederCells", bundle: nil),
-                       forHeaderFooterViewReuseIdentifier: "HederCells")
+		
+		tableView.register(HederCells.self, forHeaderFooterViewReuseIdentifier: "HederCells")
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
