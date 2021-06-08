@@ -10,14 +10,12 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    @IBOutlet fileprivate weak var table: UITableView!
-	var labelClear: UILabel!
-	@IBOutlet fileprivate weak var gestersTap: UIView!
+	fileprivate var table: UITableView!
+	fileprivate var labelClear: UILabel!
+	fileprivate var gestersTap: UIView!
+	fileprivate var seartchView: UISearchBar!
 	
-	
-	@IBOutlet fileprivate var seartchView: UISearchBar!
-    
-	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
+//	fileprivate weak var botomConstreint: NSLayoutConstraint!
 	
 	var presenter: SertchPresenter!
 	
@@ -26,12 +24,11 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		desingUI()
         settingsTV()
         
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         EnumNotification.UIKeyboardWillHide.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
-        
-        settingsSeartchView()
         
         labelClear.isHidden = true
     }
@@ -54,14 +51,6 @@ class SearchViewController: UIViewController {
         gestersTap.isUserInteractionEnabled = addGesters
     }
     
-    private func settingsSeartchView(){
-        navigationItem.titleView = seartchView
-        
-        seartchView.delegate = self
-        
-    }
-
-
     
     //MARK: - actions
     
@@ -72,7 +61,7 @@ class SearchViewController: UIViewController {
             let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
 
 			UIView.animate(withDuration: 0.27, animations: {
-				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
+//				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
 			}) {[weak self] (compl) in
 				if compl {
                     self?.settingsGesters(addGesters: !removeKeyboard)
@@ -82,7 +71,7 @@ class SearchViewController: UIViewController {
     }
 	
 	
-    @objc private func tapGester() {
+	@objc private func tapGester() {
         seartchView.resignFirstResponder()
     }
 	
@@ -150,11 +139,37 @@ class SearchViewController: UIViewController {
 		labelClear.font = UIFont.systemFont(ofSize: 25, weight: .bold)
 		labelClear.textAlignment = .center
 		self.view.addSubview(labelClear)
+		
 		labelClear.snp.makeConstraints({ (make) in
 			make.height.equalTo(44)
 			make.left.equalTo(0)
 			make.right.equalTo(0)
 			make.top.equalTo(273)
+		})
+		
+		table = UITableView()
+		self.view.addSubview(table)
+		
+		table.snp.makeConstraints({ (make) in
+			make.top.equalTo(switchTranslate.snp.bottom).offset(-16)
+			make.left.equalTo(0)
+			make.right.equalTo(0)
+			make.bottom.equalTo(0)
+		})
+		
+		seartchView = UISearchBar()
+        navigationItem.titleView = seartchView
+        seartchView.delegate = self
+		
+		gestersTap = UIView()
+		gestersTap.backgroundColor = UIColor.clear
+		self.view.addSubview(gestersTap)
+		
+		gestersTap.snp.makeConstraints({ (make) in
+			make.top.equalTo(table.snp.top)
+			make.leading.equalTo(table.snp.leading)
+			make.right.equalTo(table.snp.right)
+			make.bottom.equalTo(table.snp.bottom)
 		})
 		
 	}
@@ -286,7 +301,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//		presenter.sertchText(searchText.textEditor)
+		presenter.sertchText(searchText.textEditor)
     }
     
     

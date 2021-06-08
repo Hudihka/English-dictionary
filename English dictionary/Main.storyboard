@@ -31,107 +31,13 @@
                     <view key="view" contentMode="scaleToFill" id="mbK-na-9rd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tb2-1G-A7c">
-                                <rect key="frame" x="0.0" y="115" width="414" height="693"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-OW-yKn">
-                                <rect key="frame" x="16" y="12" width="382" height="41"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hKl-Dq-j6g"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Рус -&gt; Англ"/>
-                                    <segment title="Англ -&gt; Рус"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="actionSegment:" destination="C3g-jq-3YC" eventType="valueChanged" id="CbD-2n-HIV"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск не дал результатов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-8K-PYH">
-                                <rect key="frame" x="0.0" y="273" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="t4s-co-53P"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdQ-ws-7yU">
-                                <rect key="frame" x="20" y="68" width="51" height="31"/>
-                                <color key="onTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <connections>
-                                    <action selector="switchAction:" destination="C3g-jq-3YC" eventType="valueChanged" id="Z1Z-JI-K96"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скрыть перевод" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrg-uB-fof">
-                                <rect key="frame" x="84" y="68" width="314" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="UhE-7p-H0r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkQ-6V-2Hn">
-                                <rect key="frame" x="0.0" y="115" width="414" height="693"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="NkQ-6V-2Hn" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" id="58s-vn-tMm"/>
-                            <constraint firstItem="xrg-uB-fof" firstAttribute="leading" secondItem="qdQ-ws-7yU" secondAttribute="trailing" constant="15" id="9fH-LH-ouP"/>
-                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="top" secondItem="qdQ-ws-7yU" secondAttribute="bottom" constant="16" id="BHL-qh-iGN"/>
-                            <constraint firstItem="NkQ-6V-2Hn" firstAttribute="trailing" secondItem="cgB-Zg-0dX" secondAttribute="trailing" id="IiV-Ld-awd"/>
-                            <constraint firstAttribute="bottom" secondItem="NkQ-6V-2Hn" secondAttribute="bottom" id="Q1T-FV-1JH"/>
-                            <constraint firstItem="NkQ-6V-2Hn" firstAttribute="top" secondItem="qdQ-ws-7yU" secondAttribute="bottom" constant="16" id="TLW-EG-tpI"/>
-                            <constraint firstItem="9Cd-OW-yKn" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" constant="16" id="V88-De-NBO"/>
-                            <constraint firstItem="qdQ-ws-7yU" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="16" id="Wes-BM-k1t"/>
-                            <constraint firstItem="qdQ-ws-7yU" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" constant="20" id="WgC-ws-KSe"/>
-                            <constraint firstItem="9Cd-OW-yKn" firstAttribute="top" secondItem="cgB-Zg-0dX" secondAttribute="top" constant="12" id="Y8Z-4m-4yD"/>
-                            <constraint firstItem="xrg-uB-fof" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="16" id="YF6-yy-2Gv"/>
-                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="leading" secondItem="APr-8K-PYH" secondAttribute="leading" id="fnt-gg-PuC"/>
-                            <constraint firstItem="cgB-Zg-0dX" firstAttribute="trailing" secondItem="9Cd-OW-yKn" secondAttribute="trailing" constant="16" id="hX9-rP-eSj"/>
-                            <constraint firstItem="APr-8K-PYH" firstAttribute="trailing" secondItem="cgB-Zg-0dX" secondAttribute="trailing" id="lp1-9O-6ut"/>
-                            <constraint firstItem="APr-8K-PYH" firstAttribute="leading" secondItem="cgB-Zg-0dX" secondAttribute="leading" id="mWx-JD-wv2"/>
-                            <constraint firstAttribute="bottom" secondItem="Tb2-1G-A7c" secondAttribute="bottom" id="pRE-IJ-5hs"/>
-                            <constraint firstItem="cgB-Zg-0dX" firstAttribute="trailing" secondItem="xrg-uB-fof" secondAttribute="trailing" constant="16" id="thv-aI-0hK"/>
-                            <constraint firstItem="APr-8K-PYH" firstAttribute="top" secondItem="9Cd-OW-yKn" secondAttribute="bottom" constant="221" id="tpE-f3-33j"/>
-                            <constraint firstItem="Tb2-1G-A7c" firstAttribute="trailing" secondItem="APr-8K-PYH" secondAttribute="trailing" id="zmQ-d5-DXy"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cgB-Zg-0dX"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="39V-77-rII">
-                        <barButtonItem key="rightBarButtonItem" title="Отмена" id="sQM-mn-LBE">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="dismiss:" destination="C3g-jq-3YC" id="0KR-gs-tFk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="botomConstreint" destination="pRE-IJ-5hs" id="Apf-vA-DdW"/>
-                        <outlet property="gestersTap" destination="NkQ-6V-2Hn" id="qcO-UT-Jei"/>
-                        <outlet property="labelClear" destination="APr-8K-PYH" id="nGC-mD-JBL"/>
-                        <outlet property="seartchView" destination="Ndq-0V-bvT" id="0KR-oP-jlb"/>
-                        <outlet property="segentTranslate" destination="9Cd-OW-yKn" id="pAO-BD-fTy"/>
-                        <outlet property="switchTranslate" destination="qdQ-ws-7yU" id="8Zv-gp-TQw"/>
-                        <outlet property="table" destination="Tb2-1G-A7c" id="aKt-US-FgG"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="39V-77-rII"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSa-0d-ZYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchBar contentMode="redraw" placeholder="Поиск" id="Ndq-0V-bvT">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
             </objects>
             <point key="canvasLocation" x="2021.7391304347827" y="98.4375"/>
         </scene>
