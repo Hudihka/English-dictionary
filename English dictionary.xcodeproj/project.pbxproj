@@ -72,7 +72,6 @@
 		B283EBD825737D3D00284F55 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBD725737D3D00284F55 /* Constant.swift */; };
 		B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBDC25737F3100284F55 /* AllWordCell.swift */; };
 		B283EBE32573829300284F55 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE12573829300284F55 /* ThemeCell.swift */; };
-		B283EBE42573829300284F55 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBE22573829300284F55 /* ThemeCell.xib */; };
 		B283EBE82573852500284F55 /* Theme+CD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBE62573852500284F55 /* Theme+CD.swift */; };
 		B283EBF02573893300284F55 /* HederCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBEF2573893300284F55 /* HederCells.swift */; };
 		B283EBF42573895200284F55 /* HederCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B283EBF32573895200284F55 /* HederCells.xib */; };
@@ -151,7 +150,6 @@
 		B283EBD725737D3D00284F55 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B283EBDC25737F3100284F55 /* AllWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordCell.swift; sourceTree = "<group>"; };
 		B283EBE12573829300284F55 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
-		B283EBE22573829300284F55 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
 		B283EBE62573852500284F55 /* Theme+CD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+CD.swift"; sourceTree = "<group>"; };
 		B283EBEF2573893300284F55 /* HederCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HederCells.swift; sourceTree = "<group>"; };
 		B283EBF32573895200284F55 /* HederCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HederCells.xib; sourceTree = "<group>"; };
@@ -375,7 +373,6 @@
 				B283EBDC25737F3100284F55 /* AllWordCell.swift */,
 				B245748B258604F30038053D /* FavoriteWords.swift */,
 				B283EBE12573829300284F55 /* ThemeCell.swift */,
-				B283EBE22573829300284F55 /* ThemeCell.xib */,
 				B283EBEF2573893300284F55 /* HederCells.swift */,
 				B283EBF32573895200284F55 /* HederCells.xib */,
 			);
@@ -453,7 +450,6 @@
 				B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */,
 				52C5A91F25867BA8007DE46E /* SearchDescriptionCell.xib in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
-				B283EBE42573829300284F55 /* ThemeCell.xib in Resources */,
 				52C5A92325867D09007DE46E /* SearchCell.xib in Resources */,
 				B270152825B1B05700156559 /* CellMaster.xib in Resources */,
 			);
