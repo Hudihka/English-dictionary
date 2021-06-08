@@ -11,12 +11,10 @@ import UIKit
 class SearchViewController: UIViewController {
     
     @IBOutlet fileprivate weak var table: UITableView!
-	@IBOutlet fileprivate weak var labelClear: UILabel!
+	var labelClear: UILabel!
 	@IBOutlet fileprivate weak var gestersTap: UIView!
 	
 	
-	@IBOutlet weak var switchTranslate: UISwitch!
-	@IBOutlet weak var segentTranslate: UISegmentedControl!
 	@IBOutlet fileprivate var seartchView: UISearchBar!
     
 	@IBOutlet fileprivate weak var botomConstreint: NSLayoutConstraint!
@@ -29,8 +27,6 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 		
         settingsTV()
-		switchTranslate.isOn = presenter.hideTranslate
-		segentTranslate.selectedSegmentIndex = presenter.rusTranslate
         
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         EnumNotification.UIKeyboardWillHide.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
@@ -85,35 +81,11 @@ class SearchViewController: UIViewController {
         }
     }
 	
-
-	@IBAction func actionSegment(_ sender: UISegmentedControl) {
-		presenter.selectedRussia(rusValue: sender.selectedSegmentIndex)
-        self.seartchView.text = ""
-        self.seartchView.resignFirstResponder()
-//        if !dataArray.isEmpty {
-//            table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-//        }
-	}
-	
-	@IBAction private func switchAction(_ sender: UISwitch) {
-		presenter.hideSwitch(hide: sender.isOn)
-		animateReloadData(duration: 0.25)
-	}
 	
     @objc private func tapGester() {
         seartchView.resignFirstResponder()
     }
-
-	@IBAction fileprivate func dismiss(_ sender: Any) {
-        cancel()
-	}
 	
-    fileprivate func cancel(){
-        seartchView.resignFirstResponder()
-        self.navigationController?.dismiss(animated: true, completion: nil)
-    }
-    
-
 	
 	fileprivate func animateReloadData(duration: TimeInterval = 0){
 		
@@ -124,6 +96,83 @@ class SearchViewController: UIViewController {
 
             self.table.reloadData()
         })
+	}
+	
+	private func desingUI(){
+		
+		let RBBI = UIBarButtonItem(title: "Отмена",
+								   style: .plain,
+								   target: self,
+								   action: #selector(cancel))
+		RBBI.tintColor = UIColor.red
+		self.navigationItem.rightBarButtonItem = RBBI
+		
+		let segentTranslate = UISegmentedControl()
+		segentTranslate.selectedSegmentTintColor = UIColor.white
+		segentTranslate.insertSegment(withTitle: "Рус -> Англ", at: 0, animated: true)
+		segentTranslate.insertSegment(withTitle: "Рус -> Англ", at: 1, animated: true)
+		segentTranslate.selectedSegmentIndex = presenter.rusTranslate
+		segentTranslate.addTarget(self, action: #selector(actionSegment(_ :)), for: .valueChanged)
+		
+		self.view.addSubview(segentTranslate)
+		
+		segentTranslate.snp.makeConstraints { (make) in
+			make.top.equalTo(12)
+			make.left.equalTo(16)
+			make.right.equalTo(-16)
+			make.height.equalTo(40)
+		}
+		
+		let switchTranslate = UISwitch()
+		switchTranslate.onTintColor = UIColor.black
+		switchTranslate.isOn = presenter.hideTranslate
+		switchTranslate.addTarget(self, action: #selector(switchAction(_ :)), for: .touchUpInside)
+		self.view.addSubview(switchTranslate)
+		
+		switchTranslate.snp.makeConstraints { (make) in
+			make.top.equalTo(segentTranslate.snp.bottom).offset(-16)
+			make.left.equalTo(segentTranslate.snp.left)
+		}
+		
+		let hideTranslate = UILabel()
+		hideTranslate.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+
+		self.view.addSubview(hideTranslate)
+		hideTranslate.snp.makeConstraints({ (make) in
+			make.height.equalTo(31)
+			make.left.equalTo(15)
+			make.right.equalTo(-15)
+			make.top.equalTo(16)
+		})
+		
+		labelClear = UILabel()
+		labelClear.textColor = UIColor.black
+		labelClear.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+		labelClear.textAlignment = .center
+		self.view.addSubview(labelClear)
+		labelClear.snp.makeConstraints({ (make) in
+			make.height.equalTo(44)
+			make.left.equalTo(0)
+			make.right.equalTo(0)
+			make.top.equalTo(273)
+		})
+		
+	}
+	
+	@objc private func cancel(){
+        seartchView.resignFirstResponder()
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+	
+	@objc private func actionSegment(_ sender: UISegmentedControl) {
+		presenter.selectedRussia(rusValue: sender.selectedSegmentIndex)
+        self.seartchView.text = ""
+        self.seartchView.resignFirstResponder()
+	}
+	
+	@objc private func switchAction(_ sender: UISwitch) {
+		presenter.hideSwitch(hide: sender.isOn)
+		animateReloadData(duration: 0.25)
 	}
     
     deinit {
