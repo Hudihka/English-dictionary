@@ -10,16 +10,16 @@ import UIKit
 
 class ChekTestViewController: BaseViewController {
 
-    @IBOutlet fileprivate weak var labelWord: UILabel!
-    @IBOutlet fileprivate weak var labelTranslate: UILabel!
+	fileprivate var labelWord: UILabel!
+	fileprivate var labelTranslate: UILabel!
     
-    @IBOutlet fileprivate weak var table: UITableView!
+	fileprivate var table: UITableView!
     
     fileprivate var rusEng = true
     
 	var answerWord: AnswerWord? {
         didSet{
-            desingUI()
+            reloadDesing()
         }
     }
     
@@ -27,6 +27,7 @@ class ChekTestViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		desingUI()
         settingsTV()
     }
     
@@ -43,8 +44,51 @@ class ChekTestViewController: BaseViewController {
         return NVC
         
     }
+	
+	private func desingUI(){
+		
+		labelWord = UILabel()
+		labelWord.textColor = UIColor.black
+		labelWord.font = UIFont.systemFont(ofSize: 29, weight: .bold)
+		labelWord.textAlignment = .center
+		labelWord.numberOfLines = 0
+		self.view.addSubview(labelWord)
+		
+		labelWord.snp.makeConstraints({ (make) in
+			make.height.greaterThanOrEqualTo(31)
+			make.left.equalTo(20)
+			make.right.equalTo(-20)
+			make.top.equalTo(150)
+		})
+		
+		labelTranslate = UILabel()
+		labelTranslate.textColor = UIColor.black
+		labelTranslate.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+		labelTranslate.textAlignment = .center
+		labelTranslate.numberOfLines = 0
+		self.view.addSubview(labelTranslate)
+		
+		labelTranslate.snp.makeConstraints({ (make) in
+			make.height.greaterThanOrEqualTo(29)
+			make.left.equalTo(20)
+			make.right.equalTo(-20)
+			make.top.equalTo(labelWord.snp.bottom).offset(20)
+		})
+		
+		table = UITableView()
+		self.view.addSubview(table)
+		
+		table.snp.makeConstraints({ (make) in
+			make.top.equalTo(0)
+			make.left.equalTo(0)
+			make.right.equalTo(0)
+			make.bottom.equalTo(0)
+		})
+		
+		
+	}
     
-    private func desingUI(){
+    private func reloadDesing(){
         loadViewIfNeeded()
         
         guard let answerWord = answerWord, let word = answerWord.word else {
