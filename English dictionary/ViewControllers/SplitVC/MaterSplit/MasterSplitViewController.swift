@@ -112,7 +112,7 @@ class MasterSplitViewController: UITableViewController {
         tableView.register(UINib(nibName: "CellMaster", bundle: nil),
                        forCellReuseIdentifier: "CellMaster")
         
-        tableView.register(UINib(nibName: "MasterHeder", bundle: nil),
+		tableView.register(MasterHeder.self,
                        forHeaderFooterViewReuseIdentifier: "MasterHeder")
         
     }
