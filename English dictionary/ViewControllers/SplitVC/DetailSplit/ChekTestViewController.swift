@@ -85,7 +85,7 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
         table.backgroundColor = .white
         table.separatorStyle = .none
         
-        table.register(UINib(nibName: "ChekWordCell", bundle: nil),
+		table.register(ChekWordCell.self,
                        forCellReuseIdentifier: "ChekWordCell")
         
     }

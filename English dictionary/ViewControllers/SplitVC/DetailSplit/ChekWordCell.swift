@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ChekWordCell: UITableViewCell {
+class ChekWordCell: BaseCell {
     
-    @IBOutlet private weak var textCell: UILabel!
+    private var textCell: UILabel!
     
     var textTranslate: String? {
         didSet{
@@ -37,5 +37,22 @@ class ChekWordCell: UITableViewCell {
         self.contentView.backgroundColor = .white
         self.textCell.textColor          = .black
     }
+	
+	override func desingUI(){
+		
+		textCell = UILabel()
+		textCell.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+		textCell.numberOfLines = 0
+		self.contentView.addSubview(textCell)
+		
+		textCell.snp.makeConstraints({ (make) in
+			make.height.greaterThanOrEqualTo(20)
+			make.left.equalTo(20)
+			make.right.equalTo(-20)
+			make.top.equalTo(12)
+			make.bottom.equalTo(-12)
+		})
+		
+	}
     
 }
