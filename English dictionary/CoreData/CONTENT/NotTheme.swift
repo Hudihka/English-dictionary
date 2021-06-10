@@ -115,7 +115,7 @@ class NotTheme {
         ["engValue" : "stranger", "rusValue" : "посторонний", "descript" : ""],
         ["engValue" : "a meeting", "rusValue" : "встреча", "descript" : ""],
         ["engValue" : "sign", "rusValue" : "знак", "descript" : ""],
-        ["engValue" : "accident", "rusValue" : "авария/несчастный случай", "descript" : ""],
+        ["engValue" : "accident", "rusValue" : "авария/ несчастный случай", "descript" : ""],
         ["engValue" : "space", "rusValue" : "пространство", "descript" : ""]
 	]
 	

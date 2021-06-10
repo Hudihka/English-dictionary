@@ -92,6 +92,7 @@ class SearchCell: BaseCell {
 		
 		
 		labelWord = UILabel()
+		labelWord.numberOfLines = 0
 		labelWord.textColor = UIColor.black
 		labelWord.font = UIFont.systemFont(ofSize: 32, weight: .bold)
 		self.contentView.addSubview(labelWord)
@@ -104,6 +105,7 @@ class SearchCell: BaseCell {
 		
 		labelTarnlate = UILabel()
 		labelTarnlate.textColor = UIColor.black
+		labelTarnlate.numberOfLines = 0
 		labelTarnlate.font = UIFont.systemFont(ofSize: 23)
 		self.contentView.addSubview(labelTarnlate)
 		labelTarnlate.snp.makeConstraints({ (make) in

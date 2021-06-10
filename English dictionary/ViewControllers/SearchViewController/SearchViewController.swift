@@ -12,8 +12,9 @@ class SearchViewController: UIViewController {
     
 	fileprivate var table: UITableView!
 	fileprivate var labelClear: UILabel!
-	fileprivate var gestersTap: UIView!
+//	fileprivate var gestersTap: UIView!
 	fileprivate var seartchView: UISearchBar!
+	fileprivate var switchTranslate: UISwitch!
 	
 //	fileprivate weak var botomConstreint: NSLayoutConstraint!
 	
@@ -29,6 +30,7 @@ class SearchViewController: UIViewController {
         
         EnumNotification.UIKeyboardWillShow.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
         EnumNotification.UIKeyboardWillHide.subscribeNotific(observer: self, selector: #selector(adjustForKeydoard(notification:)))
+		
         
     }
     
@@ -40,37 +42,65 @@ class SearchViewController: UIViewController {
     
     private func settingsGesters(addGesters: Bool){
         
-        if addGesters {
-            let gesters = UITapGestureRecognizer(target: self, action: #selector(tapGester))
-            gestersTap.addGestureRecognizer(gesters)
-        } else {
-            gestersTap.gestureRecognizers?.removeAll()
-        }
+//        if addGesters {
+//            let gesters = UITapGestureRecognizer(target: self, action: #selector(tapGester(_:)))
+//			gestersTap.isUserInteractionEnabled = true
+//            gestersTap.addGestureRecognizer(gesters)
+//        } else {
+//            gestersTap.gestureRecognizers?.removeAll()
+//        }
         
-        gestersTap.isUserInteractionEnabled = addGesters
+//        gestersTap.isUserInteractionEnabled = !addGesters
     }
     
     
     //MARK: - actions
     
     @objc private func adjustForKeydoard(notification: Notification) {
-        
-        if let info = notification.userInfo, let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        self.settingsGesters(addGesters: true)
+		
+//        if let info = notification.userInfo,
+//			let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//
+//            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
+//			let botomConstreint = removeKeyboard ? 0 : -1 * keyboardFrame.height
+//
+//			self.table.snp.makeConstraints({ (make) in
+//				make.top.equalTo(switchTranslate.snp.bottom).offset(16)
+//				make.left.equalTo(0)
+//				make.right.equalTo(0)
+//				make.bottom.equalTo(botomConstreint)
+//			})
 
-            let removeKeyboard = notification.name == UIApplication.keyboardWillHideNotification
 
-			UIView.animate(withDuration: 0.27, animations: {
-//				self.botomConstreint.constant = removeKeyboard ? 0 : keyboardFrame.height
-			}) {[weak self] (compl) in
-				if compl {
-                    self?.settingsGesters(addGesters: !removeKeyboard)
-                }
-			}
-        }
+//			gestersTap.snp.makeConstraints({ (make) in
+//				make.top.equalTo(table.snp.top)
+//				make.leading.equalTo(table.snp.leading)
+//				make.right.equalTo(table.snp.right)
+//				make.bottom.equalTo(table.snp.bottom)
+//			})
+			
+			
+//			UIView.animate(withDuration: 0.27, animations: {
+//				self.view.layoutIfNeeded()
+//			})
+
+//			UIView.animate(withDuration: 0.27, animations: {
+//
+//				self.view.layoutIfNeeded()
+//
+//			}) {[weak self] (compl) in
+//				print("000000000000")
+//				if compl {
+//					print("+++++++++++++++++++++")
+//                    self?.settingsGesters(addGesters: !removeKeyboard)
+//                }
+//			}
+//        }
     }
 	
 	
-	@objc private func tapGester() {
+	@objc private func tapGester(_ sender: UITapGestureRecognizer) {
         seartchView.resignFirstResponder()
     }
 	
@@ -111,7 +141,7 @@ class SearchViewController: UIViewController {
 			make.height.equalTo(40)
 		}
 		
-		let switchTranslate = UISwitch()
+		switchTranslate = UISwitch()
 		switchTranslate.onTintColor = UIColor.black
 		switchTranslate.isOn = presenter.hideTranslate
 		switchTranslate.addTarget(self, action: #selector(switchAction(_ :)), for: .touchUpInside)
@@ -164,17 +194,17 @@ class SearchViewController: UIViewController {
         navigationItem.titleView = seartchView
         seartchView.delegate = self
 		
-		gestersTap = UIView()
-		gestersTap.backgroundColor = UIColor.clear
-		gestersTap.isUserInteractionEnabled = false
-		self.view.addSubview(gestersTap)
-		
-		gestersTap.snp.makeConstraints({ (make) in
-			make.top.equalTo(table.snp.top)
-			make.leading.equalTo(table.snp.leading)
-			make.right.equalTo(table.snp.right)
-			make.bottom.equalTo(table.snp.bottom)
-		})
+//		gestersTap = UIView()
+//		gestersTap.backgroundColor = UIColor.red
+////		gestersTap.isUserInteractionEnabled = false
+//		self.view.addSubview(gestersTap)
+//
+//		gestersTap.snp.makeConstraints({ (make) in
+//			make.top.equalTo(table.snp.top)
+//			make.leading.equalTo(table.snp.leading)
+//			make.right.equalTo(table.snp.right)
+//			make.bottom.equalTo(table.snp.bottom)
+//		})
 		
 	}
 	

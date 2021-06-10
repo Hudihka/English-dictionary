@@ -39,6 +39,7 @@ class HederCells: UITableViewHeaderFooterView {
 		titleLable.font = UIFont.systemFont(ofSize: 15)
 		titleLable.textColor = UIColor.black
 		titleLable.textAlignment = .right
+		titleLable.numberOfLines = 0
 
 		self.contentView.addSubview(titleLable)
 		titleLable.snp.makeConstraints({ (make) in
