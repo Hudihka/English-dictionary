@@ -62,7 +62,6 @@
 		B270151C25B1A7E600156559 /* MasterSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151B25B1A7E600156559 /* MasterSplitViewController.swift */; };
 		B270152025B1AC5600156559 /* MasterHeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270151F25B1AC5600156559 /* MasterHeder.swift */; };
 		B270152725B1B05700156559 /* CellMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270152525B1B05700156559 /* CellMaster.swift */; };
-		B270152825B1B05700156559 /* CellMaster.xib in Resources */ = {isa = PBXBuildFile; fileRef = B270152625B1B05700156559 /* CellMaster.xib */; };
 		B270152D25B1C45100156559 /* ChekTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270152C25B1C45100156559 /* ChekTestViewController.swift */; };
 		B283EBCD25737A6F00284F55 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCA25737A6F00284F55 /* CoreDataManager.swift */; };
 		B283EBCE25737A6F00284F55 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B283EBCB25737A6F00284F55 /* Model.xcdatamodeld */; };
@@ -136,7 +135,6 @@
 		B270151B25B1A7E600156559 /* MasterSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitViewController.swift; sourceTree = "<group>"; };
 		B270151F25B1AC5600156559 /* MasterHeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterHeder.swift; sourceTree = "<group>"; };
 		B270152525B1B05700156559 /* CellMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMaster.swift; sourceTree = "<group>"; };
-		B270152625B1B05700156559 /* CellMaster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellMaster.xib; sourceTree = "<group>"; };
 		B270152C25B1C45100156559 /* ChekTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTestViewController.swift; sourceTree = "<group>"; };
 		B283EBCA25737A6F00284F55 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B283EBCC25737A6F00284F55 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -309,7 +307,6 @@
 				B270151B25B1A7E600156559 /* MasterSplitViewController.swift */,
 				B270151F25B1AC5600156559 /* MasterHeder.swift */,
 				B270152525B1B05700156559 /* CellMaster.swift */,
-				B270152625B1B05700156559 /* CellMaster.xib */,
 			);
 			path = MaterSplit;
 			sourceTree = "<group>";
@@ -434,7 +431,6 @@
 				52B909BD2561238800FC2908 /* LaunchScreen.storyboard in Resources */,
 				B268F03925B5C46900C6B1E5 /* Main.storyboard in Resources */,
 				52B909BA2561238800FC2908 /* Assets.xcassets in Resources */,
-				B270152825B1B05700156559 /* CellMaster.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

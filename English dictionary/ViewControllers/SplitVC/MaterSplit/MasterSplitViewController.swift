@@ -109,7 +109,7 @@ class MasterSplitViewController: UITableViewController {
         tableView.backgroundColor = UIColor(rgb: 0xE9E9E9)
         tableView.separatorStyle = .none
         
-        tableView.register(UINib(nibName: "CellMaster", bundle: nil),
+		tableView.register(CellMaster.self,
                        forCellReuseIdentifier: "CellMaster")
         
 		tableView.register(MasterHeder.self,
