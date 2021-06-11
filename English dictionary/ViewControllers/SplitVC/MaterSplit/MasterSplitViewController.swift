@@ -40,8 +40,7 @@ class MasterSplitViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
-        
+        desingUI()
         settingsTV()
     }
     
@@ -84,7 +83,7 @@ class MasterSplitViewController: UITableViewController {
 	
     
 
-    @IBAction fileprivate func dismiss(_ sender: Any) {
+	@objc fileprivate func dismissVC() {
         SplitViewController.activeSplitVC = true
         self.navigationController?.splitViewController?.dismiss(animated: true, completion: nil)
     }
@@ -101,6 +100,20 @@ class MasterSplitViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
+	
+	private func desingUI(){
+		self.view.backgroundColor = .white
+		
+		self.title = "Выбранные слова"
+		
+		let LBBI = UIBarButtonItem(title: "Отмена",
+								   style: .plain,
+								   target: self,
+								   action: #selector(dismissVC))
+								   
+		LBBI.tintColor = UIColor.red
+		self.navigationItem.leftBarButtonItem = LBBI
+	}
     
     
     fileprivate func settingsTV(){

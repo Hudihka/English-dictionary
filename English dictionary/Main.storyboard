@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="2021.7391304347827" y="98.4375"/>
         </scene>
-        <!--Выбранные слова-->
+        <!--Master Split View Controller-->
         <scene sceneID="c1t-et-R8K">
             <objects>
                 <tableViewController storyboardIdentifier="MasterSplitViewController" id="c3b-pA-ct8" customClass="MasterSplitViewController" customModule="English_dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,14 +54,7 @@
                             <outlet property="delegate" destination="c3b-pA-ct8" id="Vdy-4J-1Uv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Выбранные слова" id="bfD-3f-in8">
-                        <barButtonItem key="leftBarButtonItem" title="Назад" id="53O-Wl-0we">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="dismiss:" destination="c3b-pA-ct8" id="Pd3-HL-xFK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="bfD-3f-in8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Th-Xx-F8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,51 +67,10 @@
                     <view key="view" contentMode="scaleToFill" id="t7Z-Tb-4br">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-BG-aVx">
-                                <rect key="frame" x="20" y="253.66666666666666" width="374" height="31.333333333333343"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="3qL-3Z-sXc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpR-Xc-xub">
-                                <rect key="frame" x="20" y="194" width="374" height="34.666666666666657"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="4EH-SG-ZKF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="XIS-gm-PfP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="OpR-Xc-xub" firstAttribute="leading" secondItem="cow-2y-FCK" secondAttribute="leading" constant="20" id="F2L-6A-kXe"/>
-                            <constraint firstItem="OpR-Xc-xub" firstAttribute="top" secondItem="cow-2y-FCK" secondAttribute="top" constant="150" id="YfH-YU-LEI"/>
-                            <constraint firstItem="XIS-gm-PfP" firstAttribute="bottom" secondItem="cow-2y-FCK" secondAttribute="bottom" id="abb-VQ-Dcy"/>
-                            <constraint firstItem="fdy-BG-aVx" firstAttribute="top" secondItem="OpR-Xc-xub" secondAttribute="bottom" constant="25" id="dYM-3d-N9c"/>
-                            <constraint firstItem="cow-2y-FCK" firstAttribute="trailing" secondItem="fdy-BG-aVx" secondAttribute="trailing" constant="20" id="oAc-gK-oJ9"/>
-                            <constraint firstItem="fdy-BG-aVx" firstAttribute="leading" secondItem="cow-2y-FCK" secondAttribute="leading" constant="20" id="q5j-qI-UWg"/>
-                            <constraint firstItem="XIS-gm-PfP" firstAttribute="trailing" secondItem="cow-2y-FCK" secondAttribute="trailing" id="tPM-q7-bAE"/>
-                            <constraint firstItem="XIS-gm-PfP" firstAttribute="top" secondItem="cow-2y-FCK" secondAttribute="top" id="tbA-rs-E8c"/>
-                            <constraint firstItem="XIS-gm-PfP" firstAttribute="leading" secondItem="cow-2y-FCK" secondAttribute="leading" id="wns-Ke-dxk"/>
-                            <constraint firstItem="cow-2y-FCK" firstAttribute="trailing" secondItem="OpR-Xc-xub" secondAttribute="trailing" constant="20" id="wzm-vk-YcX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cow-2y-FCK"/>
                     </view>
                     <navigationItem key="navigationItem" id="t0h-5Z-eQO"/>
-                    <connections>
-                        <outlet property="labelTranslate" destination="fdy-BG-aVx" id="cPg-n6-RjG"/>
-                        <outlet property="labelWord" destination="OpR-Xc-xub" id="RHa-Qc-vt7"/>
-                        <outlet property="table" destination="XIS-gm-PfP" id="Geu-Qc-aaB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3v-oS-40i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
