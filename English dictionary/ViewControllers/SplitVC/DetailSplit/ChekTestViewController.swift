@@ -34,7 +34,7 @@ class ChekTestViewController: BaseViewController {
     @discardableResult static func route(answerWord: AnswerWord?,
                                         rusEngTranslate: Bool) -> UINavigationController {
         
-        let VC = EnumStoryboard.main.vc("ChekTestViewController") as! ChekTestViewController
+        let VC = ChekTestViewController()
         
         VC.answerWord  = answerWord
         VC.rusEng    = rusEngTranslate

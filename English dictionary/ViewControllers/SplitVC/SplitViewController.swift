@@ -10,38 +10,10 @@ import UIKit
 
 class SplitViewController: UISplitViewController{
     
-    fileprivate var dataArray: [Word] = []
-    fileprivate var rusEng = true
+	var dataArray: [Word] = []
+	var rusEng = true
     
     static var activeSplitVC = false
-    
-    static func route(sectedThem: [Theme],
-                      favoriteSelect: Bool,
-                      rusEngTranslate: Bool) -> SplitViewController{
-        
-        let SVC = EnumStoryboard.main.vc("SplitViewController") as! SplitViewController
-        
-        let dataArray = Word.words(text: nil,
-                                   themes: sectedThem,
-                                   favorite: favoriteSelect,
-								   rusValue: nil,
-								   sorted: false)//будет постоянно рандом
-		
-//		https://developer.apple.com/documentation/uikit/uisplitviewcontrollerdelegate/1623176-splitviewcontroller
-        
-		SVC.rusEng = rusEngTranslate
-        
-        let tupl = MasterSplitViewController.route(dataArray: dataArray, rusEngTranslate: rusEngTranslate)
-        
-		let answer = tupl.master.answers.first?.value
-		
-        let NDVC = ChekTestViewController.route(answerWord: answer, rusEngTranslate: rusEngTranslate)
-        
-		SVC.viewControllers = [tupl.nav, NDVC]
-        SVC.preferredDisplayMode = .allVisible
-        
-        return SVC
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

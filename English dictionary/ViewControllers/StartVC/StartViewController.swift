@@ -46,7 +46,7 @@ class StartViewController: BaseViewController {
     
     
     private func openSplit(rusEngTranslate: Bool){
-        let SVC = SplitViewController.route(sectedThem: selectedTheme,
+		let SVC = Builder.routeSplitVC(sectedThem: selectedTheme,
                                             favoriteSelect: selectedFavor,
                                             rusEngTranslate: rusEngTranslate)
         

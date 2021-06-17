@@ -31,10 +31,10 @@ struct AnswerWord {
 
 class MasterSplitViewController: UITableViewController {
     
-    fileprivate var dataArray: [Word] = []
+	var dataArray: [Word] = []
 	var answers = [String : AnswerWord]()
     
-    fileprivate var rusEng = true
+	var rusEng = true
     
 
     override func viewDidLoad() {
@@ -51,26 +51,26 @@ class MasterSplitViewController: UITableViewController {
     }
     
     
-    @discardableResult static func route(dataArray: [Word],
-										 rusEngTranslate: Bool) -> (nav: UINavigationController,
-																	master: MasterSplitViewController) {
-        
-        let NVC = EnumStoryboard.main.vc("SplitNavigationController") as! UINavigationController
-        NVC.modalPresentationStyle = .fullScreen
-        NVC.view.backgroundColor = .white
-        
-        let MVC = NVC.viewControllers.first as! MasterSplitViewController
-        
-        MVC.rusEng = rusEngTranslate
-        MVC.dataArray = dataArray
-		
-		if let word = dataArray.first, let id = word.id {
-			MVC.answers = [id : AnswerWord(word: word, wordsArray: dataArray)]
-		}
-        
-        return (nav: NVC, master: MVC)
-        
-    }
+//    @discardableResult static func route(dataArray: [Word],
+//										 rusEngTranslate: Bool) -> (nav: UINavigationController,
+//																	master: MasterSplitViewController) {
+//
+//
+//		let MVC = MasterSplitViewController()
+//		MVC.rusEng = rusEngTranslate
+//		MVC.dataArray = dataArray
+//
+//		if let word = dataArray.first, let id = word.id {
+//			MVC.answers = [id : AnswerWord(word: word, wordsArray: dataArray)]
+//		}
+//
+//		let NVC = UINavigationController()
+//		NVC.modalPresentationStyle = .fullScreen
+//		NVC.view.backgroundColor = .white
+//
+//        return (nav: NVC, master: MVC)
+//
+//    }
 	
 	func messageAnswer(idWord: String, answer: Bool){
 		if var struc = answers[idWord]{
