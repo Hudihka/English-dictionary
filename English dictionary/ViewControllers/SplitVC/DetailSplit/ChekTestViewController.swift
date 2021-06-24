@@ -8,21 +8,21 @@
 
 import UIKit
 
-class ChekTestViewController: BaseViewController {
+class ChekTestViewController: BaseViewController, ChekTestProtocol {
 
 	fileprivate var labelWord: UILabel!
 	fileprivate var labelTranslate: UILabel!
     
 	fileprivate var table: UITableView!
-    
     fileprivate var rusEng = true
     
-	var answerWord: AnswerWord? {
+    var answerWord: AnswerWord? {
         didSet{
             reloadDesing()
         }
     }
     
+    var presenter: ChekTestPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +31,19 @@ class ChekTestViewController: BaseViewController {
         settingsTV()
     }
     
-    @discardableResult static func route(answerWord: AnswerWord?,
-                                        rusEngTranslate: Bool) -> UINavigationController {
-        
-        let VC = ChekTestViewController()
-        
-        VC.answerWord  = answerWord
-        VC.rusEng    = rusEngTranslate
-
-		let NVC = UINavigationController(rootViewController: VC)
-        
-        return NVC
-        
-    }
+//    @discardableResult static func route(answerWord: AnswerWord?,
+//                                        rusEngTranslate: Bool) -> UINavigationController {
+//
+//        let VC = ChekTestViewController()
+//
+//        VC.answerWord  = answerWord
+//        VC.rusEng    = rusEngTranslate
+//
+//		let NVC = UINavigationController(rootViewController: VC)
+//
+//        return NVC
+//
+//    }
 	
 	private func desingUI(){
 		
@@ -156,36 +156,34 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-		
-		guard let answerWord = answerWord, let word = answerWord.word else {
-			return
-		}
         
-		if let cell = tableView.cellForRow(at: indexPath) as? ChekWordCell {
+        if let words = answerWord?.words {
             
             table.isUserInteractionEnabled = false
-			let id = answerWord.words[indexPath.row].id
-			let answer = id == word.id
             
-//            сообщаем ответ
-			reloadSplitMasterVC(idWord: word.id ?? "", answer: answer)
-            cell.colorSelected(answerTrue: answer)
-			
-			self.table.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-			
-			UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: [], animations: {
-				self.table.alpha = 0
-			}) {[weak self] (com) in
-				if com {
-					self?.table.isHidden = true
-				}
-			}
+            let selectedWord = words[indexPath.row]
+            let answer = self.answerWord?.chekAnswer(word: selectedWord) ?? false
+            
+            if let cell = tableView.cellForRow(at: indexPath) as? ChekWordCell {
+                cell.colorSelected(answerTrue: answer)
+            }
+            
+            
+            
+            UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: [], animations: {
+                self.table.alpha = 0
+            }) {[weak self] (com) in
+                if com {
+                    self?.table.isHidden = true
+                }
+            }
+            
         }
+        
+
     }
 	
-	private func reloadSplitMasterVC(idWord: String, answer: Bool){
-		if let split = self.navigationController?.splitViewController as? SplitViewController{
-			split.reloadMasterVC(idWord: idWord, answer: answer)
-		}
-	}
+
 }
+
+

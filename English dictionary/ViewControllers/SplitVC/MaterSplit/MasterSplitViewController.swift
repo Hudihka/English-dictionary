@@ -8,26 +8,6 @@
 
 import UIKit
 
-struct AnswerWord {
-	var word: Word?
-	var words = [Word]()
-	var answer: Bool?
-	
-	init(word: Word, wordsArray: [Word]) {
-		self.word = word
-		
-		var words = wordsArray.filter({$0.id != word.id})[randomPick: 10]
-        let randomIndex = arc4random() % 10
-        words[Int(randomIndex)] = word
-		self.words = words
-	}
-	
-	mutating func answer(answer: Bool) {
-		self.answer = answer
-		self.words = []
-	}
-	
-}
 
 class MasterSplitViewController: UITableViewController {
     
