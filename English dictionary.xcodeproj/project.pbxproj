@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		45AB079E268497B90091DCC0 /* AnswerWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB079D268497B90091DCC0 /* AnswerWord.swift */; };
 		45AB07A0268498C20091DCC0 /* ChekTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB079F268498C20091DCC0 /* ChekTestPresenter.swift */; };
+		45AB07A22684B6990091DCC0 /* MasterSplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB07A12684B6990091DCC0 /* MasterSplitPresenter.swift */; };
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
 		522F7189266F736C00DD7A4D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F7188266F736C00DD7A4D /* BaseCell.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		45AB079D268497B90091DCC0 /* AnswerWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWord.swift; sourceTree = "<group>"; };
 		45AB079F268498C20091DCC0 /* ChekTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTestPresenter.swift; sourceTree = "<group>"; };
+		45AB07A12684B6990091DCC0 /* MasterSplitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitPresenter.swift; sourceTree = "<group>"; };
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
 		522F7188266F736C00DD7A4D /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				B270151B25B1A7E600156559 /* MasterSplitViewController.swift */,
 				B270151F25B1AC5600156559 /* MasterHeder.swift */,
 				B270152525B1B05700156559 /* CellMaster.swift */,
+				45AB07A12684B6990091DCC0 /* MasterSplitPresenter.swift */,
 			);
 			path = MaterSplit;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				528272692561277600A63410 /* Array.swift in Sources */,
 				5282726B2561277600A63410 /* NSObject.swift in Sources */,
 				B245746D2585E30B0038053D /* Time.swift in Sources */,
+				45AB07A22684B6990091DCC0 /* MasterSplitPresenter.swift in Sources */,
 				52B909B12561238400FC2908 /* AppDelegate.swift in Sources */,
 				B24574762585E3590038053D /* Phrases.swift in Sources */,
 				B270152725B1B05700156559 /* CellMaster.swift in Sources */,

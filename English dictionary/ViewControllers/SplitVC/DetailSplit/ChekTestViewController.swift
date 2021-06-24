@@ -31,20 +31,7 @@ class ChekTestViewController: BaseViewController, ChekTestProtocol {
         settingsTV()
     }
     
-//    @discardableResult static func route(answerWord: AnswerWord?,
-//                                        rusEngTranslate: Bool) -> UINavigationController {
-//
-//        let VC = ChekTestViewController()
-//
-//        VC.answerWord  = answerWord
-//        VC.rusEng    = rusEngTranslate
-//
-//		let NVC = UINavigationController(rootViewController: VC)
-//
-//        return NVC
-//
-//    }
-	
+
 	private func desingUI(){
 		
 		labelWord = UILabel()
@@ -168,7 +155,7 @@ extension ChekTestViewController: UITableViewDelegate, UITableViewDataSource{
                 cell.colorSelected(answerTrue: answer)
             }
             
-            
+            presenter.selecte(answer: answer)
             
             UIView.animateKeyframes(withDuration: 0.3, delay: 0.1, options: [], animations: {
                 self.table.alpha = 0

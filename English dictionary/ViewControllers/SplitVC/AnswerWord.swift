@@ -13,14 +13,24 @@ struct AnswerWord {
     var words = [Word]()
     var answer: Bool?
     
-    init(word: Word, wordsArray: [Word]) {
+    init(word: Word) {
         self.word = word
+    }
+    
+    mutating func addWordsArray(wordsArray: [Word]) {
+        if answer != nil {
+            return
+        }
+        
         
         var words = wordsArray.filter({$0.id != word.id})[randomPick: 10]
         let randomIndex = arc4random() % 10
         words[Int(randomIndex)] = word
+        
         self.words = words
     }
+    
+    
     
     mutating func answer(answer: Bool) {
         self.answer = answer

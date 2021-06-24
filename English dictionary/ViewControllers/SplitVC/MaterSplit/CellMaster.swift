@@ -13,21 +13,28 @@ class CellMaster: BaseCell {
     private var labelText: UILabel!
     private var labelTranslate: UILabel!
     
-    var wordAndTranslate: (word: Word, rusEngl: Bool)?{
+    
+    var wordAndTranslate: (answer: AnswerWord, rusEngl: Bool)?{
         didSet{
             if let tulp = wordAndTranslate {
-                labelText.text      =  tulp.rusEngl ? tulp.word.rusValue : tulp.word.engValue
-                labelTranslate.text = !tulp.rusEngl ? tulp.word.rusValue : tulp.word.engValue
+                
+                let rusValue = tulp.answer.word.rusValue
+                let engValue = tulp.answer.word.engValue
+                
+                labelText.text      =  tulp.rusEngl ? rusValue : engValue
+                labelTranslate.text = !tulp.rusEngl ? rusValue : engValue
+                
+                colorContentDependsAnswer(answer: tulp.answer.answer)
             }
         }
     }
     
-    var trueAnswer: Bool? = nil {
-        didSet{
+    
+    private func colorContentDependsAnswer(answer: Bool?){
             
             colorContent()
             
-            if let trueAnswer = trueAnswer {
+            if let trueAnswer = answer {
                 self.contentView.backgroundColor = trueAnswer ? .green : .red
                 self.labelTranslate.isHidden  = false
                 
@@ -36,8 +43,8 @@ class CellMaster: BaseCell {
                     self.labelTranslate.textColor = .white
                 }
             }
-        }
     }
+    
     
     private func colorContent(){
         self.contentView.backgroundColor = UIColor(rgb: 0xE9E9E9)

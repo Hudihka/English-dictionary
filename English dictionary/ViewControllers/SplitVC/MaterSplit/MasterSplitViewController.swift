@@ -9,14 +9,18 @@
 import UIKit
 
 
-class MasterSplitViewController: UITableViewController {
+class MasterSplitViewController: UITableViewController, MasterSplitProtocol {
     
-	var dataArray: [Word] = []
-	var answers = [String : AnswerWord]()
+    var dataArray: [AnswerWord] = [] {
+        didSet{
+            self.tableView.reloadData()
+        }
+    }
+    
+    var presenter: MasterSplitPresenter!
     
 	var rusEng = true
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,39 +33,7 @@ class MasterSplitViewController: UITableViewController {
         
         self.reloadAllData(duration: 0.3)
     }
-    
-    
-//    @discardableResult static func route(dataArray: [Word],
-//										 rusEngTranslate: Bool) -> (nav: UINavigationController,
-//																	master: MasterSplitViewController) {
-//
-//
-//		let MVC = MasterSplitViewController()
-//		MVC.rusEng = rusEngTranslate
-//		MVC.dataArray = dataArray
-//
-//		if let word = dataArray.first, let id = word.id {
-//			MVC.answers = [id : AnswerWord(word: word, wordsArray: dataArray)]
-//		}
-//
-//		let NVC = UINavigationController()
-//		NVC.modalPresentationStyle = .fullScreen
-//		NVC.view.backgroundColor = .white
-//
-//        return (nav: NVC, master: MVC)
-//
-//    }
 	
-	func messageAnswer(idWord: String, answer: Bool){
-		if var struc = answers[idWord]{
-			struc.answer(answer: answer)
-			answers[idWord] = struc
-			tableView.reloadData()
-		}
-	}
-	
-	
-    
 
 	@objc fileprivate func dismissVC() {
         SplitViewController.activeSplitVC = true
@@ -117,17 +89,12 @@ class MasterSplitViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let word = dataArray[indexPath.row]
-        let tupl: (word: Word, rusEngl: Bool) = (word: word, rusEngl: rusEng)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellMaster") as! CellMaster
         
+        let answer = dataArray[indexPath.row]
+        let tupl: (answer: AnswerWord, rusEngl: Bool) = (answer: answer, rusEngl: rusEng)
+        
         cell.wordAndTranslate = tupl
-		cell.trueAnswer = nil
-		
-		if let id = word.id, let answer = answers[id]?.answer{
-			cell.trueAnswer = answer
-		}
         
         return cell
     }
@@ -139,43 +106,32 @@ class MasterSplitViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let word = dataArray[indexPath.row]
+        let answer = dataArray[indexPath.row]
 		
-		guard let id = word.id else {return}
-		
-		if let struc = answers[id]{
-			collDetailSplit(answer: struc)
-			return
-		}
-		
-		let answer = AnswerWord(word: word, wordsArray: dataArray)
-		self.answers[id] = answer
-		collDetailSplit(answer: answer)
         
     }
-	
-	private func collDetailSplit(answer: AnswerWord){
-		if let split = self.navigationController?.splitViewController as? SplitViewController{
-			split.reloadDetailVC(answerWord: answer)
-		}
-	}
     
     //heder
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MasterHeder") as! MasterHeder
-        
-		let answersArray = answers.values.compactMap({$0.answer})
-		
-		cell.countTrue  = answersArray.filter({$0 == true}).count
-        cell.countFalse = answersArray.filter({$0 == false}).count
-        cell.count      = dataArray.count
+        cell.count = dataArray.count
         
         return cell
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 84
+    }
+    
+    
+    func counnt(trueCount: Int, falseCount: Int) {
+        
+        if let heder = tableView.tableHeaderView as? MasterHeder{
+            heder.countTrue  = trueCount
+            heder.countFalse = falseCount
+        }
+        
     }
 
 }
