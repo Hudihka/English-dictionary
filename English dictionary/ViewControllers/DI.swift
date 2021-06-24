@@ -80,7 +80,7 @@ class Builder{
 		}
 	
     
-    private static func routeMasterSplit(dataArray: [Word],
+    private static func routeMasterSplit(dataArray: [AnswerWord],
 										 rusEngTranslate: Bool) -> UINavigationController {
         
 																		
@@ -88,9 +88,6 @@ class Builder{
 		MVC.rusEng = rusEngTranslate
 		MVC.dataArray = dataArray
 		
-		if let word = dataArray.first, let id = word.id {
-			MVC.answers = [id : AnswerWord(word: word, wordsArray: dataArray)]
-		}
 																		
 		let NVC = UINavigationController(rootViewController: MVC)
 		NVC.modalPresentationStyle = .fullScreen
@@ -99,5 +96,23 @@ class Builder{
         return NVC
         
     }
+    
+    private static func routeDetailSplit(dataArray: [AnswerWord],
+                                         rusEngTranslate: Bool) -> UINavigationController {
+        
+                                                                        
+        let MVC = MasterSplitViewController()
+        MVC.rusEng = rusEngTranslate
+        MVC.dataArray = dataArray
+        
+                                                                        
+        let NVC = UINavigationController(rootViewController: MVC)
+        NVC.modalPresentationStyle = .fullScreen
+        NVC.view.backgroundColor = .white
+        
+        return NVC
+        
+    }
+    
 	
 }

@@ -10,6 +10,7 @@
 		45AB079E268497B90091DCC0 /* AnswerWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB079D268497B90091DCC0 /* AnswerWord.swift */; };
 		45AB07A0268498C20091DCC0 /* ChekTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB079F268498C20091DCC0 /* ChekTestPresenter.swift */; };
 		45AB07A22684B6990091DCC0 /* MasterSplitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB07A12684B6990091DCC0 /* MasterSplitPresenter.swift */; };
+		45AB07A52684CD870091DCC0 /* SplitViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AB07A42684CD870091DCC0 /* SplitViewPresenter.swift */; };
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
 		522F7189266F736C00DD7A4D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F7188266F736C00DD7A4D /* BaseCell.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
@@ -84,6 +85,7 @@
 		45AB079D268497B90091DCC0 /* AnswerWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWord.swift; sourceTree = "<group>"; };
 		45AB079F268498C20091DCC0 /* ChekTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTestPresenter.swift; sourceTree = "<group>"; };
 		45AB07A12684B6990091DCC0 /* MasterSplitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSplitPresenter.swift; sourceTree = "<group>"; };
+		45AB07A42684CD870091DCC0 /* SplitViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewPresenter.swift; sourceTree = "<group>"; };
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
 		522F7188266F736C00DD7A4D /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
@@ -167,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45AB07A32684CD090091DCC0 /* SplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */,
+				45AB07A42684CD870091DCC0 /* SplitViewPresenter.swift */,
+			);
+			path = SplitViewController;
+			sourceTree = "<group>";
+		};
 		528272432561260200A63410 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,10 +311,10 @@
 		B270151925B1A62B00156559 /* SplitVC */ = {
 			isa = PBXGroup;
 			children = (
+				45AB079D268497B90091DCC0 /* AnswerWord.swift */,
 				B270152B25B1C3C000156559 /* DetailSplit */,
 				B270152A25B1C3AD00156559 /* MaterSplit */,
-				B268F03425B5BA5D00C6B1E5 /* SplitViewController.swift */,
-				45AB079D268497B90091DCC0 /* AnswerWord.swift */,
+				45AB07A32684CD090091DCC0 /* SplitViewController */,
 			);
 			path = SplitVC;
 			sourceTree = "<group>";
@@ -508,6 +519,7 @@
 				B268F03525B5BA5D00C6B1E5 /* SplitViewController.swift in Sources */,
 				B24574692585E2F70038053D /* Clothes.swift in Sources */,
 				B24574792585E3730038053D /* Subjects.swift in Sources */,
+				45AB07A52684CD870091DCC0 /* SplitViewPresenter.swift in Sources */,
 				B2A1C88C25B54563005B8E3B /* ChekWordCell.swift in Sources */,
 				5265B593258F4D7200AA474E /* December2020.swift in Sources */,
 				5282726C2561277600A63410 /* UITableView.swift in Sources */,
