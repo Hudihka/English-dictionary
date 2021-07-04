@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459EDC132691EB2400F973CE /* Februaru-June2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EDC122691EB2300F973CE /* Februaru-June2021.swift */; };
+		459EDC152691EE3B00F973CE /* Jule2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EDC142691EE3B00F973CE /* Jule2021.swift */; };
 		52023D4B25CE990600052EC1 /* Februaru2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023D4A25CE990600052EC1 /* Februaru2021.swift */; };
 		5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5206502725612F2600DBE169 /* SettingsChekViewController.swift */; };
 		52370709260A41BB00643B60 /* March2021.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52370708260A41BB00643B60 /* March2021.swift */; };
@@ -89,6 +91,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		459EDC122691EB2300F973CE /* Februaru-June2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Februaru-June2021.swift"; sourceTree = "<group>"; };
+		459EDC142691EE3B00F973CE /* Jule2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jule2021.swift; sourceTree = "<group>"; };
 		52023D4A25CE990600052EC1 /* Februaru2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Februaru2021.swift; sourceTree = "<group>"; };
 		5206502725612F2600DBE169 /* SettingsChekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChekViewController.swift; sourceTree = "<group>"; };
 		52370708260A41BB00643B60 /* March2021.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = March2021.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 				B21BBA3025B164CB002C2DD3 /* Januri2021.swift */,
 				52370708260A41BB00643B60 /* March2021.swift */,
 				52023D4A25CE990600052EC1 /* Februaru2021.swift */,
+				459EDC122691EB2300F973CE /* Februaru-June2021.swift */,
+				459EDC142691EE3B00F973CE /* Jule2021.swift */,
 			);
 			path = CONTENT;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 				528272722561277600A63410 /* UIWindow.swift in Sources */,
 				528272562561275E00A63410 /* NavigationController.swift in Sources */,
 				B245745F2585E28B0038053D /* Verbs.swift in Sources */,
+				459EDC132691EB2400F973CE /* Februaru-June2021.swift in Sources */,
 				B24574702585E3260038053D /* Funiture.swift in Sources */,
 				528272522561275E00A63410 /* Vibro.swift in Sources */,
 				528272692561277600A63410 /* Array.swift in Sources */,
@@ -518,6 +525,7 @@
 				52370709260A41BB00643B60 /* March2021.swift in Sources */,
 				528272542561275E00A63410 /* BaseViewController.swift in Sources */,
 				B245745B2585E2380038053D /* ProfessionAndWork.swift in Sources */,
+				459EDC152691EE3B00F973CE /* Jule2021.swift in Sources */,
 				52E4D65A25867078003C9DE6 /* SearchViewController.swift in Sources */,
 				5206502825612F2600DBE169 /* SettingsChekViewController.swift in Sources */,
 				B283EBDE25737F3100284F55 /* AllWordCell.swift in Sources */,
