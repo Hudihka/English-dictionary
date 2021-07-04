@@ -59,7 +59,7 @@ class ChekTestViewController: BaseViewController {
         self.table.isUserInteractionEnabled = true
         
 		self.table.isHidden = answerWord.answer != nil
-        self.title = wordValue
+        self.title = translateValue
         
         self.labelWord.text      = wordValue
         self.labelTranslate.text = translateValue
