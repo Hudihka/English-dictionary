@@ -38,6 +38,19 @@ class Jule2021 {
         ["engValue" : "puck", "rusValue" : "шайба", "descript" : ""],
         ["engValue" : "to get", "rusValue" : "что бы получить", "descript" : ""],
         ["engValue" : "to", "rusValue" : "куда", "descript" : ""],
+        ["engValue" : "a litle", "rusValue" : "немного", "descript" : ""],
+        ["engValue" : "litle", "rusValue" : "мало", "descript" : ""],
+        ["engValue" : "a few", "rusValue" : "несколько", "descript" : ""],
+        ["engValue" : "few", "rusValue" : "мало", "descript" : ""],
+        ["engValue" : "to dump", "rusValue" : "сбросить", "descript" : ""],
+        ["engValue" : "finish with smb", "rusValue" : "покончить с чем либо", "descript" : ""],
+        ["engValue" : "yummy", "rusValue" : "вкусный", "descript" : ""],
+        ["engValue" : "coal", "rusValue" : "уголь", "descript" : ""],
+        ["engValue" : "wrap", "rusValue" : "сворачивать", "descript" : ""],
+        ["engValue" : "teaspoon", "rusValue" : "чайная ложка", "descript" : ""],
+        ["engValue" : "a can", "rusValue" : "банка", "descript" : ""],
+        ["engValue" : "a carton", "rusValue" : "картонная коробка", "descript" : ""],
+        ["engValue" : "a tin", "rusValue" : "жестяная банка", "descript" : ""],
     
     ]
     
